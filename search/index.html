@@ -124,19 +124,63 @@
                 
                 
                 
-                <li class="">
-                    <a href="/categories">
+                
+                <li class="dropdown">
+                    <!-- TODO 添加hover dropdown效果 -->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
                         <i class="fa fa-list"></i>分类
                     </a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li>
+                            <a href="/categories/FFT/">FFT</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/hash/">hash</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/other/">other</a>
+                        </li>
+                        
+                        
+                        
+                    </ul>
                 </li>
                 
                 
                 
-                <li class="">
-                    <a href="/tags">
+                
+                
+                <li class="dropdown">
+                    <!-- TODO 添加hover dropdown效果 -->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
                         <i class="fa fa-tags"></i>标签
                     </a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li>
+                            <a href="/tags/FFT/">FFT</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/hash/">hash</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/other/">other</a>
+                        </li>
+                        
+                        
+                        
+                    </ul>
                 </li>
+                
                 
                 
                 
@@ -210,7 +254,7 @@
       	var [month, day] = article.date.split('-')
         ''
         ''
-        var defaultPreview = '/imgs/preview/preview3.jpg'
+        var defaultPreview = '/imgs/preview/preview4.jpg'
         var preview = article.preview ? article.preview : defaultPreview
         var path = '/' + article.path
         resultList.append(`<div class="article well clearfix article-body article-excerpt" data-aos="flip-up">
@@ -434,11 +478,11 @@
             <div class="tab-content">
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/other/" style="font-size: 12.593324174856225px;" class="tag-cloud-link">other</a>
+    <a href="/tags/FFT/" style="font-size: 19.209872006312146px;" class="tag-cloud-link">FFT</a>
     
-    <a href="/tags/FFT/" style="font-size: 17.442976858400407px;" class="tag-cloud-link">FFT</a>
+    <a href="/tags/hash/" style="font-size: 9.470962480971398px;" class="tag-cloud-link">hash</a>
     
-    <a href="/tags/hash/" style="font-size: 18.66039964176443px;" class="tag-cloud-link">hash</a>
+    <a href="/tags/other/" style="font-size: 9.33600371770983px;" class="tag-cloud-link">other</a>
     
 </div>
                 <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
