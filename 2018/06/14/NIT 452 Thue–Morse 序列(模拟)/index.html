@@ -10,7 +10,7 @@
     
     
     
-    <title>categories | tokitsukaze</title>
+    <title>NIT 452 Thue–Morse 序列(模拟) | tokitsukaze</title>
     <link href=”http://tokitsukaze.live“ rel=”prefetch” />
 
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -207,21 +207,34 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 gal-right" id="mainstay">
-                    <!-- 搜索页面(尽可能接近ZanBlog搜索功能) -->
-
-
+                    
 <article class="article well article-body" id="article">
+    <div class="breadcrumb">
+        <i class="fa fa-home"></i>
+        <a href="http://tokitsukaze.live">tokitsukaze</a>
+        >
+        <span>NIT 452 Thue–Morse 序列(模拟)</span>
+    </div>
     <!-- 大型设备详细文章 -->
     <div class="hidden-xs">
         <div class="title-article">
             <h1>
-                <a href="/categories/index.html">categories</a>
+                <a href="/2018/06/14/NIT 452 Thue–Morse 序列(模拟)/">NIT 452 Thue–Morse 序列(模拟)</a>
             </h1>
         </div>
         <div class="tag-article">
+            
             <span class="label label-gal">
-                <i class="fa fa-calendar"></i> 2018-03-02
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/模拟/">模拟</a>
+                
             </span>
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2018-06-14
+            </span>
+            
         </div>
     </div>
     <!-- 小型设备详细文章 -->
@@ -229,19 +242,46 @@
         <center>
             <div class="title-article">
                 <h4>
-                    <a href="/categories/index.html">categories</a>
+                    <a href="/2018/06/14/NIT 452 Thue–Morse 序列(模拟)/">NIT 452 Thue–Morse 序列(模拟)</a>
                 </h4>
             </div>
             <p>
-                <i class="fa fa-calendar"></i> 2018-03-02
+                <i class="fa fa-calendar"></i> 2018-06-14
+            </p>
+            <p>
+                
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/模拟/">模拟</a>
+                
+                
+                
             </p>
         </center>
     </div>
     <div class="content-article">
-        
+        <p>转载请注明出处：<a href="http://tokitsukaze.live/">http://tokitsukaze.live/</a></p>
+<p>题目链接：<a href="https://www.nitacm.com/problem_show.php?pid=452" target="_blank" rel="noopener">https://www.nitacm.com/problem_show.php?pid=452</a></p>
+<h2 id="Thue–Morse-序列"><a href="#Thue–Morse-序列" class="headerlink" title="Thue–Morse 序列"></a>Thue–Morse 序列</h2><hr>
+<p>这是一个有趣的二进制序列。F[0]=0，F[1]=01，F[2]=0110，F[3]=01101001，F[4]=0110100110010110…观察可知，这个序列的第n项是由第n-1项与第n-1项按位取反后得到的序列拼接而成。现在狗风得到了第x项的序列(x为正无穷)，她想知道这个序列的前n个字符是什么。</p>
+<hr>
+<p>Input<br>第一行包括一个正整数T(T≤1000)，表示T个案例。</p>
+<p>对于每个案例，第一行包括一个正整数n(1≤n≤10^5)。</p>
+<hr>
+<p>Output<br>对于每个案例，输出一行长度为n的01串。</p>
+<hr>
+<p>Sample Input<br>6<br>1<br>2<br>3<br>4<br>5<br>32</p>
+<hr>
+<p>Sample Output<br>0<br>01<br>011<br>0110<br>01101<br>01101001100101101001011001101001</p>
+<hr>
+<p>Source<br>2017级新生选拔#4</p>
+<hr>
+<p>Author<br>tokitsukaze</p>
+<hr>
+<p>题解：直接模拟即可。<br>这里提供一个非常规写法。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> comment(linker, <span class="meta-string">"/STACK:1024000000,1024000000"</span>)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> mem(a,b) memset((a),(b),sizeof(a))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MP make_pair</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pb push_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> fi first</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> se second</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> sz(x) x.size()</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> all(x) x.begin(),x.end()</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> _GLIBCXX_PERMIT_BACKWARD_HASH</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;ext/hash_map&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> __gnu_cxx;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">str_hash</span>&#123;</span><span class="keyword">size_t</span> <span class="keyword">operator</span>()(<span class="keyword">const</span> <span class="built_in">string</span>&amp; str)<span class="keyword">const</span>&#123;<span class="keyword">return</span> __stl_hash_string(str.c_str());&#125;&#125;;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> ull;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> PII pair<span class="meta-string">&lt;int,int&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> PLL pair<span class="meta-string">&lt;ll,ll&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> PDD pair<span class="meta-string">&lt;double,double&gt;</span></span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF=<span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">const</span> ll LLINF=<span class="number">0x3f3f3f3f3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> PI=<span class="built_in">acos</span>(<span class="number">-1.0</span>);</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> eps=<span class="number">1e-6</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAX=<span class="number">1e5</span>+<span class="number">10</span>;</span><br><span class="line"><span class="keyword">const</span> ll mod=<span class="number">1e9</span>+<span class="number">7</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> t,n;</span><br><span class="line">	<span class="built_in">string</span> s=<span class="string">""</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">100000</span>;i++) s+=<span class="string">'0'</span>+__builtin_popcount(i)%<span class="number">2</span>;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;t);</span><br><span class="line">	<span class="keyword">while</span>(t--)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">		<span class="built_in">cout</span>&lt;&lt;s.substr(<span class="number">0</span>,n)&lt;&lt;<span class="string">"\n"</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
     </div>
 </article>
-
 
 
                 </div>
@@ -339,25 +379,25 @@
         <div class="panel panel-gal hidden-xs" data-aos="fade-up" data-aos-duration="2000">
             <ul class="nav nav-pills pills-gal">
                 <li class="">
-                    <a href="/categories/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                    <a href="/2018/06/14/NIT 452 Thue–Morse 序列(模拟)/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
                 </li>
                 <li class="">
-                    <a href="/categories/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                    <a href="/2018/06/14/NIT 452 Thue–Morse 序列(模拟)/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
                 </li>
                 <li class="">
-                    <a href="/categories/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                    <a href="/2018/06/14/NIT 452 Thue–Morse 序列(模拟)/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
                 </li>
             </ul>
             <div class="tab-content">
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/FFT/" style="font-size: 17.373304227233664px;" class="tag-cloud-link">FFT</a>
+    <a href="/tags/FFT/" style="font-size: 8.034005403124777px;" class="tag-cloud-link">FFT</a>
     
-    <a href="/tags/模拟/" style="font-size: 8.027078706915603px;" class="tag-cloud-link">模拟</a>
+    <a href="/tags/模拟/" style="font-size: 18.315540911193153px;" class="tag-cloud-link">模拟</a>
     
-    <a href="/tags/hash/" style="font-size: 9.911273588051273px;" class="tag-cloud-link">hash</a>
+    <a href="/tags/hash/" style="font-size: 11.542137300758085px;" class="tag-cloud-link">hash</a>
     
-    <a href="/tags/other/" style="font-size: 16.741028198333147px;" class="tag-cloud-link">other</a>
+    <a href="/tags/other/" style="font-size: 17.57685406634235px;" class="tag-cloud-link">other</a>
     
 </div>
                 <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
