@@ -35,7 +35,7 @@
       if (document.images) {
         var avatar = new Image();
         avatar.src = '/imgs/toki.jpg'
-        var previews = 'preview1.jpg,preview2.jpg,preview3.jpg,preview4.jpg'.split(',')
+        var previews = 'preview01.bmp,preview02.bmp,preview03.bmp,preview04.bmp,preview05.bmp,preview06.bmp,preview07.bmp,preview08.bmp,preview09.bmp,preview10.bmp,preview11.bmp,preview12.bmp,preview13.bmp,preview14.bmp,preview15.bmp'.split(',')
         var previewsPreLoad = []
         for(var i = 0; i < length; i++) {
           previewsPreLoad.push(new Image())
@@ -139,11 +139,11 @@
                         </li>
                         
                         <li>
-                            <a href="/categories/数据结构/">数据结构</a>
+                            <a href="/categories/模拟/">模拟</a>
                         </li>
                         
                         <li>
-                            <a href="/categories/模拟/">模拟</a>
+                            <a href="/categories/数据结构/">数据结构</a>
                         </li>
                         
                         <li>
@@ -181,6 +181,10 @@
                         </li>
                         
                         <li>
+                            <a href="/tags/模拟/">模拟</a>
+                        </li>
+                        
+                        <li>
                             <a href="/tags/01字典树/">01字典树</a>
                         </li>
                         
@@ -209,19 +213,15 @@
                         </li>
                         
                         <li>
-                            <a href="/tags/模拟/">模拟</a>
-                        </li>
-                        
-                        <li>
                             <a href="/tags/hash/">hash</a>
                         </li>
                         
                         <li>
-                            <a href="/tags/other/">other</a>
+                            <a href="/tags/hexo/">hexo</a>
                         </li>
                         
                         <li>
-                            <a href="/tags/hexo/">hexo</a>
+                            <a href="/tags/other/">other</a>
                         </li>
                         
                         
@@ -302,7 +302,7 @@
       	var [month, day] = article.date.split('-')
         ''
         ''
-        var defaultPreview = '/imgs/preview/preview1.jpg'
+        var defaultPreview = '/imgs/preview/preview13.bmp'
         var preview = article.preview ? article.preview : defaultPreview
         var path = '/' + article.path
         resultList.append(`<div class="article well clearfix article-body article-excerpt" data-aos="flip-up">
@@ -483,6 +483,12 @@
             
             <li class="list-group-item">
                 <span class="post-title">
+                    <a href="/2018/06/15/NIT445/">NIT 445 Length (模拟)</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
                     <a href="/2018/06/15/NIT446/">NIT 446 合法序列 (思维)</a>
                 </span>
             </li>
@@ -535,12 +541,6 @@
                 </span>
             </li>
             
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2018/06/13/hello-world/">Hello World</a>
-                </span>
-            </li>
-            
         </ul>
     </div>
 </aside>
@@ -568,29 +568,29 @@
             <div class="tab-content">
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/思维/" style="font-size: 10.18638778460225px;" class="tag-cloud-link">思维</a>
+    <a href="/tags/思维/" style="font-size: 19.486688701199366px;" class="tag-cloud-link">思维</a>
     
-    <a href="/tags/01字典树/" style="font-size: 14.393422958474353px;" class="tag-cloud-link">01字典树</a>
+    <a href="/tags/模拟/" style="font-size: 17.345602873451995px;" class="tag-cloud-link">模拟</a>
     
-    <a href="/tags/树状数组/" style="font-size: 15.693795331243047px;" class="tag-cloud-link">树状数组</a>
+    <a href="/tags/01字典树/" style="font-size: 15.870956962074743px;" class="tag-cloud-link">01字典树</a>
     
-    <a href="/tags/枚举/" style="font-size: 14.446079682536027px;" class="tag-cloud-link">枚举</a>
+    <a href="/tags/树状数组/" style="font-size: 16.410961431236657px;" class="tag-cloud-link">树状数组</a>
     
-    <a href="/tags/STL/" style="font-size: 8.181850715353836px;" class="tag-cloud-link">STL</a>
+    <a href="/tags/枚举/" style="font-size: 17.501077036041515px;" class="tag-cloud-link">枚举</a>
     
-    <a href="/tags/线段树/" style="font-size: 9.870727637365878px;" class="tag-cloud-link">线段树</a>
+    <a href="/tags/STL/" style="font-size: 15.52485593951102px;" class="tag-cloud-link">STL</a>
     
-    <a href="/tags/主席树/" style="font-size: 9.073571485334783px;" class="tag-cloud-link">主席树</a>
+    <a href="/tags/线段树/" style="font-size: 19.08914055311882px;" class="tag-cloud-link">线段树</a>
     
-    <a href="/tags/FFT/" style="font-size: 12.464041886046955px;" class="tag-cloud-link">FFT</a>
+    <a href="/tags/主席树/" style="font-size: 16.255346507151284px;" class="tag-cloud-link">主席树</a>
     
-    <a href="/tags/模拟/" style="font-size: 8.137191091956709px;" class="tag-cloud-link">模拟</a>
+    <a href="/tags/FFT/" style="font-size: 19.3834169327962px;" class="tag-cloud-link">FFT</a>
     
-    <a href="/tags/hash/" style="font-size: 10.650818425994403px;" class="tag-cloud-link">hash</a>
+    <a href="/tags/hash/" style="font-size: 17.293205004098333px;" class="tag-cloud-link">hash</a>
     
-    <a href="/tags/other/" style="font-size: 16.911527928232747px;" class="tag-cloud-link">other</a>
+    <a href="/tags/hexo/" style="font-size: 16.443321419210946px;" class="tag-cloud-link">hexo</a>
     
-    <a href="/tags/hexo/" style="font-size: 11.305006176754198px;" class="tag-cloud-link">hexo</a>
+    <a href="/tags/other/" style="font-size: 18.495193571612127px;" class="tag-cloud-link">other</a>
     
 </div>
                 <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
@@ -675,7 +675,7 @@
     window.slideConfig = {
       prefix: '/imgs/slide/background',
       ext: 'bmp',
-      maxCount: '9'
+      maxCount: '10'
     }
 </script>
 <script src="/js/hs.js"></script>

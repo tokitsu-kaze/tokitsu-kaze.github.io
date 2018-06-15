@@ -10,7 +10,7 @@
     
     
     
-    <title>categories: 数据结构 | tokitsukaze</title>
+    <title>NIT 445 Length (模拟) | tokitsukaze</title>
     <link href=”http://tokitsukaze.live“ rel=”prefetch” />
 
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -247,19 +247,34 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 gal-right" id="mainstay">
-                    <article class="article well article-body" id="article-category">
+                    
+<article class="article well article-body" id="article">
     <div class="breadcrumb">
         <i class="fa fa-home"></i>
         <a href="http://tokitsukaze.live">tokitsukaze</a>
         >
-        <span>目录</span>
+        <span>NIT 445 Length (模拟)</span>
     </div>
     <!-- 大型设备详细文章 -->
     <div class="hidden-xs">
         <div class="title-article">
             <h1>
-                <a href="/categories/数据结构/index.html">数据结构</a>
+                <a href="/2018/06/15/NIT445/">NIT 445 Length (模拟)</a>
             </h1>
+        </div>
+        <div class="tag-article">
+            
+            <span class="label label-gal">
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/模拟/">模拟</a>
+                
+            </span>
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2018-06-15
+            </span>
+            
         </div>
     </div>
     <!-- 小型设备详细文章 -->
@@ -267,27 +282,51 @@
         <center>
             <div class="title-article">
                 <h4>
-                    <a href="/categories/数据结构/index.html">数据结构</a>
+                    <a href="/2018/06/15/NIT445/">NIT 445 Length (模拟)</a>
                 </h4>
             </div>
+            <p>
+                <i class="fa fa-calendar"></i> 2018-06-15
+            </p>
+            <p>
+                
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/模拟/">模拟</a>
+                
+                
+                
+            </p>
         </center>
     </div>
-    <div class="content-article" style="margin-top: 30px;">
-        <div class="alert alert-info" style="font-size: 14px; line-height: 2; font-weight: bold;">
-            
-            <a href="/2018/06/15/NIT447/">NIT 447 XOR and MAX (01字典树)</a>
-            <br>
-            
-            <a href="/2018/06/15/NIT448/">NIT 448 逆序数 (树状数组)</a>
-            <br>
-            
-            <a href="/2018/06/15/NIT449/">NIT 449 帅气的ES(改) (STL/线段树/主席树)</a>
-            <br>
-            
-            
-        </div>
+    <div class="content-article">
+        <p>转载请注明出处：<a href="http://tokitsukaze.live/">http://tokitsukaze.live/</a></p>
+<p>题目链接：<a href="https://www.nitacm.com/problem_show.php?pid=445" target="_blank" rel="noopener">https://www.nitacm.com/problem_show.php?pid=445</a></p>
+<h2 id="Length"><a href="#Length" class="headerlink" title="Length"></a>Length</h2><hr>
+<p>狗风给你一个数字x，希望你告诉她，这个数字转换成二进制后有多长。</p>
+<hr>
+<p>Input<br>多组数据。</p>
+<p>对于每组数据，第一行包括一个整数x(0≤x≤10^18)。</p>
+<hr>
+<p>Output<br>对于每组数据，输出一行，表示答案。</p>
+<hr>
+<p>Sample Input<br>4<br>11</p>
+<hr>
+<p>Sample Output<br>3<br>4</p>
+<hr>
+<p>Hint<br>4转换成二进制变为100，所以长度为3。<br>11转换成二进制变为1101，所以长度为4。</p>
+<hr>
+<p>Source<br>2017级新生选拔#4</p>
+<hr>
+<p>Author<br>tokitsukaze</p>
+<hr>
+<p>题解：<br>直接模拟即可，注意特判x=0的情况。</p>
+<p>代码：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> comment(linker, <span class="meta-string">"/STACK:1024000000,1024000000"</span>)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> mem(a,b) memset((a),(b),sizeof(a))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MP make_pair</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pb push_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> fi first</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> se second</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> sz(x) (int)x.size()</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> all(x) x.begin(),x.end()</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> _GLIBCXX_PERMIT_BACKWARD_HASH</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;ext/hash_map&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> __gnu_cxx;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">str_hash</span>&#123;</span><span class="keyword">size_t</span> <span class="keyword">operator</span>()(<span class="keyword">const</span> <span class="built_in">string</span>&amp; str)<span class="keyword">const</span>&#123;<span class="keyword">return</span> __stl_hash_string(str.c_str());&#125;&#125;;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> ull;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> PII pair<span class="meta-string">&lt;int,int&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> PLL pair<span class="meta-string">&lt;ll,ll&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> PDD pair<span class="meta-string">&lt;double,double&gt;</span></span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF=<span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">const</span> ll LLINF=<span class="number">0x3f3f3f3f3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> PI=<span class="built_in">acos</span>(<span class="number">-1.0</span>);</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> eps=<span class="number">1e-6</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAX=<span class="number">5e5</span>+<span class="number">10</span>;</span><br><span class="line"><span class="keyword">const</span> ll mod=<span class="number">1e9</span>+<span class="number">7</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	ll x,ans;</span><br><span class="line">	<span class="keyword">while</span>(~<span class="built_in">scanf</span>(<span class="string">"%lld"</span>,&amp;x))</span><br><span class="line">	&#123;</span><br><span class="line">		assert(x&gt;=<span class="number">0</span>&amp;&amp;x&lt;=<span class="number">1000000000000000000L</span>L);</span><br><span class="line">		<span class="keyword">if</span>(x==<span class="number">0</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">puts</span>(<span class="string">"1"</span>);</span><br><span class="line">			<span class="keyword">continue</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		ans=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">while</span>(x)</span><br><span class="line">		&#123;</span><br><span class="line">			x&gt;&gt;=<span class="number">1</span>;</span><br><span class="line">			ans++;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,ans);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
     </div>
 </article>
+
+
                 </div>
                 <aside class="col-md-4 gal-left" id="sidebar">
     <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
@@ -419,41 +458,41 @@
         <div class="panel panel-gal hidden-xs" data-aos="fade-up" data-aos-duration="2000">
             <ul class="nav nav-pills pills-gal">
                 <li class="">
-                    <a href="/categories/数据结构/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                    <a href="/2018/06/15/NIT445/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
                 </li>
                 <li class="">
-                    <a href="/categories/数据结构/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                    <a href="/2018/06/15/NIT445/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
                 </li>
                 <li class="">
-                    <a href="/categories/数据结构/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                    <a href="/2018/06/15/NIT445/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
                 </li>
             </ul>
             <div class="tab-content">
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/思维/" style="font-size: 14.539195032040364px;" class="tag-cloud-link">思维</a>
+    <a href="/tags/思维/" style="font-size: 8.653925554955855px;" class="tag-cloud-link">思维</a>
     
-    <a href="/tags/模拟/" style="font-size: 15.735255802230022px;" class="tag-cloud-link">模拟</a>
+    <a href="/tags/模拟/" style="font-size: 14.538385661773976px;" class="tag-cloud-link">模拟</a>
     
-    <a href="/tags/01字典树/" style="font-size: 11.429129557203575px;" class="tag-cloud-link">01字典树</a>
+    <a href="/tags/01字典树/" style="font-size: 14.647616927251532px;" class="tag-cloud-link">01字典树</a>
     
-    <a href="/tags/树状数组/" style="font-size: 16.89922917530938px;" class="tag-cloud-link">树状数组</a>
+    <a href="/tags/树状数组/" style="font-size: 16.564024839886912px;" class="tag-cloud-link">树状数组</a>
     
-    <a href="/tags/枚举/" style="font-size: 10.724657615950374px;" class="tag-cloud-link">枚举</a>
+    <a href="/tags/枚举/" style="font-size: 8.150723882054391px;" class="tag-cloud-link">枚举</a>
     
-    <a href="/tags/STL/" style="font-size: 9.208539178525795px;" class="tag-cloud-link">STL</a>
+    <a href="/tags/STL/" style="font-size: 9.538658265033307px;" class="tag-cloud-link">STL</a>
     
-    <a href="/tags/线段树/" style="font-size: 10.33797621248236px;" class="tag-cloud-link">线段树</a>
+    <a href="/tags/线段树/" style="font-size: 13.709367796773396px;" class="tag-cloud-link">线段树</a>
     
-    <a href="/tags/主席树/" style="font-size: 11.711782708400108px;" class="tag-cloud-link">主席树</a>
+    <a href="/tags/主席树/" style="font-size: 18.99610339385829px;" class="tag-cloud-link">主席树</a>
     
-    <a href="/tags/FFT/" style="font-size: 12.003637448965076px;" class="tag-cloud-link">FFT</a>
+    <a href="/tags/FFT/" style="font-size: 9.88384811238538px;" class="tag-cloud-link">FFT</a>
     
-    <a href="/tags/hash/" style="font-size: 11.37794148450476px;" class="tag-cloud-link">hash</a>
+    <a href="/tags/hash/" style="font-size: 8.997700342518556px;" class="tag-cloud-link">hash</a>
     
-    <a href="/tags/hexo/" style="font-size: 18.27587694511563px;" class="tag-cloud-link">hexo</a>
+    <a href="/tags/hexo/" style="font-size: 10.429010417801534px;" class="tag-cloud-link">hexo</a>
     
-    <a href="/tags/other/" style="font-size: 19.706719939045275px;" class="tag-cloud-link">other</a>
+    <a href="/tags/other/" style="font-size: 9.68001559279964px;" class="tag-cloud-link">other</a>
     
 </div>
                 <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
