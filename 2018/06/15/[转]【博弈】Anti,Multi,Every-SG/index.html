@@ -10,7 +10,7 @@
     
     
     
-    <title>archive_a | tokitsukaze</title>
+    <title>(转)【博弈】Anti,Multi,Every-SG | tokitsukaze</title>
     <link href=”http://tokitsukaze.live“ rel=”prefetch” />
 
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -66,7 +66,7 @@
         <div class="ring">
             <a href="http://tokitsukaze.live" class="menuItem" style="left: 50%; top: 15%;">首页</a>
             
-            <a href="/archives/2018/page/2/" class="menuItem" style="left: 80.3109%; top: 32.5%;">下一页</a>
+            <a class="menuItem" style="left: 80.3109%; top: 32.5%;">下一页</a>
             
             <a href="/archives" class="menuItem" style="left: 80.3109%; top: 67.5%;">归档</a>
             <a href="/about" class="menuItem" style="left: 50%; top: 85%;">关于</a>
@@ -116,7 +116,7 @@
                 
                 
                 
-                <li class="current">
+                <li class="">
                     <a href="/archives">
                         <i class="fa fa-archive"></i>归档
                     </a>
@@ -259,19 +259,36 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 gal-right" id="mainstay">
-                    <article class="article well article-body" id="article-archive">
+                    
+<article class="article well article-body" id="article">
     <div class="breadcrumb">
         <i class="fa fa-home"></i>
         <a href="http://tokitsukaze.live">tokitsukaze</a>
         >
-        <span>归档</span>
+        <span>(转)【博弈】Anti,Multi,Every-SG</span>
     </div>
     <!-- 大型设备详细文章 -->
     <div class="hidden-xs">
         <div class="title-article">
             <h1>
-                <a href="/archives">归档</a>
+                <a href="/2018/06/15/[转]【博弈】Anti,Multi,Every-SG/">(转)【博弈】Anti,Multi,Every-SG</a>
             </h1>
+        </div>
+        <div class="tag-article">
+            
+            <span class="label label-gal">
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/博弈/">博弈</a>, 
+                
+                <a href="/tags/学习笔记/">学习笔记</a>
+                
+            </span>
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2018-06-15
+            </span>
+            
         </div>
     </div>
     <!-- 小型设备详细文章 -->
@@ -279,75 +296,118 @@
         <center>
             <div class="title-article">
                 <h4>
-                    <a href="/archives">归档</a>
+                    <a href="/2018/06/15/[转]【博弈】Anti,Multi,Every-SG/">(转)【博弈】Anti,Multi,Every-SG</a>
                 </h4>
             </div>
+            <p>
+                <i class="fa fa-calendar"></i> 2018-06-15
+            </p>
+            <p>
+                
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/博弈/">博弈</a>, 
+                
+                <a href="/tags/学习笔记/">学习笔记</a>
+                
+                
+                
+            </p>
         </center>
     </div>
-    <div class="content-article" style="margin-top: 30px;">
-        
-        
-            <h1 style="font-size: 24px; margin-top: 40px;">2018年</h1>
-            
-        <div class="alert alert-info" style="font-size: 14px; line-height: 2; font-weight: bold;">
-            
-             
-             
-                        <a href="/2018/06/15/[转]【博弈】Anti,Multi,Every-SG/">(转)【博弈】Anti,Multi,Every-SG</a>
-                        <br>
-            
-             
-                        <a href="/2018/06/15/NIT458/">NIT 458 Strictly Increasing Subinterval (思维)</a>
-                        <br>
-            
-             
-                        <a href="/2018/06/15/NIT445/">NIT 445 Length (模拟)</a>
-                        <br>
-            
-             
-                        <a href="/2018/06/15/NIT446/">NIT 446 合法序列 (思维)</a>
-                        <br>
-            
-             
-                        <a href="/2018/06/15/NIT447/">NIT 447 XOR and MAX (01字典树)</a>
-                        <br>
-            
-             
-                        <a href="/2018/06/15/hexo 文章中插入图片/">hexo 文章中插入图片</a>
-                        <br>
-            
-             
-                        <a href="/2018/06/15/NIT448/">NIT 448 逆序数 (树状数组)</a>
-                        <br>
-            
-             
-                        <a href="/2018/06/15/NIT449/">NIT 449 帅气的ES(改) (STL/线段树/主席树)</a>
-                        <br>
-            
-             
-                        <a href="/2018/06/15/NIT450/">NIT 450 极致色彩 (枚举)</a>
-                        <br>
-            
-             
-                        <a href="/2018/06/14/NIT451/">NIT 451 等差序列 (FFT计数)</a>
-                        <br>
-            
-             
-                        <a href="/2018/06/14/NIT452/">NIT 452 Thue–Morse 序列 (模拟)</a>
-                        <br>
-            
-             
-                        <a href="/2018/06/14/NIT453/">NIT 453 相似字符串 (hash)</a>
-                        <br>
-            
-             
-                        <a href="/2018/06/13/hello-world/">Hello World</a>
-                        <br>
-            
-                    </div>
-        
+    <div class="content-article">
+        <p>原文：<a href="http://blog.sina.com.cn/s/blog_51cea4040100h3l9.html" target="_blank" rel="noopener">http://blog.sina.com.cn/s/blog_51cea4040100h3l9.html</a></p>
+<pre><code>一、Anti-SG
+定义：桌子上有N堆石子，游戏者轮流取石子。
+      每次只能从一堆中取出任意数目的石子，但不能不取。
+      取走最后一个石子者败。
+
+因为要求是取走最后一个石子的人败，那么，想赢的人，肯定是想，我就要留一个石子让你去取。
+所以，我们在考虑条件的时候，就要加上石子数是不是1这个条件了。当然，还有SG函数本身。
+
+贾志豪发明的SJ定理（Sprague Grundy——Jia Zhihao）解决了这个问题。
+
+SJ定理：
+对于任意一个Anti-SG游戏，如果我们规定当局面中所有的单一游戏的SG值为0时，游戏结束。
+先手必胜当且仅当：（1）游戏的SG函数不为0且游戏中某个单一游戏的SG函数大于1；（2）游戏的SG函数为0且游戏中没有单一游戏的SG函数大于1。
+
+我们提出定理里的两个限制：1、SG函数为不为0。2、有没有某单一游戏的SG函数大于1。
+通过这两个限制，我们可以组合出4种情况：
+（1）SG==0，有某单一游戏的SG&gt;1。
+（2）SG!=0，有某单一游戏的SG&gt;1。（必胜SJ）
+（3）SG==0，无某单一游戏的SG&gt;1。(必胜SJ)
+（4）SG!=0，无某单一游戏的SG&gt;1。
+
+对于情况（1）：
+当SG==0，存在某单一游戏的SG&gt;1，因为SG==0，所以一定存在至少两个单一游戏的SG&gt;1。而一次操作只能改变一个单一游戏的SG值，那么，操作后，一定到情况（2）。所以情况（1）是先手必败。
+
+对于情况（2）：
+当SG!=0时，&lt;1&gt;若只有一个单一游戏的SG&gt;1，我们一定可以通过一次操作，使得剩下的单一游戏一共有奇数个1，这样就先手必胜。&lt;2&gt;若不只一个单一游戏的SG&gt;1，我们可以通过一次操作，使得情况变为SG==0，有某单一游戏的SG&gt;1。对于情况（2）来说，都有子状态是必败状态，所以，情况（2）是先手必胜。
+
+对于情况（3）：
+当SG==0，并且没有一单一游戏的SG&gt;1，说明这里只存在偶数个1。如果1的个数为0，则先手必胜。如果1个个数大于0，说明一共有偶数个1，依然是先手必胜。
+
+对于情况（4）：
+当SG!=0，无某单一游戏的SG&gt;1，说明现在有奇数个SG==1，操作有两种。
+&lt;1&gt;将某一单一游戏的SG值变成大于1，转移后SG依然不等于0，且有一个单一游戏的SG&gt;1，这就到了情况（2）。
+&lt;2&gt;将一个SG==1的转移为SG==0，这样就到了情况（3）。
+所以情况（4）下是先手必败。
+
+二、Multi-SG
+定义：Multi-SG游戏规定，在符合拓扑原则的前提下，一个单一游戏的后继可以为多个单一游戏。
+      Multi-SG其他规则与SG游戏相同。
+关于这个，如果ccy没理解错，就相当于POI1999/2000的Stripes那题。
+http://blog.sina.com.cn/s/blog_51cea4040100h37e.html
+
+三、Every-SG
+定义：Every-SG 游戏规定，对于还没有结束的单一游戏，游戏者必须对该游戏进行一步决策。
+      Every-SG 游戏的其他规则与普通SG 游戏相同。
+
+这种类型，可以想成这样，有N组游戏，有N个穿红色衣服的人代表先手，有N个穿蓝色衣服的人代表后手，这个时候，编号相同的人和游戏分到一组游戏，既第i号穿红色衣服人和第i号穿蓝色衣服的人做第i个游戏。游戏开始后，首先所有穿红衣服的人先操作，然后所有穿蓝色衣服的人再操作，这样轮流下去。直到最后还没游戏完的一组，这组如果是红色衣服的人胜利，那么该游戏先手必胜，如果是蓝色衣服的人胜利，就是先手必败。
+很明显，Every-SG不仅仅像其他SG那样仅仅跟SG值有关，还与一个游戏的时间长度有关。
+
+如果先手想赢，那么，在做先手必胜的单一游戏时，他肯定是想把战线尽量拉长。在做先手必败的单一游戏时，他肯定是想把游戏尽快结束。
+
+于是我们开一个Step数组。
+表示对于先手必胜的单一游戏而言，它最少走好多步胜利。对于先手必败的单一游戏而言，它最多走好多步。
+这样，我们只需要看最后所有单一游戏最大的step那组的SG是0还是非0就可以断定是否先手必胜了。
+
+很容易得出：
+（u是v的子状态）
+step[v] = 0；                 （v为终止状态）
+step[v] = max{step[u]} + 1；  （sg[v]&gt;0,sg[u]=0）
+step[v] = min{step[u]} + 1；  （sg[v]==0）
+
+现在需要证明两个东西：
+（1）先手必胜，step表示的是最少走好多步。
+（2）先手必败，step表示的是最多走好多步。
+
+证明（1）：
+对于v点，先手必胜。先手总是从sg&gt;1的到sg==0，他可以保证自己每次减少的步数为1。对手每次是从sg==0到sg&gt;1，最少将步数减小1，既对方走的min值所取的结点，如果选其他的，步数反而到那步后还要增加。所以，先手必胜，step表示的是最少走好多步。
+（反起想，这也是为什么step第三个递推式是用min的原因。）
+
+证明（2）：
+对于v点，先手必败。先手总是从sg==0到sg&gt;1，他可以保证自己每次减少的步数为1。对手每次是从sg&gt;1到sg==0，对手肯定想让战线拉长，那么他只让步数减少1.所以，先手必败，step表示的是最多走好多步。
+
+这里，式子的推导和证明柔和起来看更有利于理解。
+值得注意理解的是，这里的最多和最少并不是绝对的最多最少。
+对于（1）（2）而言，都是先手保证自己的操作后，看对手操作而决定最多最少。
+而这里的最多最少正好等于step也是我们强制先手每次只减少步数1而得来的。
+
+不过，我们是先手嘛，当然可以多个脑壳决定自己了！！！
+
+贾志豪在证Every-SG时，多证明了一条，就是最大的step为奇数时必胜。
+ccy觉得这个虽然好证明，但是何必呢？最多step的那个单一游戏判断下它的SG是不是为0不就可以了吗？
+关于step为奇这个，也说一下。
+最终状态，sg[v]==0，step[v]==0，为偶。
+每个sg[v]!=0的step是由sg[u]==0的step[u]加上1得到，所以为奇。
+每个sg[v]==0的step是由下面sg[u]!=0的step[u]加上1得到，所以为偶。
+所以，sg[v]!=0的，step为奇。
+</code></pre>
     </div>
 </article>
+
+
                 </div>
                 <aside class="col-md-4 gal-left" id="sidebar">
     <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
@@ -479,45 +539,45 @@
         <div class="panel panel-gal hidden-xs" data-aos="fade-up" data-aos-duration="2000">
             <ul class="nav nav-pills pills-gal">
                 <li class="">
-                    <a href="/archives/2018/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                    <a href="/2018/06/15/[转]【博弈】Anti,Multi,Every-SG/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
                 </li>
                 <li class="">
-                    <a href="/archives/2018/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                    <a href="/2018/06/15/[转]【博弈】Anti,Multi,Every-SG/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
                 </li>
                 <li class="">
-                    <a href="/archives/2018/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                    <a href="/2018/06/15/[转]【博弈】Anti,Multi,Every-SG/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
                 </li>
             </ul>
             <div class="tab-content">
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/模拟/" style="font-size: 12.774561810605178px;" class="tag-cloud-link">模拟</a>
+    <a href="/tags/模拟/" style="font-size: 8.536128556304138px;" class="tag-cloud-link">模拟</a>
     
-    <a href="/tags/思维/" style="font-size: 16.16476475739127px;" class="tag-cloud-link">思维</a>
+    <a href="/tags/思维/" style="font-size: 15.197402484171295px;" class="tag-cloud-link">思维</a>
     
-    <a href="/tags/01字典树/" style="font-size: 13.852650383683674px;" class="tag-cloud-link">01字典树</a>
+    <a href="/tags/01字典树/" style="font-size: 8.784108409424608px;" class="tag-cloud-link">01字典树</a>
     
-    <a href="/tags/树状数组/" style="font-size: 17.662445574657216px;" class="tag-cloud-link">树状数组</a>
+    <a href="/tags/树状数组/" style="font-size: 19.229571430523364px;" class="tag-cloud-link">树状数组</a>
     
-    <a href="/tags/STL/" style="font-size: 17.114051041515015px;" class="tag-cloud-link">STL</a>
+    <a href="/tags/STL/" style="font-size: 11.926545712181552px;" class="tag-cloud-link">STL</a>
     
-    <a href="/tags/线段树/" style="font-size: 18.040728044173168px;" class="tag-cloud-link">线段树</a>
+    <a href="/tags/线段树/" style="font-size: 11.89335288754438px;" class="tag-cloud-link">线段树</a>
     
-    <a href="/tags/主席树/" style="font-size: 17.628563568583413px;" class="tag-cloud-link">主席树</a>
+    <a href="/tags/主席树/" style="font-size: 11.763484437865674px;" class="tag-cloud-link">主席树</a>
     
-    <a href="/tags/枚举/" style="font-size: 18.978524503493432px;" class="tag-cloud-link">枚举</a>
+    <a href="/tags/枚举/" style="font-size: 11.132968500443923px;" class="tag-cloud-link">枚举</a>
     
-    <a href="/tags/FFT/" style="font-size: 16.328541328239144px;" class="tag-cloud-link">FFT</a>
+    <a href="/tags/FFT/" style="font-size: 10.917665010212017px;" class="tag-cloud-link">FFT</a>
     
-    <a href="/tags/hash/" style="font-size: 11.12814152263195px;" class="tag-cloud-link">hash</a>
+    <a href="/tags/hash/" style="font-size: 19.185458243113686px;" class="tag-cloud-link">hash</a>
     
-    <a href="/tags/博弈/" style="font-size: 11.801807038730598px;" class="tag-cloud-link">博弈</a>
+    <a href="/tags/博弈/" style="font-size: 15.95267841973976px;" class="tag-cloud-link">博弈</a>
     
-    <a href="/tags/学习笔记/" style="font-size: 9.451907738990938px;" class="tag-cloud-link">学习笔记</a>
+    <a href="/tags/学习笔记/" style="font-size: 19.56283392098296px;" class="tag-cloud-link">学习笔记</a>
     
-    <a href="/tags/other/" style="font-size: 18.63790873098549px;" class="tag-cloud-link">other</a>
+    <a href="/tags/other/" style="font-size: 14.71588122559961px;" class="tag-cloud-link">other</a>
     
-    <a href="/tags/hexo/" style="font-size: 8.506179966424597px;" class="tag-cloud-link">hexo</a>
+    <a href="/tags/hexo/" style="font-size: 13.541464006709802px;" class="tag-cloud-link">hexo</a>
     
 </div>
                 <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
