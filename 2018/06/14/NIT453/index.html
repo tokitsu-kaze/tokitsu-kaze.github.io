@@ -10,7 +10,7 @@
     
     
     
-    <title>tags: hash | tokitsukaze</title>
+    <title>NIT 453 相似字符串 (hash) | tokitsukaze</title>
     <link href=”http://tokitsukaze.live“ rel=”prefetch” />
 
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -231,19 +231,34 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 gal-right" id="mainstay">
-                    <article class="article well article-body" id="article-tag">
+                    
+<article class="article well article-body" id="article">
     <div class="breadcrumb">
         <i class="fa fa-home"></i>
         <a href="http://tokitsukaze.live">tokitsukaze</a>
         >
-        <span>标签</span>
+        <span>NIT 453 相似字符串 (hash)</span>
     </div>
     <!-- 大型设备详细文章 -->
     <div class="hidden-xs">
         <div class="title-article">
             <h1>
-                <a href="/tags/hash/index.html">hash</a>
+                <a href="/2018/06/14/NIT453/">NIT 453 相似字符串 (hash)</a>
             </h1>
+        </div>
+        <div class="tag-article">
+            
+            <span class="label label-gal">
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/hash/">hash</a>
+                
+            </span>
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2018-06-14
+            </span>
+            
         </div>
     </div>
     <!-- 小型设备详细文章 -->
@@ -251,21 +266,64 @@
         <center>
             <div class="title-article">
                 <h4>
-                    <a href="/tags/hash/index.html">hash</a>
+                    <a href="/2018/06/14/NIT453/">NIT 453 相似字符串 (hash)</a>
                 </h4>
             </div>
+            <p>
+                <i class="fa fa-calendar"></i> 2018-06-14
+            </p>
+            <p>
+                
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/hash/">hash</a>
+                
+                
+                
+            </p>
         </center>
     </div>
-    <div class="content-article" style="margin-top: 30px;">
-        <div class="alert alert-info" style="font-size: 14px; line-height: 2; font-weight: bold;">
-            
-            <a href="/2018/06/14/NIT453/">NIT 453 相似字符串 (hash)</a>
-            <br>
-            
-            
-        </div>
+    <div class="content-article">
+        <p>转载请注明出处：<a href="http://tokitsukaze.live/">http://tokitsukaze.live/</a></p>
+<p>题目链接：<a href="https://www.nitacm.com/problem_show.php?pid=453" target="_blank" rel="noopener">https://www.nitacm.com/problem_show.php?pid=453</a></p>
+<h2 id="相似字符串"><a href="#相似字符串" class="headerlink" title="相似字符串"></a>相似字符串</h2><hr>
+<p>狗风获得了一个长度为n，由a-z小写字母组成的字符串。</p>
+<p>我们定义两个字符串是相似的，当且仅当能通过多次以下操作，使得两个字符串相等。并且把需要操作的最小次数，称为两个字符串的相似度。</p>
+<p>操作是这样的：选择一个字符串，把字符串的每个字母都+1(例如‘a’变成‘b’，’z’变成’a’)。比如选择“acdz”，操作一次后变为“bdea”。</p>
+<p>现在狗风从字符串中任取两个子串，狗风想知道它们是不是相似的，如果它们相似，请输出相似度，如果它们不相似，请输出-1。</p>
+<hr>
+<p>Input<br>多组数据。</p>
+<p>对于每组数据，第一行包括一个正整数n(1≤n≤105)，表示字符串长度。</p>
+<p>第二行包括一个长度为n的字符串。</p>
+<p>接下来一行包括一个正整数q(1≤q≤105)，表示询问次数。</p>
+<p>接下来q行，每行包括3个正整数x，y，len。(1≤x，y≤n)，(1≤len≤n并且1≤x+len-1，y+len-1≤n)。表示查询子串[x…x+len-1]和子串[y…y+len-1]。</p>
+<p>n=105，q=105的数据大约有10组。</p>
+<hr>
+<p>Output<br>对于每个查询，输出一行，表示答案。</p>
+<hr>
+<p>Sample Input<br>10<br>aabbcdedcz<br>4<br>1 3 2<br>2 6 2<br>4 6 4<br>1 10 1</p>
+<hr>
+<p>Sample Output<br>1<br>3<br>-1<br>1</p>
+<hr>
+<p>Hint<br>第一个查询的子串为“aa”和“bb”，“aa”变为“bb”需要1次操作，所以相似度为1。</p>
+<p>第二个查询的子串为“ab”和“de”，“ab”变为“de”需要3次操作，所以相似度为3。</p>
+<p>第三个查询的子串为“bcde”和“dedc”，“bcde”不能变为“dedc”，所以两个字符串不相似，输出-1。</p>
+<p>第四个查询的子串为“a”和“z”，“z”变为“a”需要1次操作，所以相似度为1。</p>
+<hr>
+<p>Source<br>2017级新生选拔#4</p>
+<hr>
+<p>Author<br>tokitsukaze</p>
+<hr>
+<p>题解：</p>
+<p>预处理：对这个字符串的26种变化做hash。</p>
+<p>查询：用差分的方式取出y子串的hash值，然后取出x子串26种变化的hash值，判断有没有一种变化能使x子串的hash值等于y子串的hash值，如果有，假设是第i种变化，那么答案就是min(i,26-i)，如果没有，答案就是-1。</p>
+<p>代码：</p>
+<p>这里给出双hash的代码。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;bits/stdc++.h&gt;</span><br><span class="line">#pragma comment(linker, &quot;/STACK:1024000000,1024000000&quot;)</span><br><span class="line">#define mem(a,b) memset((a),(b),sizeof(a))</span><br><span class="line">#define MP make_pair</span><br><span class="line">#define pb push_back</span><br><span class="line">#define fi first</span><br><span class="line">#define se second</span><br><span class="line">#define sz(x) x.size()</span><br><span class="line">#define all(x) x.begin(),x.end()</span><br><span class="line">using namespace std;</span><br><span class="line">#define _GLIBCXX_PERMIT_BACKWARD_HASH</span><br><span class="line">#include &lt;ext/hash_map&gt;</span><br><span class="line">using namespace __gnu_cxx;</span><br><span class="line">struct str_hash&#123;size_t operator()(const string&amp; str)const&#123;return __stl_hash_string(str.c_str());&#125;&#125;;</span><br><span class="line">typedef long long ll;</span><br><span class="line">typedef unsigned long long ull;</span><br><span class="line">#define PII pair&lt;int,int&gt;</span><br><span class="line">#define PLL pair&lt;ll,ll&gt;</span><br><span class="line">#define PDD pair&lt;double,double&gt;</span><br><span class="line">const int INF=0x3f3f3f3f;</span><br><span class="line">const ll LLINF=0x3f3f3f3f3f3f3f3f;</span><br><span class="line">const double PI=acos(-1.0);</span><br><span class="line">const double eps=1e-6;</span><br><span class="line">const int MAX=1e5+10;</span><br><span class="line">const ll mod=1e9+7;</span><br><span class="line">struct hash_table</span><br><span class="line">&#123;</span><br><span class="line">	ll seed,p;</span><br><span class="line">	ll Hash[26][MAX],tmp[MAX];</span><br><span class="line">	void set(ll _seed,ll _p)</span><br><span class="line">	&#123;</span><br><span class="line">		seed=_seed;</span><br><span class="line">		p=_p;</span><br><span class="line">	&#125;</span><br><span class="line">	void work(char *s,int n)</span><br><span class="line">	&#123;</span><br><span class="line">		ll i,j;</span><br><span class="line">		tmp[0]=1;</span><br><span class="line">		for(i=1;i&lt;=n;i++) tmp[i]=tmp[i-1]*seed%p;</span><br><span class="line">		for(i=1;i&lt;=n;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			for(j=0;j&lt;26;j++)</span><br><span class="line">			&#123;</span><br><span class="line">				Hash[j][i]=(Hash[j][i-1]*seed%p+(s[i]-&apos;a&apos;+j)%26)%p;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	ll get(int l,int r,int id)</span><br><span class="line">	&#123;</span><br><span class="line">		return (Hash[id][r]-Hash[id][l-1]*tmp[r-l+1]%p+p)%p;	</span><br><span class="line">	&#125;</span><br><span class="line">&#125;ha[2];</span><br><span class="line">char s[MAX];</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	int n,i,q,x,y,len,ans;</span><br><span class="line">	ll tmp;</span><br><span class="line">	while(~scanf(&quot;%d&quot;,&amp;n))</span><br><span class="line">	&#123;</span><br><span class="line">		assert(n&gt;=1&amp;&amp;n&lt;=100000);</span><br><span class="line">		scanf(&quot; %[a-z]&quot;,s+1);</span><br><span class="line">		assert(strlen(s+1)==n);</span><br><span class="line">		ha[0].set(233333,1e9+7);</span><br><span class="line">		ha[1].set(19260817,998244353);</span><br><span class="line">		for(i=0;i&lt;2;i++) ha[i].work(s,n);</span><br><span class="line">		scanf(&quot;%d&quot;,&amp;q);</span><br><span class="line">		assert(q&gt;=1&amp;&amp;q&lt;=100000);</span><br><span class="line">		while(q--)</span><br><span class="line">		&#123;</span><br><span class="line">			scanf(&quot;%d%d%d&quot;,&amp;x,&amp;y,&amp;len);</span><br><span class="line">			assert(len&gt;=1);</span><br><span class="line">			assert(x&gt;=1&amp;&amp;x+len-1&lt;=n);</span><br><span class="line">			assert(y&gt;=1&amp;&amp;y+len-1&lt;=n);</span><br><span class="line">			vector&lt;int&gt; res;</span><br><span class="line">			ans=INF;</span><br><span class="line">			tmp=ha[0].get(y,y+len-1,0);</span><br><span class="line">			for(i=0;i&lt;26;i++) if(ha[0].get(x,x+len-1,i)==tmp) res.pb(i);</span><br><span class="line">			tmp=ha[1].get(y,y+len-1,0);</span><br><span class="line">			for(i=0;i&lt;sz(res);i++)</span><br><span class="line">			&#123;</span><br><span class="line">				if(ha[1].get(x,x+len-1,res[i])==tmp)</span><br><span class="line">				&#123;</span><br><span class="line">					ans=min(ans,res[i]);</span><br><span class="line">					ans=min(ans,26-res[i]);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			if(ans==INF) ans=-1;</span><br><span class="line">			printf(&quot;%d\n&quot;,ans);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
     </div>
 </article>
+
+
                 </div>
                 <aside class="col-md-4 gal-left" id="sidebar">
     <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
@@ -379,35 +437,35 @@
         <div class="panel panel-gal hidden-xs" data-aos="fade-up" data-aos-duration="2000">
             <ul class="nav nav-pills pills-gal">
                 <li class="">
-                    <a href="/tags/hash/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                    <a href="/2018/06/14/NIT453/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
                 </li>
                 <li class="">
-                    <a href="/tags/hash/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                    <a href="/2018/06/14/NIT453/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
                 </li>
                 <li class="">
-                    <a href="/tags/hash/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                    <a href="/2018/06/14/NIT453/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
                 </li>
             </ul>
             <div class="tab-content">
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/树状数组/" style="font-size: 18.4998674690273px;" class="tag-cloud-link">树状数组</a>
+    <a href="/tags/树状数组/" style="font-size: 10.314137477389398px;" class="tag-cloud-link">树状数组</a>
     
-    <a href="/tags/STL/" style="font-size: 17.87721474079205px;" class="tag-cloud-link">STL</a>
+    <a href="/tags/STL/" style="font-size: 18.854558404580015px;" class="tag-cloud-link">STL</a>
     
-    <a href="/tags/线段树/" style="font-size: 15.556554828044298px;" class="tag-cloud-link">线段树</a>
+    <a href="/tags/线段树/" style="font-size: 15.968664115142676px;" class="tag-cloud-link">线段树</a>
     
-    <a href="/tags/主席树/" style="font-size: 19.83269961478607px;" class="tag-cloud-link">主席树</a>
+    <a href="/tags/主席树/" style="font-size: 8.997145651743839px;" class="tag-cloud-link">主席树</a>
     
-    <a href="/tags/枚举/" style="font-size: 17.869577212295297px;" class="tag-cloud-link">枚举</a>
+    <a href="/tags/枚举/" style="font-size: 14.22598064605096px;" class="tag-cloud-link">枚举</a>
     
-    <a href="/tags/FFT/" style="font-size: 13.729221863868071px;" class="tag-cloud-link">FFT</a>
+    <a href="/tags/FFT/" style="font-size: 15.486464246372428px;" class="tag-cloud-link">FFT</a>
     
-    <a href="/tags/模拟/" style="font-size: 11.733581556656384px;" class="tag-cloud-link">模拟</a>
+    <a href="/tags/模拟/" style="font-size: 16.03620928007747px;" class="tag-cloud-link">模拟</a>
     
-    <a href="/tags/hash/" style="font-size: 9.09696804087259px;" class="tag-cloud-link">hash</a>
+    <a href="/tags/hash/" style="font-size: 12.587942737232591px;" class="tag-cloud-link">hash</a>
     
-    <a href="/tags/other/" style="font-size: 11.659981523890234px;" class="tag-cloud-link">other</a>
+    <a href="/tags/other/" style="font-size: 10.463041095932088px;" class="tag-cloud-link">other</a>
     
 </div>
                 <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
