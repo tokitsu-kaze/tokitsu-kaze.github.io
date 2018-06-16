@@ -31,14 +31,6 @@
         }
     </style>
     
-    <script src="//cdn1.lncld.net/static/js/3.4.2/av-min.js"></script>
-    <script>
-      AV.init({
-        appId: 'uWENcdh76XODom0EpStAf6YB-gzGzoHsz',
-        appKey: 'LSYJgbG12AXcaDaMjrHeOmiE'
-      })
-    </script>
-    
     <!--<script type="text/javascript">
       if (document.images) {
         var avatar = new Image();
@@ -143,11 +135,11 @@
                         
                         
                         <li>
-                            <a href="/categories/学习笔记/">学习笔记</a>
+                            <a href="/categories/竞赛经历/">竞赛经历</a>
                         </li>
                         
                         <li>
-                            <a href="/categories/竞赛经历/">竞赛经历</a>
+                            <a href="/categories/学习笔记/">学习笔记</a>
                         </li>
                         
                         <li>
@@ -197,15 +189,15 @@
                         
                         
                         <li>
+                            <a href="/tags/竞赛经历/">竞赛经历</a>
+                        </li>
+                        
+                        <li>
                             <a href="/tags/博弈/">博弈</a>
                         </li>
                         
                         <li>
                             <a href="/tags/学习笔记/">学习笔记</a>
-                        </li>
-                        
-                        <li>
-                            <a href="/tags/竞赛经历/">竞赛经历</a>
                         </li>
                         
                         <li>
@@ -249,11 +241,11 @@
                         </li>
                         
                         <li>
-                            <a href="/tags/hexo/">hexo</a>
+                            <a href="/tags/other/">other</a>
                         </li>
                         
                         <li>
-                            <a href="/tags/other/">other</a>
+                            <a href="/tags/hexo/">hexo</a>
                         </li>
                         
                         
@@ -310,7 +302,7 @@
     var p = query.length > 1 ? query[1].split('=')[1] : 1
     // 获取每页的页码数
     var pageSize = '10'
-    var useLeancloud = 'LSYJgbG12AXcaDaMjrHeOmiE'
+    var useLeancloud = ''
     $.getJSON('/content.json', function (json) {
       $('#search-breadcrumb').append(`搜索'${s}'的结果`)
       var result = getArticles(s, 'posts', json).concat(getArticles(s, 'pages', json))
@@ -334,7 +326,7 @@
       	var [month, day] = article.date.split('-')
         ''
         ''
-        var defaultPreview = '/imgs/preview/preview13.bmp'
+        var defaultPreview = '/imgs/preview/preview07.bmp'
         var preview = article.preview ? article.preview : defaultPreview
         var path = '/' + article.path
         resultList.append(`<div class="article well clearfix article-body article-excerpt" data-aos="flip-up">
@@ -600,35 +592,35 @@
             <div class="tab-content">
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/博弈/" style="font-size: 11.782147927387662px;" class="tag-cloud-link">博弈</a>
+    <a href="/tags/竞赛经历/" style="font-size: 17.449578955455795px;" class="tag-cloud-link">竞赛经历</a>
     
-    <a href="/tags/学习笔记/" style="font-size: 12.949250330096193px;" class="tag-cloud-link">学习笔记</a>
+    <a href="/tags/博弈/" style="font-size: 18.582819173199105px;" class="tag-cloud-link">博弈</a>
     
-    <a href="/tags/竞赛经历/" style="font-size: 16.08975883494838px;" class="tag-cloud-link">竞赛经历</a>
+    <a href="/tags/学习笔记/" style="font-size: 8.534496398405407px;" class="tag-cloud-link">学习笔记</a>
     
-    <a href="/tags/思维/" style="font-size: 12.895706430402324px;" class="tag-cloud-link">思维</a>
+    <a href="/tags/思维/" style="font-size: 8.24456576199514px;" class="tag-cloud-link">思维</a>
     
-    <a href="/tags/模拟/" style="font-size: 10.560297270860055px;" class="tag-cloud-link">模拟</a>
+    <a href="/tags/模拟/" style="font-size: 12.436248742735472px;" class="tag-cloud-link">模拟</a>
     
-    <a href="/tags/01字典树/" style="font-size: 13.791262909462601px;" class="tag-cloud-link">01字典树</a>
+    <a href="/tags/01字典树/" style="font-size: 14.386976548974973px;" class="tag-cloud-link">01字典树</a>
     
-    <a href="/tags/树状数组/" style="font-size: 11.909421844083194px;" class="tag-cloud-link">树状数组</a>
+    <a href="/tags/树状数组/" style="font-size: 8.550114838418311px;" class="tag-cloud-link">树状数组</a>
     
-    <a href="/tags/STL/" style="font-size: 15.963045405113478px;" class="tag-cloud-link">STL</a>
+    <a href="/tags/STL/" style="font-size: 11.775102915697921px;" class="tag-cloud-link">STL</a>
     
-    <a href="/tags/线段树/" style="font-size: 16.897963655075664px;" class="tag-cloud-link">线段树</a>
+    <a href="/tags/线段树/" style="font-size: 12.248304369785231px;" class="tag-cloud-link">线段树</a>
     
-    <a href="/tags/主席树/" style="font-size: 19.797668490586517px;" class="tag-cloud-link">主席树</a>
+    <a href="/tags/主席树/" style="font-size: 17.975695766974088px;" class="tag-cloud-link">主席树</a>
     
-    <a href="/tags/枚举/" style="font-size: 15.513102915590599px;" class="tag-cloud-link">枚举</a>
+    <a href="/tags/枚举/" style="font-size: 11.746112987848177px;" class="tag-cloud-link">枚举</a>
     
-    <a href="/tags/FFT/" style="font-size: 10.713958759180965px;" class="tag-cloud-link">FFT</a>
+    <a href="/tags/FFT/" style="font-size: 12.54877164242594px;" class="tag-cloud-link">FFT</a>
     
-    <a href="/tags/hash/" style="font-size: 15.737450669395592px;" class="tag-cloud-link">hash</a>
+    <a href="/tags/hash/" style="font-size: 15.379184266400912px;" class="tag-cloud-link">hash</a>
     
-    <a href="/tags/hexo/" style="font-size: 15.657720763639903px;" class="tag-cloud-link">hexo</a>
+    <a href="/tags/other/" style="font-size: 17.696310996041763px;" class="tag-cloud-link">other</a>
     
-    <a href="/tags/other/" style="font-size: 17.940098452794466px;" class="tag-cloud-link">other</a>
+    <a href="/tags/hexo/" style="font-size: 15.066396740749946px;" class="tag-cloud-link">hexo</a>
     
 </div>
                 <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
@@ -639,6 +631,10 @@
     
     <li>
         <a href="http://www.cnblogs.com/wujiechao/" target="_blank">linmiaomiao</a>
+    </li>
+    
+    <li>
+        <a href="http://cubercsl.cn/" target="_blank">CSL</a>
     </li>
     
 </div>
@@ -721,12 +717,6 @@
 
 <script src="/js/oni.js"></script>
 
-
-<script>
-    window.hot_posts_count = '10'
-    // window.use_leancloud = 'true'
-</script>
-<script src="/js/comment/leancloud.js"></script>
 
 
 </html>
