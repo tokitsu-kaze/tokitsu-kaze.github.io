@@ -10,7 +10,7 @@
     
     
     
-    <title>tags: 线段树 | tokitsukaze</title>
+    <title>tokitsukaze</title>
     <link href=”http://tokitsukaze.live“ rel=”prefetch” />
 
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -72,7 +72,7 @@
             <a href="/about" class="menuItem" style="left: 50%; top: 85%;">关于</a>
             <a href="/message" class="menuItem" style="left: 19.6891%; top: 67.5%;">留言板</a>
             
-            <a class="menuItem" style="left: 19.6891%; top: 32.5%;">上一页</a>
+            <a href="/page/2/" class="menuItem" style="left: 19.6891%; top: 32.5%;">上一页</a>
             
         </div>
         <audio id="audio" src="/imgs/oni.mp3"></audio>
@@ -275,41 +275,144 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 gal-right" id="mainstay">
-                    <article class="article well article-body" id="article-tag">
-    <div class="breadcrumb">
-        <i class="fa fa-home"></i>
-        <a href="http://tokitsukaze.live">tokitsukaze</a>
-        >
-        <span>标签</span>
+                    
+<div class="alert well fade in" id="gal-issue" role="alert">
+    <!-- TODO 添加关闭公告框功能 -->
+    <button type="button" class="close" data-dismiss="alert">×</button>
+    <!-- 这里自行配置公告内容 -->
+    <strong>本博客主要用于写一些题解/游戏攻略</strong>
+    <br>
+    <strong>一些细节部分正在完善中</strong>
+    <!-- 自行配置公告内容结束 -->
+</div>
+
+<div id="article-list">
+     
+     
+     <div class="article well clearfix article-body article-excerpt" data-aos="flip-up">
+    
+    <div class="data-article hidden-xs">
+        <span class="month">09月</span>
+        <span class="day">23</span>
     </div>
-    <!-- 大型设备详细文章 -->
-    <div class="hidden-xs">
+    <!-- 大型设备文章 -->
+    <section class="hidden-xs">
         <div class="title-article">
             <h1>
-                <a href="/tags/线段树/index.html">线段树</a>
+                <a href="/2016/09/23/hello-world/">
+                    <span>Hello World</span>
+                </a>
             </h1>
         </div>
-    </div>
-    <!-- 小型设备详细文章 -->
-    <div class="visible-xs">
-        <center>
-            <div class="title-article">
-                <h4>
-                    <a href="/tags/线段树/index.html">线段树</a>
-                </h4>
-            </div>
-        </center>
-    </div>
-    <div class="content-article" style="margin-top: 30px;">
-        <div class="alert alert-info" style="font-size: 14px; line-height: 2; font-weight: bold;">
+        <div class="tag-article">
             
-            <a href="/2018/06/15/NIT449/">NIT 449 帅气的ES(改) (STL/线段树/主席树)</a>
-            <br>
+            <span class="label label-gal">
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/other/">other</a>
+                
+            </span>
             
             
+            <!-- TODO 添加评论统计 -->
+            <!--<span class="label label-gal">
+                <i class="fa fa-comments"></i>
+                <a href="/2016/09/23/hello-world/#comments">739</a>
+            </span>-->
         </div>
-    </div>
-</article>
+        <div class="alert alert-gal article-body content-article">
+            <div class="item">
+                <a href="/2016/09/23/hello-world/">
+                    <div class="img">
+                        
+                        <img src="/imgs/preview/preview15.bmp" alt="Hello World">
+                    </div>
+                    <div class="info">
+                        
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+    <section class="visible-xs">
+        <div class="title-article">
+            <center>
+                <h4>
+                    <a href="/2016/09/23/hello-world/">
+                        <span>Hello World</span>
+                    </a>
+                </h4>
+            </center>
+        </div>
+        <p></p>
+        <center>
+            <i class="fa fa-calendar"></i> 2016-09-23
+        </center>
+        <p></p>
+        <p></p>
+        <center>
+            
+            <i class="fa fa-tags"></i>
+            
+            <a href="/tags/other/">other</a>
+            
+            
+            
+        </center>
+        <p></p>
+        <div class="alert alert-gal article-body content-article">
+            <p style="text-align: center;">
+                <a href="/2016/09/23/hello-world/">
+                    
+                    <img src="/imgs/preview/preview01.bmp" alt="Hello World">
+                </a>
+            </p>
+        </div>
+        
+        <a class="btn btn-danger pull-right read-more btn-block" href="/2016/09/23/hello-world/">
+            阅读全文
+            <!--<span class="badge">739</span>-->
+        </a>
+    </section>
+</div>
+     
+</div>
+<!-- 前方最多7个 < 1 2 3 4 5 6 -->
+<!-- 前方超过第7页则分为 < 1 ... (n - 3) (n - 2) (n - 1) n, 此时前面为固定的6个 -->
+
+<!-- 后方最多8个 (n + 1) 到 (n + 7) > -->
+<!-- 如果末页和当前页相差超过7, 此时后面为固定的6个, (n + 1) (n + 2) (n + 3) ... total > -->
+
+
+
+<div id="gal-pagination" class="clearfix">
+    <ul class="pagination pagination-gal pull-right">
+        
+        <li class="prev">
+            <a href="/page/2/">«</a>
+        </li>
+        
+        
+        
+        <li>
+            <a href="/">1</a>
+        </li>
+        
+        <li>
+            <a href="/page/2 ">2</a>
+        </li>
+        
+        
+        <li class="current">
+            <span>3</span>
+        </li>
+        
+        
+        
+        
+    </ul>
+</div>
+
                 </div>
                 <aside class="col-md-4 gal-left" id="sidebar">
     <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
@@ -441,49 +544,49 @@
         <div class="panel panel-gal hidden-xs" data-aos="fade-up" data-aos-duration="2000">
             <ul class="nav nav-pills pills-gal">
                 <li class="">
-                    <a href="/tags/线段树/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                    <a href="/page/3/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
                 </li>
                 <li class="">
-                    <a href="/tags/线段树/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                    <a href="/page/3/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
                 </li>
                 <li class="">
-                    <a href="/tags/线段树/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                    <a href="/page/3/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
                 </li>
             </ul>
             <div class="tab-content">
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/博弈/" style="font-size: 15.362002802137269px;" class="tag-cloud-link">博弈</a>
+    <a href="/tags/博弈/" style="font-size: 18.32134314409478px;" class="tag-cloud-link">博弈</a>
     
-    <a href="/tags/学习笔记/" style="font-size: 16.376604311209245px;" class="tag-cloud-link">学习笔记</a>
+    <a href="/tags/学习笔记/" style="font-size: 18.989929641971898px;" class="tag-cloud-link">学习笔记</a>
     
-    <a href="/tags/竞赛经历/" style="font-size: 16.044667936884032px;" class="tag-cloud-link">竞赛经历</a>
+    <a href="/tags/竞赛经历/" style="font-size: 10.754477292719503px;" class="tag-cloud-link">竞赛经历</a>
     
-    <a href="/tags/数学/" style="font-size: 9.542033786850975px;" class="tag-cloud-link">数学</a>
+    <a href="/tags/数学/" style="font-size: 16.201321334278838px;" class="tag-cloud-link">数学</a>
     
-    <a href="/tags/思维/" style="font-size: 17.493347510460076px;" class="tag-cloud-link">思维</a>
+    <a href="/tags/思维/" style="font-size: 16.6320314743279px;" class="tag-cloud-link">思维</a>
     
-    <a href="/tags/模拟/" style="font-size: 15.721506098137954px;" class="tag-cloud-link">模拟</a>
+    <a href="/tags/模拟/" style="font-size: 11.238294953618592px;" class="tag-cloud-link">模拟</a>
     
-    <a href="/tags/01字典树/" style="font-size: 18.40924856580259px;" class="tag-cloud-link">01字典树</a>
+    <a href="/tags/01字典树/" style="font-size: 18.422975635027505px;" class="tag-cloud-link">01字典树</a>
     
-    <a href="/tags/树状数组/" style="font-size: 13.779275283451522px;" class="tag-cloud-link">树状数组</a>
+    <a href="/tags/树状数组/" style="font-size: 11.395714606892906px;" class="tag-cloud-link">树状数组</a>
     
-    <a href="/tags/STL/" style="font-size: 17.565774150947856px;" class="tag-cloud-link">STL</a>
+    <a href="/tags/STL/" style="font-size: 14.570391924960767px;" class="tag-cloud-link">STL</a>
     
-    <a href="/tags/线段树/" style="font-size: 19.27400736314367px;" class="tag-cloud-link">线段树</a>
+    <a href="/tags/线段树/" style="font-size: 19.855518803868257px;" class="tag-cloud-link">线段树</a>
     
-    <a href="/tags/主席树/" style="font-size: 10.344288009373665px;" class="tag-cloud-link">主席树</a>
+    <a href="/tags/主席树/" style="font-size: 19.889167639479826px;" class="tag-cloud-link">主席树</a>
     
-    <a href="/tags/枚举/" style="font-size: 15.086689352960047px;" class="tag-cloud-link">枚举</a>
+    <a href="/tags/枚举/" style="font-size: 17.865512649416836px;" class="tag-cloud-link">枚举</a>
     
-    <a href="/tags/FFT/" style="font-size: 8.79056453280365px;" class="tag-cloud-link">FFT</a>
+    <a href="/tags/FFT/" style="font-size: 9.210207359559671px;" class="tag-cloud-link">FFT</a>
     
-    <a href="/tags/hash/" style="font-size: 13.125071217830229px;" class="tag-cloud-link">hash</a>
+    <a href="/tags/hash/" style="font-size: 10.979048729246731px;" class="tag-cloud-link">hash</a>
     
-    <a href="/tags/other/" style="font-size: 18.97924524391076px;" class="tag-cloud-link">other</a>
+    <a href="/tags/other/" style="font-size: 16.787674019670167px;" class="tag-cloud-link">other</a>
     
-    <a href="/tags/hexo/" style="font-size: 15.598500941502103px;" class="tag-cloud-link">hexo</a>
+    <a href="/tags/hexo/" style="font-size: 8.017371421773406px;" class="tag-cloud-link">hexo</a>
     
 </div>
                 <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
