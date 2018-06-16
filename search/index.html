@@ -31,6 +31,14 @@
         }
     </style>
     
+    <script src="//cdn1.lncld.net/static/js/3.4.2/av-min.js"></script>
+    <script>
+      AV.init({
+        appId: 'uWENcdh76XODom0EpStAf6YB-gzGzoHsz',
+        appKey: 'LSYJgbG12AXcaDaMjrHeOmiE'
+      })
+    </script>
+    
     <!--<script type="text/javascript">
       if (document.images) {
         var avatar = new Image();
@@ -135,11 +143,11 @@
                         
                         
                         <li>
-                            <a href="/categories/竞赛经历/">竞赛经历</a>
+                            <a href="/categories/学习笔记/">学习笔记</a>
                         </li>
                         
                         <li>
-                            <a href="/categories/学习笔记/">学习笔记</a>
+                            <a href="/categories/竞赛经历/">竞赛经历</a>
                         </li>
                         
                         <li>
@@ -189,15 +197,15 @@
                         
                         
                         <li>
-                            <a href="/tags/竞赛经历/">竞赛经历</a>
-                        </li>
-                        
-                        <li>
                             <a href="/tags/博弈/">博弈</a>
                         </li>
                         
                         <li>
                             <a href="/tags/学习笔记/">学习笔记</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/竞赛经历/">竞赛经历</a>
                         </li>
                         
                         <li>
@@ -302,7 +310,7 @@
     var p = query.length > 1 ? query[1].split('=')[1] : 1
     // 获取每页的页码数
     var pageSize = '10'
-    var useLeancloud = ''
+    var useLeancloud = 'LSYJgbG12AXcaDaMjrHeOmiE'
     $.getJSON('/content.json', function (json) {
       $('#search-breadcrumb').append(`搜索'${s}'的结果`)
       var result = getArticles(s, 'posts', json).concat(getArticles(s, 'pages', json))
@@ -326,7 +334,7 @@
       	var [month, day] = article.date.split('-')
         ''
         ''
-        var defaultPreview = '/imgs/preview/preview11.bmp'
+        var defaultPreview = '/imgs/preview/preview10.bmp'
         var preview = article.preview ? article.preview : defaultPreview
         var path = '/' + article.path
         resultList.append(`<div class="article well clearfix article-body article-excerpt" data-aos="flip-up">
@@ -592,35 +600,35 @@
             <div class="tab-content">
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/竞赛经历/" style="font-size: 8.74007762731578px;" class="tag-cloud-link">竞赛经历</a>
+    <a href="/tags/博弈/" style="font-size: 15.1897989075038px;" class="tag-cloud-link">博弈</a>
     
-    <a href="/tags/博弈/" style="font-size: 12.557160257923519px;" class="tag-cloud-link">博弈</a>
+    <a href="/tags/学习笔记/" style="font-size: 8.451925565916511px;" class="tag-cloud-link">学习笔记</a>
     
-    <a href="/tags/学习笔记/" style="font-size: 8.310167140922886px;" class="tag-cloud-link">学习笔记</a>
+    <a href="/tags/竞赛经历/" style="font-size: 8.43954231776827px;" class="tag-cloud-link">竞赛经历</a>
     
-    <a href="/tags/思维/" style="font-size: 11.739858150245565px;" class="tag-cloud-link">思维</a>
+    <a href="/tags/思维/" style="font-size: 14.522424989998296px;" class="tag-cloud-link">思维</a>
     
-    <a href="/tags/模拟/" style="font-size: 16.069644857194362px;" class="tag-cloud-link">模拟</a>
+    <a href="/tags/模拟/" style="font-size: 18.300786379094152px;" class="tag-cloud-link">模拟</a>
     
-    <a href="/tags/01字典树/" style="font-size: 18.040760503885014px;" class="tag-cloud-link">01字典树</a>
+    <a href="/tags/01字典树/" style="font-size: 15.857389442324878px;" class="tag-cloud-link">01字典树</a>
     
-    <a href="/tags/树状数组/" style="font-size: 14.553319842220558px;" class="tag-cloud-link">树状数组</a>
+    <a href="/tags/树状数组/" style="font-size: 15.740991977864827px;" class="tag-cloud-link">树状数组</a>
     
-    <a href="/tags/STL/" style="font-size: 8.037451793318617px;" class="tag-cloud-link">STL</a>
+    <a href="/tags/STL/" style="font-size: 13.327544381873732px;" class="tag-cloud-link">STL</a>
     
-    <a href="/tags/线段树/" style="font-size: 18.844143190688076px;" class="tag-cloud-link">线段树</a>
+    <a href="/tags/线段树/" style="font-size: 11.797915475253333px;" class="tag-cloud-link">线段树</a>
     
-    <a href="/tags/主席树/" style="font-size: 16.728412888498884px;" class="tag-cloud-link">主席树</a>
+    <a href="/tags/主席树/" style="font-size: 11.402978604253724px;" class="tag-cloud-link">主席树</a>
     
-    <a href="/tags/枚举/" style="font-size: 11.114294397635321px;" class="tag-cloud-link">枚举</a>
+    <a href="/tags/枚举/" style="font-size: 12.264661337627565px;" class="tag-cloud-link">枚举</a>
     
-    <a href="/tags/FFT/" style="font-size: 19.9335112392552px;" class="tag-cloud-link">FFT</a>
+    <a href="/tags/FFT/" style="font-size: 12.349645223264888px;" class="tag-cloud-link">FFT</a>
     
-    <a href="/tags/hash/" style="font-size: 14.728596906167695px;" class="tag-cloud-link">hash</a>
+    <a href="/tags/hash/" style="font-size: 15.47320521517109px;" class="tag-cloud-link">hash</a>
     
-    <a href="/tags/other/" style="font-size: 15.947335096069834px;" class="tag-cloud-link">other</a>
+    <a href="/tags/other/" style="font-size: 10.026397835356573px;" class="tag-cloud-link">other</a>
     
-    <a href="/tags/hexo/" style="font-size: 17.595112348134357px;" class="tag-cloud-link">hexo</a>
+    <a href="/tags/hexo/" style="font-size: 13.005918738447441px;" class="tag-cloud-link">hexo</a>
     
 </div>
                 <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
@@ -713,6 +721,12 @@
 
 <script src="/js/oni.js"></script>
 
+
+<script>
+    window.hot_posts_count = '10'
+    // window.use_leancloud = 'true'
+</script>
+<script src="/js/comment/leancloud.js"></script>
 
 
 </html>
