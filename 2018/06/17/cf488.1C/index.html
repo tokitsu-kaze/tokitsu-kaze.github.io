@@ -143,11 +143,11 @@
                         </li>
                         
                         <li>
-                            <a href="/categories/思维/">思维</a>
+                            <a href="/categories/数学/">数学</a>
                         </li>
                         
                         <li>
-                            <a href="/categories/数学/">数学</a>
+                            <a href="/categories/思维/">思维</a>
                         </li>
                         
                         <li>
@@ -167,11 +167,11 @@
                         </li>
                         
                         <li>
-                            <a href="/categories/枚举/">枚举</a>
+                            <a href="/categories/几何/">几何</a>
                         </li>
                         
                         <li>
-                            <a href="/categories/几何/">几何</a>
+                            <a href="/categories/枚举/">枚举</a>
                         </li>
                         
                         <li>
@@ -209,11 +209,11 @@
                         </li>
                         
                         <li>
-                            <a href="/tags/思维/">思维</a>
+                            <a href="/tags/数学/">数学</a>
                         </li>
                         
                         <li>
-                            <a href="/tags/数学/">数学</a>
+                            <a href="/tags/思维/">思维</a>
                         </li>
                         
                         <li>
@@ -229,10 +229,6 @@
                         </li>
                         
                         <li>
-                            <a href="/tags/枚举/">枚举</a>
-                        </li>
-                        
-                        <li>
                             <a href="/tags/STL/">STL</a>
                         </li>
                         
@@ -245,11 +241,15 @@
                         </li>
                         
                         <li>
-                            <a href="/tags/hash/">hash</a>
+                            <a href="/tags/枚举/">枚举</a>
                         </li>
                         
                         <li>
                             <a href="/tags/FFT/">FFT</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/hash/">hash</a>
                         </li>
                         
                         <li>
@@ -353,7 +353,7 @@
 <hr>
 <p>题意：在一个平面上有两组点。第一组的横坐标为x=-100，并且没有相同的y。第二组的横坐标为x=100，并且没有相同的y。现在要在x=0处放两个点(可以放在同一个坐标上)，对于那两组点，每一组的点都会对这两个点做射线，并可能命中另一组的点。求命中点的个数最大是多少。</p>
 <hr>
-<p>题解：<br>那两个点肯定是在第一组的某个点和第二组的某个点的连线上。所以先枚举每一对点，连线与x=0相交求出交点A。然后每个点对A做射线，如果能命中另一组的点，就状压标记一下这个点和命中的点。这里的复杂度是O(n^3*log(n))。</p>
+<p>题解：<br>那两个点肯定是在第一组的某个点和第二组的某个点的连线上。所以先枚举每一对点(为了避免出现小数，输入的每个点的y先X2)，连线与x=0相交求出交点A。然后每个点对A做射线，如果能命中另一组的点，就状压标记一下这个点和命中的点。这里的复杂度是O(n^3*log(n))。</p>
 <p>然后再暴力枚举两个交点，计算一下两个交点总共能命中多少个点，取max即可。状压我用了bitset(可以直接用ll)，这里的复杂度是O(n^5/64)，其实就是O(n^4)。</p>
 <p>代码：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> comment(linker, <span class="meta-string">"/STACK:1024000000,1024000000"</span>)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> mem(a,b) memset((a),(b),sizeof(a))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MP make_pair</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pb push_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> fi first</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> se second</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> sz(x) (int)x.size()</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> all(x) x.begin(),x.end()</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> _GLIBCXX_PERMIT_BACKWARD_HASH</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;ext/hash_map&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> __gnu_cxx;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">str_hash</span>&#123;</span><span class="keyword">size_t</span> <span class="keyword">operator</span>()(<span class="keyword">const</span> <span class="built_in">string</span>&amp; str)<span class="keyword">const</span>&#123;<span class="keyword">return</span> __stl_hash_string(str.c_str());&#125;&#125;;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> ull;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> PII pair<span class="meta-string">&lt;int,int&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> PLL pair<span class="meta-string">&lt;ll,ll&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> PDD pair<span class="meta-string">&lt;double,double&gt;</span></span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF=<span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">const</span> ll LLINF=<span class="number">0x3f3f3f3f3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> PI=<span class="built_in">acos</span>(<span class="number">-1.0</span>);</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> eps=<span class="number">1e-8</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAX=<span class="number">1e5</span>+<span class="number">10</span>;</span><br><span class="line"><span class="keyword">const</span> ll mod=<span class="number">1e9</span>+<span class="number">7</span>;</span><br><span class="line"><span class="keyword">int</span> n,m,a[<span class="number">111</span>],b[<span class="number">111</span>];</span><br><span class="line">hash_map&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; aa,bb;</span><br><span class="line"><span class="built_in">bitset</span>&lt;65&gt; aaa[<span class="number">62</span>][<span class="number">62</span>],bbb[<span class="number">62</span>][<span class="number">62</span>];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">gao</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> ii,<span class="keyword">int</span> jj)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">int</span> i,tmp;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		tmp=a[i]+<span class="number">2</span>*(x-a[i]);</span><br><span class="line">		<span class="keyword">if</span>(bb.count(tmp))</span><br><span class="line">		&#123;</span><br><span class="line">			aaa[ii][jj][i]=<span class="number">1</span>;	</span><br><span class="line">			bbb[ii][jj][bb[tmp]]=<span class="number">1</span>;	</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=m;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		tmp=b[i]+<span class="number">2</span>*(x-b[i]);</span><br><span class="line">		<span class="keyword">if</span>(aa.count(tmp))</span><br><span class="line">		&#123;</span><br><span class="line">			aaa[ii][jj][aa[tmp]]=<span class="number">1</span>;</span><br><span class="line">			bbb[ii][jj][i]=<span class="number">1</span>;	</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i,j,ans,ii,jj;</span><br><span class="line">	<span class="keyword">while</span>(~<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;n,&amp;m))</span><br><span class="line">	&#123;</span><br><span class="line">		aa.clear();</span><br><span class="line">		bb.clear();</span><br><span class="line">		<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a[i]);</span><br><span class="line">			a[i]*=<span class="number">2</span>;</span><br><span class="line">			aa[a[i]]=i;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=m;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;b[i]);</span><br><span class="line">			b[i]*=<span class="number">2</span>;</span><br><span class="line">			bb[b[i]]=i;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;=m;j++)</span><br><span class="line">			&#123;</span><br><span class="line">				aaa[i][j].reset();</span><br><span class="line">				bbb[i][j].reset();</span><br><span class="line">				gao(max(a[i],b[j])-<span class="built_in">abs</span>(a[i]-b[j])/<span class="number">2</span>,i,j);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		ans=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;=m;j++)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">for</span>(ii=i;ii&lt;=n;ii++)</span><br><span class="line">				&#123;</span><br><span class="line">					<span class="keyword">for</span>(jj=j;jj&lt;=m;jj++)</span><br><span class="line">					&#123;</span><br><span class="line">						ans=max(ans,(<span class="keyword">int</span>)(aaa[i][j]|aaa[ii][jj]).count()+(<span class="keyword">int</span>)(bbb[i][j]|bbb[ii][jj]).count());</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d\n"</span>,ans);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -513,39 +513,39 @@
             <div class="tab-content">
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/博弈/" style="font-size: 15.12700377633913px;" class="tag-cloud-link">博弈</a>
+    <a href="/tags/博弈/" style="font-size: 16.65370230658964px;" class="tag-cloud-link">博弈</a>
     
-    <a href="/tags/学习笔记/" style="font-size: 9.951033443651514px;" class="tag-cloud-link">学习笔记</a>
+    <a href="/tags/学习笔记/" style="font-size: 16.097242410447514px;" class="tag-cloud-link">学习笔记</a>
     
-    <a href="/tags/竞赛经历/" style="font-size: 10.22836153738442px;" class="tag-cloud-link">竞赛经历</a>
+    <a href="/tags/竞赛经历/" style="font-size: 9.081706817116391px;" class="tag-cloud-link">竞赛经历</a>
     
-    <a href="/tags/思维/" style="font-size: 12.412318650372455px;" class="tag-cloud-link">思维</a>
+    <a href="/tags/数学/" style="font-size: 18.285406946929946px;" class="tag-cloud-link">数学</a>
     
-    <a href="/tags/数学/" style="font-size: 13.304314750026073px;" class="tag-cloud-link">数学</a>
+    <a href="/tags/思维/" style="font-size: 18.097834880795318px;" class="tag-cloud-link">思维</a>
     
-    <a href="/tags/模拟/" style="font-size: 17.515104676328214px;" class="tag-cloud-link">模拟</a>
+    <a href="/tags/模拟/" style="font-size: 16.63903153651421px;" class="tag-cloud-link">模拟</a>
     
-    <a href="/tags/01字典树/" style="font-size: 15.395278361261525px;" class="tag-cloud-link">01字典树</a>
+    <a href="/tags/01字典树/" style="font-size: 8.799714852996164px;" class="tag-cloud-link">01字典树</a>
     
-    <a href="/tags/树状数组/" style="font-size: 8.495906510189371px;" class="tag-cloud-link">树状数组</a>
+    <a href="/tags/树状数组/" style="font-size: 15.252918152920067px;" class="tag-cloud-link">树状数组</a>
     
-    <a href="/tags/枚举/" style="font-size: 19.926598022304134px;" class="tag-cloud-link">枚举</a>
+    <a href="/tags/STL/" style="font-size: 14.17643071358436px;" class="tag-cloud-link">STL</a>
     
-    <a href="/tags/STL/" style="font-size: 17.49879808081652px;" class="tag-cloud-link">STL</a>
+    <a href="/tags/线段树/" style="font-size: 16.596893398356993px;" class="tag-cloud-link">线段树</a>
     
-    <a href="/tags/线段树/" style="font-size: 13.48607310525893px;" class="tag-cloud-link">线段树</a>
+    <a href="/tags/主席树/" style="font-size: 15.620812416968072px;" class="tag-cloud-link">主席树</a>
     
-    <a href="/tags/主席树/" style="font-size: 8.424013949144115px;" class="tag-cloud-link">主席树</a>
+    <a href="/tags/枚举/" style="font-size: 13.85099886040986px;" class="tag-cloud-link">枚举</a>
     
-    <a href="/tags/hash/" style="font-size: 16.658161990279748px;" class="tag-cloud-link">hash</a>
+    <a href="/tags/FFT/" style="font-size: 16.243937709914313px;" class="tag-cloud-link">FFT</a>
     
-    <a href="/tags/FFT/" style="font-size: 18.792951870400817px;" class="tag-cloud-link">FFT</a>
+    <a href="/tags/hash/" style="font-size: 16.95213158322759px;" class="tag-cloud-link">hash</a>
     
-    <a href="/tags/几何/" style="font-size: 10.475926450474612px;" class="tag-cloud-link">几何</a>
+    <a href="/tags/几何/" style="font-size: 16.011801765480282px;" class="tag-cloud-link">几何</a>
     
-    <a href="/tags/other/" style="font-size: 8.412646752347207px;" class="tag-cloud-link">other</a>
+    <a href="/tags/other/" style="font-size: 12.43684209890245px;" class="tag-cloud-link">other</a>
     
-    <a href="/tags/hexo/" style="font-size: 14.567348517480678px;" class="tag-cloud-link">hexo</a>
+    <a href="/tags/hexo/" style="font-size: 11.868776253782745px;" class="tag-cloud-link">hexo</a>
     
 </div>
                 <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
