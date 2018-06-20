@@ -32,6 +32,14 @@
         }
     </style>
     
+    <script src="//cdn1.lncld.net/static/js/3.4.2/av-min.js"></script>
+    <script>
+      AV.init({
+        appId: 'uWENcdh76XODom0EpStAf6YB-gzGzoHsz',
+        appKey: 'LSYJgbG12AXcaDaMjrHeOmiE'
+      })
+    </script>
+    
     <!--<script type="text/javascript">
       if (document.images) {
         var avatar = new Image();
@@ -335,7 +343,7 @@
     var p = query.length > 1 ? query[1].split('=')[1] : 1
     // 获取每页的页码数
     var pageSize = '10'
-    var useLeancloud = ''
+    var useLeancloud = 'LSYJgbG12AXcaDaMjrHeOmiE'
     $.getJSON('/content.json', function (json) {
       $('#search-breadcrumb').append(`搜索'${s}'的结果`)
       var result = getArticles(s, 'posts', json).concat(getArticles(s, 'pages', json))
@@ -359,7 +367,7 @@
       	var [month, day] = article.date.split('-')
         ''
         ''
-        var defaultPreview = '/imgs/preview/preview04.bmp'
+        var defaultPreview = '/imgs/preview/preview13.bmp'
         var preview = article.preview ? article.preview : defaultPreview
         var path = '/' + article.path
         resultList.append(`<div class="article well clearfix article-body article-excerpt" data-aos="flip-up">
@@ -625,41 +633,41 @@
             <div class="tab-content">
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/博弈/" style="font-size: 10.686506395033774px;" class="tag-cloud-link">博弈</a>
+    <a href="/tags/博弈/" style="font-size: 18.851329075216427px;" class="tag-cloud-link">博弈</a>
     
-    <a href="/tags/学习笔记/" style="font-size: 9.78242111326324px;" class="tag-cloud-link">学习笔记</a>
+    <a href="/tags/学习笔记/" style="font-size: 18.871895617076483px;" class="tag-cloud-link">学习笔记</a>
     
-    <a href="/tags/竞赛经历/" style="font-size: 9.098515027105073px;" class="tag-cloud-link">竞赛经历</a>
+    <a href="/tags/竞赛经历/" style="font-size: 10.738175281759215px;" class="tag-cloud-link">竞赛经历</a>
     
-    <a href="/tags/数学/" style="font-size: 16.06224997800743px;" class="tag-cloud-link">数学</a>
+    <a href="/tags/数学/" style="font-size: 19.638896538211966px;" class="tag-cloud-link">数学</a>
     
-    <a href="/tags/思维/" style="font-size: 17.827412494111133px;" class="tag-cloud-link">思维</a>
+    <a href="/tags/思维/" style="font-size: 17.52266158716462px;" class="tag-cloud-link">思维</a>
     
-    <a href="/tags/模拟/" style="font-size: 16.904713120766832px;" class="tag-cloud-link">模拟</a>
+    <a href="/tags/模拟/" style="font-size: 13.998312951779756px;" class="tag-cloud-link">模拟</a>
     
-    <a href="/tags/01字典树/" style="font-size: 17.47670099658887px;" class="tag-cloud-link">01字典树</a>
+    <a href="/tags/01字典树/" style="font-size: 19.430288485247143px;" class="tag-cloud-link">01字典树</a>
     
-    <a href="/tags/树状数组/" style="font-size: 9.908816426112498px;" class="tag-cloud-link">树状数组</a>
+    <a href="/tags/树状数组/" style="font-size: 17.583877432946295px;" class="tag-cloud-link">树状数组</a>
     
-    <a href="/tags/STL/" style="font-size: 8.292118531142522px;" class="tag-cloud-link">STL</a>
+    <a href="/tags/STL/" style="font-size: 16.03964729977335px;" class="tag-cloud-link">STL</a>
     
-    <a href="/tags/线段树/" style="font-size: 18.80278065634992px;" class="tag-cloud-link">线段树</a>
+    <a href="/tags/线段树/" style="font-size: 14.572124728880691px;" class="tag-cloud-link">线段树</a>
     
-    <a href="/tags/主席树/" style="font-size: 18.136971905163346px;" class="tag-cloud-link">主席树</a>
+    <a href="/tags/主席树/" style="font-size: 18.233511429073715px;" class="tag-cloud-link">主席树</a>
     
-    <a href="/tags/枚举/" style="font-size: 12.16788283375427px;" class="tag-cloud-link">枚举</a>
+    <a href="/tags/枚举/" style="font-size: 14.234074177105027px;" class="tag-cloud-link">枚举</a>
     
-    <a href="/tags/FFT/" style="font-size: 16.64115650082122px;" class="tag-cloud-link">FFT</a>
+    <a href="/tags/FFT/" style="font-size: 18.59316519549648px;" class="tag-cloud-link">FFT</a>
     
-    <a href="/tags/hash/" style="font-size: 10.106566414410455px;" class="tag-cloud-link">hash</a>
+    <a href="/tags/hash/" style="font-size: 19.131539757219887px;" class="tag-cloud-link">hash</a>
     
-    <a href="/tags/几何/" style="font-size: 12.843912082390812px;" class="tag-cloud-link">几何</a>
+    <a href="/tags/几何/" style="font-size: 19.52122200114101px;" class="tag-cloud-link">几何</a>
     
-    <a href="/tags/数据结构/" style="font-size: 14.640553787454696px;" class="tag-cloud-link">数据结构</a>
+    <a href="/tags/数据结构/" style="font-size: 8.771650488351526px;" class="tag-cloud-link">数据结构</a>
     
-    <a href="/tags/other/" style="font-size: 12.823796621990653px;" class="tag-cloud-link">other</a>
+    <a href="/tags/other/" style="font-size: 16.48511607099725px;" class="tag-cloud-link">other</a>
     
-    <a href="/tags/hexo/" style="font-size: 16.007855668551628px;" class="tag-cloud-link">hexo</a>
+    <a href="/tags/hexo/" style="font-size: 12.159743756271764px;" class="tag-cloud-link">hexo</a>
     
 </div>
                 <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
@@ -760,6 +768,12 @@
 
 <script src="/js/oni.js"></script>
 
+
+<script>
+    window.hot_posts_count = '10'
+    // window.use_leancloud = 'true'
+</script>
+<script src="/js/comment/leancloud.js"></script>
 
 
 <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
