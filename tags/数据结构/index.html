@@ -10,7 +10,7 @@
     
     
     
-    <title>archive_a | tokitsukaze</title>
+    <title>tags: 数据结构 | tokitsukaze</title>
     <link href=”http://tokitsukaze.live“ rel=”prefetch” />
 
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -32,14 +32,6 @@
         }
     </style>
     
-    <script src="//cdn1.lncld.net/static/js/3.4.2/av-min.js"></script>
-    <script>
-      AV.init({
-        appId: 'uWENcdh76XODom0EpStAf6YB-gzGzoHsz',
-        appKey: 'LSYJgbG12AXcaDaMjrHeOmiE'
-      })
-    </script>
-    
     <!--<script type="text/javascript">
       if (document.images) {
         var avatar = new Image();
@@ -52,6 +44,9 @@
         }
       }
     </script>-->
+
+<script src="https://cdn1.lncld.net/static/js/av-min-1.2.1.js"></script>
+  <script>AV.initialize("你的APP ID", "你的APP Key");</script>
 </head>
 <body>
     <!-- 背景轮播图功能 -->
@@ -66,6 +61,24 @@
     </ul>
 </section>
     <!-- 欧尼酱功能, 谁用谁知道 -->
+    
+    <div class="gal-menu gal-dropdown">
+    <div class="circle" id="gal">
+        <div class="ring">
+            <a href="http://tokitsukaze.live" class="menuItem" style="left: 50%; top: 15%;">首页</a>
+            
+            <a class="menuItem" style="left: 80.3109%; top: 32.5%;">下一页</a>
+            
+            <a href="/archives" class="menuItem" style="left: 80.3109%; top: 67.5%;">归档</a>
+            <a href="/about" class="menuItem" style="left: 50%; top: 85%;">关于</a>
+            <a href="/message" class="menuItem" style="left: 19.6891%; top: 67.5%;">留言板</a>
+            
+            <a class="menuItem" style="left: 19.6891%; top: 32.5%;">上一页</a>
+            
+        </div>
+        <audio id="audio" src="/imgs/oni.mp3"></audio>
+    </div>
+</div>
     
     <header class="navbar navbar-inverse" id="gal-header">
     <div class="container">
@@ -104,7 +117,7 @@
                 
                 
                 
-                <li class="current">
+                <li class="">
                     <a href="/archives">
                         <i class="fa fa-archive"></i>归档
                     </a>
@@ -112,25 +125,165 @@
                 
                 
                 
-                <li class="">
-                    <a href="/categories">
+                
+                <li class="dropdown">
+                    <!-- TODO 添加hover dropdown效果 -->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
                         <i class="fa fa-list"></i>分类
                     </a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li>
+                            <a href="/categories/学习笔记/">学习笔记</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/竞赛经历/">竞赛经历</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/数学/">数学</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/思维/">思维</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/博弈/">博弈</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/模拟/">模拟</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/数据结构/">数据结构</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/字符串/">字符串</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/几何/">几何</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/枚举/">枚举</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/线段树/">线段树</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/other/">other</a>
+                        </li>
+                        
+                        
+                        
+                    </ul>
                 </li>
                 
                 
                 
-                <li class="">
-                    <a href="/tags">
+                
+                
+                <li class="dropdown">
+                    <!-- TODO 添加hover dropdown效果 -->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
                         <i class="fa fa-tags"></i>标签
                     </a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li>
+                            <a href="/tags/博弈/">博弈</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/学习笔记/">学习笔记</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/竞赛经历/">竞赛经历</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/数学/">数学</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/思维/">思维</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/模拟/">模拟</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/01字典树/">01字典树</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/树状数组/">树状数组</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/STL/">STL</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/线段树/">线段树</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/主席树/">主席树</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/枚举/">枚举</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/FFT/">FFT</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/hash/">hash</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/几何/">几何</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/数据结构/">数据结构</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/other/">other</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/hexo/">hexo</a>
+                        </li>
+                        
+                        
+                        
+                    </ul>
                 </li>
                 
                 
                 
+                
                 <li class="">
-                    <a href="http://tokitsukaze.live/categories/Games/">
-                        <i class="fa fa-gamepad"></i>Games
+                    <a href="/about">
+                        <i class="fa fa-user"></i>Game
                     </a>
                 </li>
                 
@@ -138,7 +291,7 @@
                 
                 <li class="">
                     <a href="/about">
-                        <i class="fa fa-comments"></i>留言板
+                        <i class="fa fa-user"></i>关于我
                     </a>
                 </li>
                 
@@ -151,18 +304,18 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 gal-right" id="mainstay">
-                    <article class="article well article-body" id="article-archive">
+                    <article class="article well article-body" id="article-tag">
     <div class="breadcrumb">
         <i class="fa fa-home"></i>
         <a href="http://tokitsukaze.live">tokitsukaze</a>
         >
-        <span>归档</span>
+        <span>标签</span>
     </div>
     <!-- 大型设备详细文章 -->
     <div class="hidden-xs">
         <div class="title-article">
             <h1>
-                <a href="/archives">归档</a>
+                <a href="/tags/数据结构/index.html">数据结构</a>
             </h1>
         </div>
     </div>
@@ -171,139 +324,19 @@
         <center>
             <div class="title-article">
                 <h4>
-                    <a href="/archives">归档</a>
+                    <a href="/tags/数据结构/index.html">数据结构</a>
                 </h4>
             </div>
         </center>
     </div>
     <div class="content-article" style="margin-top: 30px;">
-        
-        
-            <h1 style="font-size: 24px; margin-top: 40px;">2018年</h1>
-            
         <div class="alert alert-info" style="font-size: 14px; line-height: 2; font-weight: bold;">
             
-             
-             
-                        <a href="/2018/06/19/cf489.2E/">Codeforces Round#489 div2E Nastya and King-Shamans (线段树+暴力剪枝)</a>
-                        <br>
+            <a href="/2018/06/19/cf489.2E/">Codeforces Round#489 div2E Nastya and King-Shamans (线段树+暴力剪枝)</a>
+            <br>
             
-             
-                        <a href="/2018/06/19/cf489.2D/">Codeforces Round#489 div2D Nastya and a Game (暴力)</a>
-                        <br>
             
-             
-                        <a href="/2018/06/18/cf488.1E/">Codeforces Round#488 div1E Nikita and Order Statistics (FFT)</a>
-                        <br>
-            
-             
-                        <a href="/2018/06/17/cf488.1C/">Codeforces Round#488 div2E/div1C Careful Maneuvering (枚举)</a>
-                        <br>
-            
-             
-                        <a href="/2018/06/17/cf488.1A/">Codeforces Round#488 div2C/div1A Two Squares (几何)</a>
-                        <br>
-            
-             
-                        <a href="/2018/06/16/NIT436/">NIT 436 C=A+B (数学)</a>
-                        <br>
-            
-             
-                        <a href="/2018/06/16/NIT442/">NIT 442 Patrol (思维)</a>
-                        <br>
-            
-             
-                        <a href="/2018/06/15/NIT443/">NIT 443 Another Stone Game (sg函数)</a>
-                        <br>
-            
-             
-                        <a href="/2018/06/15/(转)【博弈】Anti,Multi,Every-SG/">(转)【博弈】Anti,Multi,Every-SG</a>
-                        <br>
-            
-             
-                        <a href="/2018/06/15/NIT458/">NIT 458 Strictly Increasing Subinterval (思维)</a>
-                        <br>
-            
-             
-                        <a href="/2018/06/15/NIT445/">NIT 445 Length (模拟)</a>
-                        <br>
-            
-             
-                        <a href="/2018/06/15/NIT446/">NIT 446 合法序列 (思维)</a>
-                        <br>
-            
-             
-                        <a href="/2018/06/15/NIT447/">NIT 447 XOR and MAX (01字典树)</a>
-                        <br>
-            
-             
-                        <a href="/2018/06/15/hexo 文章中插入图片/">hexo 文章中插入图片</a>
-                        <br>
-            
-             
-                        <a href="/2018/06/15/NIT448/">NIT 448 逆序数 (树状数组)</a>
-                        <br>
-            
-             
-                        <a href="/2018/06/15/NIT449/">NIT 449 帅气的ES(改) (STL/线段树/主席树)</a>
-                        <br>
-            
-             
-                        <a href="/2018/06/15/NIT450/">NIT 450 极致色彩 (枚举)</a>
-                        <br>
-            
-             
-                        <a href="/2018/06/14/NIT451/">NIT 451 等差序列 (FFT计数)</a>
-                        <br>
-            
-             
-                        <a href="/2018/06/14/NIT452/">NIT 452 Thue–Morse 序列 (模拟)</a>
-                        <br>
-            
-             
-                        <a href="/2018/06/14/NIT453/">NIT 453 相似字符串 (hash)</a>
-                        <br>
-            
-             
-                        <a href="/2018/05/20/2018ICPCxian/">2018ICPC西安邀请赛</a>
-                        <br>
-            
-             
-                        <a href="/2018/04/30/2018zhejiangshengsai/">2018浙江省赛</a>
-                        <br>
-            
-             
-                        </div>
-                    <h1 style="font-size: 24px; margin-top: 40px;">2017年</h1>
-                    <div class="alert alert-info" style="font-size: 14px; line-height: 2; font-weight: bold;">
-                 
-             
-                        <a href="/2017/12/17/2017ICPCshanghaiECL-Final/">2017ICPC上海ECL-Final</a>
-                        <br>
-            
-             
-                        <a href="/2017/11/05/2017CCPChangzhou/">2017CCPC杭州赛区</a>
-                        <br>
-            
-             
-                        <a href="/2017/05/13/2017ningboshisai/">2017宁波市市赛</a>
-                        <br>
-            
-             
-                        <a href="/2017/04/09/2017ZJUxiaosai/">2017浙江大学校赛</a>
-                        <br>
-            
-             
-                        </div>
-                    <h1 style="font-size: 24px; margin-top: 40px;">2016年</h1>
-                    <div class="alert alert-info" style="font-size: 14px; line-height: 2; font-weight: bold;">
-                 
-             
-                        <a href="/2016/09/23/hello-world/">Hello World</a>
-                        <br>
-            
-                    </div>
-        
+        </div>
     </div>
 </article>
                 </div>
@@ -351,21 +384,6 @@
 </aside>
     
 
-    <!-- 要配置好leancloud才能开启此小工具 -->
-    
-    <aside id="sidebar-hot_posts">
-    <div class="panel panel-gal hot hidden-xs" data-aos="fade-up" data-aos-duration="2000">
-        <div class="panel-heading">
-            <i class="fa fa-fire"></i>
-            最热文章
-            <i class="fa fa-times-circle panel-remove"></i>
-            <i class="fa fa-chevron-circle-up panel-toggle"></i>
-        </div>
-        <ul class="list-group list-group-flush"></ul>
-    </div>
-</aside>
-    
-    
     
     <aside id="sidebar-recent_posts">
     <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
@@ -442,18 +460,9 @@
 </aside>
     
 
+    <!-- 要配置好leancloud才能开启此小工具 -->
     
-    <aside id="sidebar-recent_comments">
-    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
-        <div class="panel-heading">
-            <i class="fa fa-comments"></i>
-            最新评论
-            <i class="fa fa-times-circle panel-remove"></i>
-            <i class="fa fa-chevron-circle-up panel-toggle"></i>
-        </div>
-        <ul class="list-group list-group-flush"></ul>
-    </div>
-</aside>
+    
     
 
     
@@ -461,51 +470,53 @@
         <div class="panel panel-gal hidden-xs" data-aos="fade-up" data-aos-duration="2000">
             <ul class="nav nav-pills pills-gal">
                 <li class="">
-                    <a href="/archives/2018/page/2/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                    <a href="/tags/数据结构/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
                 </li>
                 <li class="">
-                    <a href="/archives/2018/page/2/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                    <a href="/tags/数据结构/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
                 </li>
                 <li class="">
-                    <a href="/archives/2018/page/2/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                    <a href="/tags/数据结构/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
                 </li>
             </ul>
             <div class="tab-content">
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/竞赛经历/" style="font-size: 18.904578073096015px;" class="tag-cloud-link">竞赛经历</a>
+    <a href="/tags/博弈/" style="font-size: 9.290406249427303px;" class="tag-cloud-link">博弈</a>
     
-    <a href="/tags/博弈/" style="font-size: 16.358542575294564px;" class="tag-cloud-link">博弈</a>
+    <a href="/tags/学习笔记/" style="font-size: 15.099716419855245px;" class="tag-cloud-link">学习笔记</a>
     
-    <a href="/tags/学习笔记/" style="font-size: 13.67716173304554px;" class="tag-cloud-link">学习笔记</a>
+    <a href="/tags/竞赛经历/" style="font-size: 10.578890627005011px;" class="tag-cloud-link">竞赛经历</a>
     
-    <a href="/tags/数学/" style="font-size: 13.465946018412975px;" class="tag-cloud-link">数学</a>
+    <a href="/tags/数学/" style="font-size: 18.326184601213974px;" class="tag-cloud-link">数学</a>
     
-    <a href="/tags/思维/" style="font-size: 10.909758691644551px;" class="tag-cloud-link">思维</a>
+    <a href="/tags/思维/" style="font-size: 10.476430584890288px;" class="tag-cloud-link">思维</a>
     
-    <a href="/tags/模拟/" style="font-size: 17.95773310862019px;" class="tag-cloud-link">模拟</a>
+    <a href="/tags/模拟/" style="font-size: 19.976686574737798px;" class="tag-cloud-link">模拟</a>
     
-    <a href="/tags/01字典树/" style="font-size: 16.09538608289596px;" class="tag-cloud-link">01字典树</a>
+    <a href="/tags/01字典树/" style="font-size: 13.21702152696648px;" class="tag-cloud-link">01字典树</a>
     
-    <a href="/tags/树状数组/" style="font-size: 13.045146006132104px;" class="tag-cloud-link">树状数组</a>
+    <a href="/tags/树状数组/" style="font-size: 11.500517759417487px;" class="tag-cloud-link">树状数组</a>
     
-    <a href="/tags/STL/" style="font-size: 10.251312593257463px;" class="tag-cloud-link">STL</a>
+    <a href="/tags/STL/" style="font-size: 8.145383287580788px;" class="tag-cloud-link">STL</a>
     
-    <a href="/tags/线段树/" style="font-size: 14.798189265022572px;" class="tag-cloud-link">线段树</a>
+    <a href="/tags/线段树/" style="font-size: 16.677637090682715px;" class="tag-cloud-link">线段树</a>
     
-    <a href="/tags/主席树/" style="font-size: 12.522067705733168px;" class="tag-cloud-link">主席树</a>
+    <a href="/tags/主席树/" style="font-size: 9.714742755310496px;" class="tag-cloud-link">主席树</a>
     
-    <a href="/tags/枚举/" style="font-size: 19.4031467620254px;" class="tag-cloud-link">枚举</a>
+    <a href="/tags/枚举/" style="font-size: 9.231895271837022px;" class="tag-cloud-link">枚举</a>
     
-    <a href="/tags/FFT/" style="font-size: 16.057587656898217px;" class="tag-cloud-link">FFT</a>
+    <a href="/tags/FFT/" style="font-size: 8.229614201155837px;" class="tag-cloud-link">FFT</a>
     
-    <a href="/tags/hash/" style="font-size: 15.53012662879048px;" class="tag-cloud-link">hash</a>
+    <a href="/tags/hash/" style="font-size: 12.85666444370992px;" class="tag-cloud-link">hash</a>
     
-    <a href="/tags/几何/" style="font-size: 18.99482833233228px;" class="tag-cloud-link">几何</a>
+    <a href="/tags/几何/" style="font-size: 12.624158389248713px;" class="tag-cloud-link">几何</a>
     
-    <a href="/tags/other/" style="font-size: 8.076075257996605px;" class="tag-cloud-link">other</a>
+    <a href="/tags/数据结构/" style="font-size: 12.46431781143473px;" class="tag-cloud-link">数据结构</a>
     
-    <a href="/tags/hexo/" style="font-size: 10.053204367408608px;" class="tag-cloud-link">hexo</a>
+    <a href="/tags/other/" style="font-size: 10.584610622610414px;" class="tag-cloud-link">other</a>
+    
+    <a href="/tags/hexo/" style="font-size: 19.258210187931127px;" class="tag-cloud-link">hexo</a>
     
 </div>
                 <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
@@ -604,12 +615,8 @@
 <script src="/js/hs.js"></script>
 <script src="/js/blog.js"></script>
 
+<script src="/js/oni.js"></script>
 
-<script>
-    window.hot_posts_count = '10'
-    // window.use_leancloud = 'true'
-</script>
-<script src="/js/comment/leancloud.js"></script>
 
 
 <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
@@ -633,11 +640,5 @@
     }
 </script>
 <script src="/js/comment/gitment.js"></script>
-
-
-
-<!-- 页面点击小红心 -->
-<script type="text/javascript" src="/js/src/love.js"></script>
-
 
 </html>
