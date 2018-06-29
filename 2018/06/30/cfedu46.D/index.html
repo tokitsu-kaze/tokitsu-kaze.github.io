@@ -10,7 +10,7 @@
     
     
     
-    <title>categories: dp | tokitsukaze</title>
+    <title>Codeforces edu#46 D.Yet Another Problem On a Subsequence (dp) | tokitsukaze</title>
     <link href=”http://tokitsukaze.live“ rel=”prefetch” />
 
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -112,7 +112,7 @@
                 
                 
                 
-                <li class="current">
+                <li class="">
                     <a href="/categories">
                         <i class="fa fa-list"></i>分类
                     </a>
@@ -151,19 +151,39 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 gal-right" id="mainstay">
-                    <article class="article well article-body" id="article-category">
+                    
+<article class="article well article-body" id="article">
     <div class="breadcrumb">
         <i class="fa fa-home"></i>
         <a href="http://tokitsukaze.live">tokitsukaze</a>
         >
-        <span>目录</span>
+        <span>Codeforces edu#46 D.Yet Another Problem On a Subsequence (dp)</span>
     </div>
     <!-- 大型设备详细文章 -->
     <div class="hidden-xs">
         <div class="title-article">
             <h1>
-                <a href="/categories/dp/index.html">dp</a>
+                <a href="/2018/06/30/cfedu46.D/">Codeforces edu#46 D.Yet Another Problem On a Subsequence (dp)</a>
             </h1>
+        </div>
+        <div class="tag-article">
+            
+            <span class="label label-gal">
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/dp/">dp</a>
+                
+            </span>
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2018-06-30
+            </span>
+
+            
+            <span class="label label-gal">
+                <i class="fa fa-eye"></i>
+            </span>
+            
         </div>
     </div>
     <!-- 小型设备详细文章 -->
@@ -171,24 +191,47 @@
         <center>
             <div class="title-article">
                 <h4>
-                    <a href="/categories/dp/index.html">dp</a>
+                    <a href="/2018/06/30/cfedu46.D/">Codeforces edu#46 D.Yet Another Problem On a Subsequence (dp)</a>
                 </h4>
             </div>
+            <p>
+                <i class="fa fa-calendar"></i> 2018-06-30
+            </p>
+            <p>
+                
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/dp/">dp</a>
+                
+                
+                
+                <i class="fa fa-eye"></i>
+                
+            </p>
         </center>
     </div>
-    <div class="content-article" style="margin-top: 30px;">
-        <div class="alert alert-info" style="font-size: 14px; line-height: 2; font-weight: bold;">
-            
-            <a href="/2018/06/30/cfedu46.D/">Codeforces edu#46 D.Yet Another Problem On a Subsequence (dp)</a>
-            <br>
-            
-            <a href="/2018/06/22/cf490.3F/">Codeforces Round#490 div3F Cards and Joy (01背包)</a>
-            <br>
-            
-            
-        </div>
+    <div class="content-article">
+        <p>转载请注明出处：<a href="http://tokitsukaze.live/">http://tokitsukaze.live/</a></p>
+<p>题目链接：<a href="http://codeforces.com/problemset/problem/1000/D" target="_blank" rel="noopener">http://codeforces.com/problemset/problem/1000/D</a></p>
+<hr>
+<p>题意：给一个序列。定义good子序列：满足可以划分为若干个组，每个组的第一个数=这个组的长度-1。求有多少个good子序列。</p>
+<hr>
+<p>题解：<br>dp[i]表示以i开头的good子序列的个数。直接倒着转移即可。</p>
+<p>代码：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> comment(linker, <span class="meta-string">"/STACK:1024000000,1024000000"</span>)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> mem(a,b) memset((a),(b),sizeof(a))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MP make_pair</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pb push_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> fi first</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> se second</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> sz(x) (int)x.size()</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> all(x) x.begin(),x.end()</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> _GLIBCXX_PERMIT_BACKWARD_HASH</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;ext/hash_map&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> __gnu_cxx;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">str_hash</span>&#123;</span><span class="keyword">size_t</span> <span class="keyword">operator</span>()(<span class="keyword">const</span> <span class="built_in">string</span>&amp; str)<span class="keyword">const</span>&#123;<span class="keyword">return</span> __stl_hash_string(str.c_str());&#125;&#125;;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> ull;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> PII pair<span class="meta-string">&lt;int,int&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> PLL pair<span class="meta-string">&lt;ll,ll&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> PDD pair<span class="meta-string">&lt;double,double&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> VI vector<span class="meta-string">&lt;int&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> VL vector<span class="meta-string">&lt;ll&gt;</span></span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF=<span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">const</span> ll LLINF=<span class="number">0x3f3f3f3f3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> PI=<span class="built_in">acos</span>(<span class="number">-1.0</span>);</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> eps=<span class="number">1e-4</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAX=<span class="number">5e5</span>+<span class="number">10</span>;</span><br><span class="line"><span class="keyword">const</span> ll mod=<span class="number">998244353</span>;</span><br><span class="line">ll C[<span class="number">1010</span>][<span class="number">1010</span>];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">(<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i,j;</span><br><span class="line">	<span class="keyword">for</span>(i=(C[<span class="number">0</span>][<span class="number">0</span>]=<span class="number">1</span>);i&lt;=n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span>(j=(C[i][<span class="number">0</span>]=<span class="number">1</span>);j&lt;=n;j++)</span><br><span class="line">		&#123;</span><br><span class="line">			C[i][j]=(C[i<span class="number">-1</span>][j]+C[i<span class="number">-1</span>][j<span class="number">-1</span>])%mod;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125; </span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n,i,j,a[MAX];</span><br><span class="line">	ll dp[<span class="number">1010</span>];</span><br><span class="line">	init(<span class="number">1000</span>);</span><br><span class="line">	<span class="keyword">while</span>(~<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n))</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++) <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a[i]);</span><br><span class="line">		mem(dp,<span class="number">0</span>);</span><br><span class="line">		dp[n+<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">for</span>(i=n;i;i--)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(a[i]&lt;=<span class="number">0</span>) <span class="keyword">continue</span>;</span><br><span class="line">			<span class="keyword">for</span>(j=n;j-a[i]&gt;=i;j--)</span><br><span class="line">			&#123;</span><br><span class="line">				(dp[i]+=dp[j+<span class="number">1</span>]*C[j-i][a[i]]%mod)%=mod;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span>(i=<span class="number">2</span>;i&lt;=n;i++) (dp[<span class="number">1</span>]+=dp[i])%=mod;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,dp[<span class="number">1</span>]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
     </div>
 </article>
+
+
+<div id="comments-template"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script>
+	if(!window.commentConfig) {
+      window.commentConfig = {}
+      window.commentConfig.title = 'Codeforces edu#46 D.Yet Another Problem On a Subsequence (dp)'
+    }
+</script>
+
                 </div>
                 <aside class="col-md-4 gal-left" id="sidebar">
     <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
@@ -344,59 +387,59 @@
         <div class="panel panel-gal hidden-xs" data-aos="fade-up" data-aos-duration="2000">
             <ul class="nav nav-pills pills-gal">
                 <li class="">
-                    <a href="/categories/dp/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                    <a href="/2018/06/30/cfedu46.D/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
                 </li>
                 <li class="">
-                    <a href="/categories/dp/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                    <a href="/2018/06/30/cfedu46.D/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
                 </li>
                 <li class="">
-                    <a href="/categories/dp/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                    <a href="/2018/06/30/cfedu46.D/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
                 </li>
             </ul>
             <div class="tab-content">
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/博弈/" style="font-size: 11.94468018680232px;" class="tag-cloud-link">博弈</a>
+    <a href="/tags/博弈/" style="font-size: 13.440481392408767px;" class="tag-cloud-link">博弈</a>
     
-    <a href="/tags/学习笔记/" style="font-size: 16.83280613039475px;" class="tag-cloud-link">学习笔记</a>
+    <a href="/tags/学习笔记/" style="font-size: 8.117729755389881px;" class="tag-cloud-link">学习笔记</a>
     
-    <a href="/tags/竞赛经历/" style="font-size: 17.370100723130506px;" class="tag-cloud-link">竞赛经历</a>
+    <a href="/tags/竞赛经历/" style="font-size: 13.236171400584105px;" class="tag-cloud-link">竞赛经历</a>
     
-    <a href="/tags/思维/" style="font-size: 19.55240585237641px;" class="tag-cloud-link">思维</a>
+    <a href="/tags/思维/" style="font-size: 14.355666471558763px;" class="tag-cloud-link">思维</a>
     
-    <a href="/tags/数学/" style="font-size: 15.034029270375537px;" class="tag-cloud-link">数学</a>
+    <a href="/tags/数学/" style="font-size: 16.264405355897807px;" class="tag-cloud-link">数学</a>
     
-    <a href="/tags/模拟/" style="font-size: 18.916534494121986px;" class="tag-cloud-link">模拟</a>
+    <a href="/tags/模拟/" style="font-size: 9.124693763262991px;" class="tag-cloud-link">模拟</a>
     
-    <a href="/tags/01字典树/" style="font-size: 18.817479750087685px;" class="tag-cloud-link">01字典树</a>
+    <a href="/tags/01字典树/" style="font-size: 17.826733191681328px;" class="tag-cloud-link">01字典树</a>
     
-    <a href="/tags/STL/" style="font-size: 16.941589021743695px;" class="tag-cloud-link">STL</a>
+    <a href="/tags/STL/" style="font-size: 9.429838226928554px;" class="tag-cloud-link">STL</a>
     
-    <a href="/tags/线段树/" style="font-size: 15.594509182824154px;" class="tag-cloud-link">线段树</a>
+    <a href="/tags/线段树/" style="font-size: 13.197616265135055px;" class="tag-cloud-link">线段树</a>
     
-    <a href="/tags/主席树/" style="font-size: 17.701199034991017px;" class="tag-cloud-link">主席树</a>
+    <a href="/tags/主席树/" style="font-size: 14.493028219338925px;" class="tag-cloud-link">主席树</a>
     
-    <a href="/tags/枚举/" style="font-size: 8.277476165178143px;" class="tag-cloud-link">枚举</a>
+    <a href="/tags/枚举/" style="font-size: 14.734152367207546px;" class="tag-cloud-link">枚举</a>
     
-    <a href="/tags/树状数组/" style="font-size: 18.55762144530791px;" class="tag-cloud-link">树状数组</a>
+    <a href="/tags/树状数组/" style="font-size: 9.880707582714843px;" class="tag-cloud-link">树状数组</a>
     
-    <a href="/tags/FFT/" style="font-size: 14.07246199999587px;" class="tag-cloud-link">FFT</a>
+    <a href="/tags/FFT/" style="font-size: 11.865944003531407px;" class="tag-cloud-link">FFT</a>
     
-    <a href="/tags/hash/" style="font-size: 14.542678962901565px;" class="tag-cloud-link">hash</a>
+    <a href="/tags/hash/" style="font-size: 13.913214921110876px;" class="tag-cloud-link">hash</a>
     
-    <a href="/tags/几何/" style="font-size: 13.932706540339574px;" class="tag-cloud-link">几何</a>
+    <a href="/tags/几何/" style="font-size: 14.74299571648876px;" class="tag-cloud-link">几何</a>
     
-    <a href="/tags/dp/" style="font-size: 9.356344916740364px;" class="tag-cloud-link">dp</a>
+    <a href="/tags/dp/" style="font-size: 18.83628900116903px;" class="tag-cloud-link">dp</a>
     
-    <a href="/tags/背包问题/" style="font-size: 16.456961604222684px;" class="tag-cloud-link">背包问题</a>
+    <a href="/tags/背包问题/" style="font-size: 10.340171351770296px;" class="tag-cloud-link">背包问题</a>
     
-    <a href="/tags/强连通分量/" style="font-size: 11.23504994025351px;" class="tag-cloud-link">强连通分量</a>
+    <a href="/tags/强连通分量/" style="font-size: 16.741436028429966px;" class="tag-cloud-link">强连通分量</a>
     
-    <a href="/tags/双联通分量/" style="font-size: 17.915542757677677px;" class="tag-cloud-link">双联通分量</a>
+    <a href="/tags/双联通分量/" style="font-size: 13.349292014404348px;" class="tag-cloud-link">双联通分量</a>
     
-    <a href="/tags/other/" style="font-size: 9.944116769537995px;" class="tag-cloud-link">other</a>
+    <a href="/tags/other/" style="font-size: 17.217547985734427px;" class="tag-cloud-link">other</a>
     
-    <a href="/tags/hexo/" style="font-size: 16.87770194674193px;" class="tag-cloud-link">hexo</a>
+    <a href="/tags/hexo/" style="font-size: 13.955438549444509px;" class="tag-cloud-link">hexo</a>
     
 </div>
                 <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
@@ -506,7 +549,7 @@
 <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
     if(window.commentConfig) {
-      window.commentConfig.id = ''
+      window.commentConfig.id = 'Sat Jun 30 2018 02:07:41 GMT+0800'
       window.commentConfig.owner = 'tokitsu-kaze'
       window.commentConfig.repo = 'comment-save'
       window.commentConfig.client_id = '822ab9521b502687b55f'
@@ -514,7 +557,7 @@
       window.commentConfig.redirect_uri = ''
     } else {
       window.commentConfig = {
-      	id: '',
+      	id: 'Sat Jun 30 2018 02:07:41 GMT+0800',
         owner: 'tokitsu-kaze',
         repo: 'comment-save',
         client_id: '822ab9521b502687b55f',
