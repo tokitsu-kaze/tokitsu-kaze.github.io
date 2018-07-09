@@ -10,7 +10,7 @@
     
     
     
-    <title>2017浙江大学校赛 | tokitsukaze</title>
+    <title>CS Academy Round#65 (Div. 2 only) C.Crossing Tree (树的直径+欧拉序) | tokitsukaze</title>
     <link href=”http://tokitsukaze.live“ rel=”prefetch” />
 
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -157,13 +157,13 @@
         <i class="fa fa-home"></i>
         <a href="http://tokitsukaze.live">tokitsukaze</a>
         >
-        <span>2017浙江大学校赛</span>
+        <span>CS Academy Round#65 (Div. 2 only) C.Crossing Tree (树的直径+欧拉序)</span>
     </div>
     <!-- 大型设备详细文章 -->
     <div class="hidden-xs">
         <div class="title-article">
             <h1>
-                <a href="/2017/04/09/2017ZJUxiaosai/">2017浙江大学校赛</a>
+                <a href="/2018/07/09/CSA65.C/">CS Academy Round#65 (Div. 2 only) C.Crossing Tree (树的直径+欧拉序)</a>
             </h1>
         </div>
         <div class="tag-article">
@@ -171,12 +171,12 @@
             <span class="label label-gal">
                 <i class="fa fa-tags"></i>
                 
-                <a href="/tags/竞赛经历/">竞赛经历</a>
+                <a href="/tags/构造/">构造</a>
                 
             </span>
             
             <span class="label label-gal">
-                <i class="fa fa-calendar"></i> 2017-04-09
+                <i class="fa fa-calendar"></i> 2018-07-09
             </span>
 
             
@@ -191,17 +191,17 @@
         <center>
             <div class="title-article">
                 <h4>
-                    <a href="/2017/04/09/2017ZJUxiaosai/">2017浙江大学校赛</a>
+                    <a href="/2018/07/09/CSA65.C/">CS Academy Round#65 (Div. 2 only) C.Crossing Tree (树的直径+欧拉序)</a>
                 </h4>
             </div>
             <p>
-                <i class="fa fa-calendar"></i> 2017-04-09
+                <i class="fa fa-calendar"></i> 2018-07-09
             </p>
             <p>
                 
                 <i class="fa fa-tags"></i>
                 
-                <a href="/tags/竞赛经历/">竞赛经历</a>
+                <a href="/tags/构造/">构造</a>
                 
                 
                 
@@ -212,7 +212,13 @@
     </div>
     <div class="content-article">
         <p>转载请注明出处：<a href="http://tokitsukaze.live/">http://tokitsukaze.live/</a></p>
-<p><code>公费旅游+骗吃骗喝+日常翻车 1小时a掉2题 然后C题我的思路太繁琐了 强行分类讨论 打一半就不想打然后队友接盘 然后我去看G wa了一发发现思路不对 然后其他题又不是很好做 于是三个人就开始肛C 然后各种翻车...学了两个月算法结果在xjb搞的题上翻车..人生如此艰难.jpg</code><br><img src="/2017/04/09/2017ZJUxiaosai/1.jpg" alt="1"><img src="/2017/04/09/2017ZJUxiaosai/2.jpg" alt="2"><img src="/2017/04/09/2017ZJUxiaosai/3.jpg" alt="3"></p>
+<p>题目链接：<a href="https://csacademy.com/contest/archive/task/crossing-tree/statement/" target="_blank" rel="noopener">https://csacademy.com/contest/archive/task/crossing-tree/statement/</a></p>
+<hr>
+<p>题意：给一棵n个顶点的树，让你选择一个起点，把每个点都走一遍。边的长度为1，让你输出路径的长度并按走的顺序输出路径。</p>
+<hr>
+<p>题解：<br>记录树的直径，沿着树的直径走，到每个节点再向非树的直径的节点走，走完回到直径上。所以路径长度是(n-dia)*2-1+dia。dia是树的直接的节点个数。</p>
+<p>代码：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> comment(linker, <span class="meta-string">"/STACK:1024000000,1024000000"</span>)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> mem(a,b) memset((a),(b),sizeof(a))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MP make_pair</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pb push_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> fi first</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> se second</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> sz(x) (int)x.size()</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> all(x) x.begin(),x.end()</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> _GLIBCXX_PERMIT_BACKWARD_HASH</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;ext/hash_map&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> __gnu_cxx;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> ull;</span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; PII;</span><br><span class="line"><span class="keyword">typedef</span> pair&lt;ll,ll&gt; PLL;</span><br><span class="line"><span class="keyword">typedef</span> <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; VI;</span><br><span class="line"><span class="keyword">typedef</span> <span class="built_in">vector</span>&lt;ll&gt; VL;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">str_hash</span>&#123;</span><span class="keyword">size_t</span> <span class="keyword">operator</span>()(<span class="keyword">const</span> <span class="built_in">string</span>&amp; str)<span class="keyword">const</span>&#123;<span class="keyword">return</span> __stl_hash_string(str.c_str());&#125;&#125;;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF=<span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">const</span> ll LLINF=<span class="number">0x3f3f3f3f3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> PI=<span class="built_in">acos</span>(<span class="number">-1.0</span>);</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> eps=<span class="number">1e-4</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAX=<span class="number">1e5</span>+<span class="number">10</span>;</span><br><span class="line"><span class="keyword">const</span> ll mod=<span class="number">1e9</span>+<span class="number">7</span>;</span><br><span class="line"><span class="comment">/***************************************  head  **********************************************/</span></span><br><span class="line">VI mp[MAX],res;</span><br><span class="line"><span class="keyword">int</span> fa[MAX],flag[MAX],rt,mx;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> pre,<span class="keyword">int</span> h)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	fa[x]=pre;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">auto</span> to:mp[x])</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(to==pre) <span class="keyword">continue</span>;</span><br><span class="line">		dfs(to,x,h+<span class="number">1</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(h&gt;mx)</span><br><span class="line">	&#123;</span><br><span class="line">		mx=h;</span><br><span class="line">		rt=x;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">gao</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> pre)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	res.pb(x);</span><br><span class="line">	flag[x]=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">auto</span> to:mp[x])</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(to==pre) <span class="keyword">continue</span>;</span><br><span class="line">		<span class="keyword">if</span>(flag[to]) <span class="keyword">continue</span>;</span><br><span class="line">		gao(to,x);</span><br><span class="line">		res.pb(x);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n,i,a,b;</span><br><span class="line">	<span class="keyword">while</span>(~<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n))</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++) mp[i].clear();</span><br><span class="line">		res.clear();</span><br><span class="line">		mem(flag,<span class="number">0</span>);</span><br><span class="line">		<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n<span class="number">-1</span>;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;a,&amp;b);</span><br><span class="line">			mp[a].pb(b);</span><br><span class="line">			mp[b].pb(a);</span><br><span class="line">		&#125;</span><br><span class="line">		rt=<span class="number">1</span>;</span><br><span class="line">		mx=<span class="number">-1</span>;</span><br><span class="line">		dfs(rt,<span class="number">-1</span>,<span class="number">0</span>);</span><br><span class="line">		mx=<span class="number">-1</span>;</span><br><span class="line">		dfs(rt,<span class="number">-1</span>,<span class="number">0</span>);</span><br><span class="line">		VI tmp;</span><br><span class="line">		<span class="keyword">while</span>(~rt)</span><br><span class="line">		&#123;</span><br><span class="line">			tmp.pb(rt);</span><br><span class="line">			flag[rt]=<span class="number">1</span>;</span><br><span class="line">			rt=fa[rt];</span><br><span class="line">		&#125;</span><br><span class="line">		mx++;</span><br><span class="line">		assert(sz(tmp)==mx);</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">auto</span> it:tmp) gao(it,<span class="number">-1</span>);</span><br><span class="line">		assert(sz(res)<span class="number">-1</span>==(n-mx)*<span class="number">2</span><span class="number">-1</span>+mx);</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d\n"</span>,sz(res)<span class="number">-1</span>);</span><br><span class="line">		<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;sz(res);i++) <span class="built_in">printf</span>(<span class="string">"%d%c"</span>,res[i],<span class="string">" \n"</span>[i==sz(res)<span class="number">-1</span>]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
     </div>
 </article>
@@ -223,7 +229,7 @@
 <script>
 	if(!window.commentConfig) {
       window.commentConfig = {}
-      window.commentConfig.title = '2017浙江大学校赛'
+      window.commentConfig.title = 'CS Academy Round#65 (Div. 2 only) C.Crossing Tree (树的直径+欧拉序)'
     }
 </script>
 
@@ -382,65 +388,65 @@
         <div class="panel panel-gal hidden-xs" data-aos="fade-up" data-aos-duration="2000">
             <ul class="nav nav-pills pills-gal">
                 <li class="">
-                    <a href="/2017/04/09/2017ZJUxiaosai/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                    <a href="/2018/07/09/CSA65.C/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
                 </li>
                 <li class="">
-                    <a href="/2017/04/09/2017ZJUxiaosai/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                    <a href="/2018/07/09/CSA65.C/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
                 </li>
                 <li class="">
-                    <a href="/2017/04/09/2017ZJUxiaosai/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                    <a href="/2018/07/09/CSA65.C/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
                 </li>
             </ul>
             <div class="tab-content">
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/博弈/" style="font-size: 16.27695294620686px;" class="tag-cloud-link">博弈</a>
+    <a href="/tags/博弈/" style="font-size: 10.367160243300559px;" class="tag-cloud-link">博弈</a>
     
-    <a href="/tags/学习笔记/" style="font-size: 11.081377463841449px;" class="tag-cloud-link">学习笔记</a>
+    <a href="/tags/学习笔记/" style="font-size: 11.098677187362759px;" class="tag-cloud-link">学习笔记</a>
     
-    <a href="/tags/竞赛经历/" style="font-size: 19.609062084468007px;" class="tag-cloud-link">竞赛经历</a>
+    <a href="/tags/竞赛经历/" style="font-size: 10.042642170872208px;" class="tag-cloud-link">竞赛经历</a>
     
-    <a href="/tags/数学/" style="font-size: 16.982915431556723px;" class="tag-cloud-link">数学</a>
+    <a href="/tags/数学/" style="font-size: 19.480373957546433px;" class="tag-cloud-link">数学</a>
     
-    <a href="/tags/思维/" style="font-size: 13.680909808414206px;" class="tag-cloud-link">思维</a>
+    <a href="/tags/思维/" style="font-size: 15.281691312651791px;" class="tag-cloud-link">思维</a>
     
-    <a href="/tags/构造/" style="font-size: 11.148286133720479px;" class="tag-cloud-link">构造</a>
+    <a href="/tags/构造/" style="font-size: 12.986001824201981px;" class="tag-cloud-link">构造</a>
     
-    <a href="/tags/模拟/" style="font-size: 8.577792525703394px;" class="tag-cloud-link">模拟</a>
+    <a href="/tags/模拟/" style="font-size: 9.443288515513807px;" class="tag-cloud-link">模拟</a>
     
-    <a href="/tags/01字典树/" style="font-size: 9.096400593762644px;" class="tag-cloud-link">01字典树</a>
+    <a href="/tags/01字典树/" style="font-size: 15.220815460493434px;" class="tag-cloud-link">01字典树</a>
     
-    <a href="/tags/树状数组/" style="font-size: 13.642042094877173px;" class="tag-cloud-link">树状数组</a>
+    <a href="/tags/树状数组/" style="font-size: 17.629042469454344px;" class="tag-cloud-link">树状数组</a>
     
-    <a href="/tags/STL/" style="font-size: 11.944254971036187px;" class="tag-cloud-link">STL</a>
+    <a href="/tags/STL/" style="font-size: 8.845780075168523px;" class="tag-cloud-link">STL</a>
     
-    <a href="/tags/线段树/" style="font-size: 14.416062366169257px;" class="tag-cloud-link">线段树</a>
+    <a href="/tags/线段树/" style="font-size: 11.156443585139765px;" class="tag-cloud-link">线段树</a>
     
-    <a href="/tags/主席树/" style="font-size: 15.297747892231529px;" class="tag-cloud-link">主席树</a>
+    <a href="/tags/主席树/" style="font-size: 10.356016617066365px;" class="tag-cloud-link">主席树</a>
     
-    <a href="/tags/枚举/" style="font-size: 9.411105130406941px;" class="tag-cloud-link">枚举</a>
+    <a href="/tags/枚举/" style="font-size: 14.929717694793656px;" class="tag-cloud-link">枚举</a>
     
-    <a href="/tags/FFT/" style="font-size: 10.741618579470238px;" class="tag-cloud-link">FFT</a>
+    <a href="/tags/FFT/" style="font-size: 14.651735012886173px;" class="tag-cloud-link">FFT</a>
     
-    <a href="/tags/hash/" style="font-size: 10.108474991353898px;" class="tag-cloud-link">hash</a>
+    <a href="/tags/hash/" style="font-size: 14.2123630772772px;" class="tag-cloud-link">hash</a>
     
-    <a href="/tags/几何/" style="font-size: 12.92666350927707px;" class="tag-cloud-link">几何</a>
+    <a href="/tags/几何/" style="font-size: 16.61190401424319px;" class="tag-cloud-link">几何</a>
     
-    <a href="/tags/强连通分量/" style="font-size: 11.738817429352931px;" class="tag-cloud-link">强连通分量</a>
+    <a href="/tags/强连通分量/" style="font-size: 18.511899974376714px;" class="tag-cloud-link">强连通分量</a>
     
-    <a href="/tags/dp/" style="font-size: 19.680117838332528px;" class="tag-cloud-link">dp</a>
+    <a href="/tags/dp/" style="font-size: 18.931697210229466px;" class="tag-cloud-link">dp</a>
     
-    <a href="/tags/背包问题/" style="font-size: 12.164293749757856px;" class="tag-cloud-link">背包问题</a>
+    <a href="/tags/背包问题/" style="font-size: 15.445702859974926px;" class="tag-cloud-link">背包问题</a>
     
-    <a href="/tags/树形dp/" style="font-size: 19.141171891549178px;" class="tag-cloud-link">树形dp</a>
+    <a href="/tags/树形dp/" style="font-size: 13.84032051228692px;" class="tag-cloud-link">树形dp</a>
     
-    <a href="/tags/dfs-bfs/" style="font-size: 14.632357555747122px;" class="tag-cloud-link">dfs/bfs</a>
+    <a href="/tags/dfs-bfs/" style="font-size: 16.114517941216484px;" class="tag-cloud-link">dfs/bfs</a>
     
-    <a href="/tags/双联通分量/" style="font-size: 19.18812226984605px;" class="tag-cloud-link">双联通分量</a>
+    <a href="/tags/双联通分量/" style="font-size: 10.18894426987354px;" class="tag-cloud-link">双联通分量</a>
     
-    <a href="/tags/other/" style="font-size: 16.959869394222263px;" class="tag-cloud-link">other</a>
+    <a href="/tags/other/" style="font-size: 16.210296378100256px;" class="tag-cloud-link">other</a>
     
-    <a href="/tags/hexo/" style="font-size: 13.513796176265526px;" class="tag-cloud-link">hexo</a>
+    <a href="/tags/hexo/" style="font-size: 18.99979270459225px;" class="tag-cloud-link">hexo</a>
     
 </div>
                 <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
@@ -550,7 +556,7 @@
 <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
     if(window.commentConfig) {
-      window.commentConfig.id = 'Sun Apr 09 2017 20:34:14 GMT+0800'
+      window.commentConfig.id = 'Mon Jul 09 2018 10:07:04 GMT+0800'
       window.commentConfig.owner = 'tokitsu-kaze'
       window.commentConfig.repo = 'comment-save'
       window.commentConfig.client_id = '822ab9521b502687b55f'
@@ -558,7 +564,7 @@
       window.commentConfig.redirect_uri = ''
     } else {
       window.commentConfig = {
-      	id: 'Sun Apr 09 2017 20:34:14 GMT+0800',
+      	id: 'Mon Jul 09 2018 10:07:04 GMT+0800',
         owner: 'tokitsu-kaze',
         repo: 'comment-save',
         client_id: '822ab9521b502687b55f',
