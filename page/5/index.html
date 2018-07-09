@@ -10,7 +10,7 @@
     
     
     
-    <title>categories: 学习笔记 | tokitsukaze</title>
+    <title>tokitsukaze</title>
     <link href=”http://tokitsukaze.live“ rel=”prefetch” />
 
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -112,7 +112,7 @@
                 
                 
                 
-                <li class="current">
+                <li class="">
                     <a href="/categories">
                         <i class="fa fa-list"></i>分类
                     </a>
@@ -151,41 +151,162 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 gal-right" id="mainstay">
-                    <article class="article well article-body" id="article-category">
-    <div class="breadcrumb">
-        <i class="fa fa-home"></i>
-        <a href="http://tokitsukaze.live">tokitsukaze</a>
-        >
-        <span>目录</span>
+                    
+<div class="alert well fade in" id="gal-issue" role="alert">
+    <!-- TODO 添加关闭公告框功能 -->
+    <button type="button" class="close" data-dismiss="alert">×</button>
+    <!-- 这里自行配置公告内容 -->
+    <strong>本博客主要用于写一些题解/游戏攻略</strong>
+    <br>
+    <strong>一些细节部分正在完善中，有些页面还没写</strong>
+    <br>
+    <strong>新增评论功能，用github账号登入可以评论啦</strong>
+    <br>
+    <strong>有问题请联系：861794979@qq.com</strong>
+    <!-- 自行配置公告内容结束 -->
+</div>
+
+<div id="article-list">
+     
+     
+     <div class="article well clearfix article-body article-excerpt" data-aos="flip-up">
+    
+    <div class="data-article hidden-xs">
+        <span class="month">09月</span>
+        <span class="day">23</span>
     </div>
-    <!-- 大型设备详细文章 -->
-    <div class="hidden-xs">
+    <!-- 大型设备文章 -->
+    <section class="hidden-xs">
         <div class="title-article">
             <h1>
-                <a href="/categories/学习笔记/index.html">学习笔记</a>
+                <a href="/2016/09/23/hello-world/">
+                    <span>Hello World</span>
+                </a>
             </h1>
         </div>
-    </div>
-    <!-- 小型设备详细文章 -->
-    <div class="visible-xs">
-        <center>
-            <div class="title-article">
-                <h4>
-                    <a href="/categories/学习笔记/index.html">学习笔记</a>
-                </h4>
-            </div>
-        </center>
-    </div>
-    <div class="content-article" style="margin-top: 30px;">
-        <div class="alert alert-info" style="font-size: 14px; line-height: 2; font-weight: bold;">
+        <div class="tag-article">
             
-            <a href="/2018/06/15/(转)【博弈】Anti,Multi,Every-SG/">(转)【博弈】Anti,Multi,Every-SG</a>
-            <br>
+            <span class="label label-gal">
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/other/">other</a>
+                
+            </span>
             
             
+            <span class="label label-gal">
+                <i class="fa fa-eye"></i>
+            </span>
+            
+            <!-- TODO 添加评论统计 -->
+            <!--<span class="label label-gal">
+                <i class="fa fa-comments"></i>
+                <a href="/2016/09/23/hello-world/#comments">739</a>
+            </span>-->
         </div>
-    </div>
-</article>
+        <div class="alert alert-gal article-body content-article">
+            <div class="item">
+                <a href="/2016/09/23/hello-world/">
+                    <div class="img">
+                        
+                        <img src="/imgs/preview/preview07.bmp" alt="Hello World">
+                    </div>
+                    <div class="info">
+                        
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+    <section class="visible-xs">
+        <div class="title-article">
+            <center>
+                <h4>
+                    <a href="/2016/09/23/hello-world/">
+                        <span>Hello World</span>
+                    </a>
+                </h4>
+            </center>
+        </div>
+        <p></p>
+        <center>
+            <i class="fa fa-calendar"></i> 2016-09-23
+        </center>
+        <p></p>
+        <p></p>
+        <center>
+            
+            <i class="fa fa-tags"></i>
+            
+            <a href="/tags/other/">other</a>
+            
+            
+            
+            <i class="fa fa-eye"></i>
+            
+        </center>
+        <p></p>
+        <div class="alert alert-gal article-body content-article">
+            <p style="text-align: center;">
+                <a href="/2016/09/23/hello-world/">
+                    
+                    <img src="/imgs/preview/preview07.bmp" alt="Hello World">
+                </a>
+            </p>
+        </div>
+        
+        <a class="btn btn-danger pull-right read-more btn-block" href="/2016/09/23/hello-world/">
+            阅读全文
+            <!--<span class="badge">739</span>-->
+        </a>
+    </section>
+</div>
+     
+</div>
+<!-- 前方最多7个 < 1 2 3 4 5 6 -->
+<!-- 前方超过第7页则分为 < 1 ... (n - 3) (n - 2) (n - 1) n, 此时前面为固定的6个 -->
+
+<!-- 后方最多8个 (n + 1) 到 (n + 7) > -->
+<!-- 如果末页和当前页相差超过7, 此时后面为固定的6个, (n + 1) (n + 2) (n + 3) ... total > -->
+
+
+
+<div id="gal-pagination" class="clearfix">
+    <ul class="pagination pagination-gal pull-right">
+        
+        <li class="prev">
+            <a href="/page/4/">«</a>
+        </li>
+        
+        
+        
+        <li>
+            <a href="/">1</a>
+        </li>
+        
+        <li>
+            <a href="/page/2 ">2</a>
+        </li>
+        
+        <li>
+            <a href="/page/3 ">3</a>
+        </li>
+        
+        <li>
+            <a href="/page/4 ">4</a>
+        </li>
+        
+        
+        <li class="current">
+            <span>5</span>
+        </li>
+        
+        
+        
+        
+    </ul>
+</div>
+
                 </div>
                 <aside class="col-md-4 gal-left" id="sidebar">
     <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
@@ -341,67 +462,67 @@
         <div class="panel panel-gal hidden-xs" data-aos="fade-up" data-aos-duration="2000">
             <ul class="nav nav-pills pills-gal">
                 <li class="">
-                    <a href="/categories/学习笔记/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                    <a href="/page/5/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
                 </li>
                 <li class="">
-                    <a href="/categories/学习笔记/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                    <a href="/page/5/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
                 </li>
                 <li class="">
-                    <a href="/categories/学习笔记/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                    <a href="/page/5/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
                 </li>
             </ul>
             <div class="tab-content">
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/博弈/" style="font-size: 15.186188594031682px;" class="tag-cloud-link">博弈</a>
+    <a href="/tags/博弈/" style="font-size: 18.210865971687962px;" class="tag-cloud-link">博弈</a>
     
-    <a href="/tags/学习笔记/" style="font-size: 11.204695852415528px;" class="tag-cloud-link">学习笔记</a>
+    <a href="/tags/学习笔记/" style="font-size: 13.72287481191475px;" class="tag-cloud-link">学习笔记</a>
     
-    <a href="/tags/竞赛经历/" style="font-size: 17.856004226295408px;" class="tag-cloud-link">竞赛经历</a>
+    <a href="/tags/竞赛经历/" style="font-size: 11.922912625996547px;" class="tag-cloud-link">竞赛经历</a>
     
-    <a href="/tags/数学/" style="font-size: 12.018146827492771px;" class="tag-cloud-link">数学</a>
+    <a href="/tags/数学/" style="font-size: 12.296961045097792px;" class="tag-cloud-link">数学</a>
     
-    <a href="/tags/构造/" style="font-size: 18.289955652725634px;" class="tag-cloud-link">构造</a>
+    <a href="/tags/构造/" style="font-size: 17.52437578707452px;" class="tag-cloud-link">构造</a>
     
-    <a href="/tags/思维/" style="font-size: 8.099899084418903px;" class="tag-cloud-link">思维</a>
+    <a href="/tags/思维/" style="font-size: 19.858215644536866px;" class="tag-cloud-link">思维</a>
     
-    <a href="/tags/模拟/" style="font-size: 12.460428819510376px;" class="tag-cloud-link">模拟</a>
+    <a href="/tags/模拟/" style="font-size: 11.287323861235468px;" class="tag-cloud-link">模拟</a>
     
-    <a href="/tags/STL/" style="font-size: 19.46340752327966px;" class="tag-cloud-link">STL</a>
+    <a href="/tags/STL/" style="font-size: 13.707482309412567px;" class="tag-cloud-link">STL</a>
     
-    <a href="/tags/线段树/" style="font-size: 12.23258213058898px;" class="tag-cloud-link">线段树</a>
+    <a href="/tags/线段树/" style="font-size: 16.135867361811272px;" class="tag-cloud-link">线段树</a>
     
-    <a href="/tags/主席树/" style="font-size: 8.611744877629786px;" class="tag-cloud-link">主席树</a>
+    <a href="/tags/主席树/" style="font-size: 17.516161125284754px;" class="tag-cloud-link">主席树</a>
     
-    <a href="/tags/枚举/" style="font-size: 15.257631260450221px;" class="tag-cloud-link">枚举</a>
+    <a href="/tags/枚举/" style="font-size: 19.15191027851171px;" class="tag-cloud-link">枚举</a>
     
-    <a href="/tags/FFT/" style="font-size: 16.45849503851171px;" class="tag-cloud-link">FFT</a>
+    <a href="/tags/FFT/" style="font-size: 17.132976608182112px;" class="tag-cloud-link">FFT</a>
     
-    <a href="/tags/hash/" style="font-size: 16.683672967964682px;" class="tag-cloud-link">hash</a>
+    <a href="/tags/hash/" style="font-size: 19.70555547010582px;" class="tag-cloud-link">hash</a>
     
-    <a href="/tags/几何/" style="font-size: 18.35226190871815px;" class="tag-cloud-link">几何</a>
+    <a href="/tags/几何/" style="font-size: 8.796988539509012px;" class="tag-cloud-link">几何</a>
     
-    <a href="/tags/强连通分量/" style="font-size: 11.875485959988495px;" class="tag-cloud-link">强连通分量</a>
+    <a href="/tags/强连通分量/" style="font-size: 14.062497074135331px;" class="tag-cloud-link">强连通分量</a>
     
-    <a href="/tags/01字典树/" style="font-size: 15.429237169812197px;" class="tag-cloud-link">01字典树</a>
+    <a href="/tags/01字典树/" style="font-size: 17.684449169454833px;" class="tag-cloud-link">01字典树</a>
     
-    <a href="/tags/树状数组/" style="font-size: 9.075442380274794px;" class="tag-cloud-link">树状数组</a>
+    <a href="/tags/树状数组/" style="font-size: 11.170876665006357px;" class="tag-cloud-link">树状数组</a>
     
-    <a href="/tags/dfs-bfs/" style="font-size: 14.098321967519874px;" class="tag-cloud-link">dfs/bfs</a>
+    <a href="/tags/dfs-bfs/" style="font-size: 19.558473338583923px;" class="tag-cloud-link">dfs/bfs</a>
     
-    <a href="/tags/树形dp/" style="font-size: 12.1784025290751px;" class="tag-cloud-link">树形dp</a>
+    <a href="/tags/树形dp/" style="font-size: 10.539683579650418px;" class="tag-cloud-link">树形dp</a>
     
-    <a href="/tags/单调栈-单调队列/" style="font-size: 13.062000172394214px;" class="tag-cloud-link">单调栈/单调队列</a>
+    <a href="/tags/单调栈-单调队列/" style="font-size: 15.750671199506474px;" class="tag-cloud-link">单调栈/单调队列</a>
     
-    <a href="/tags/dp/" style="font-size: 18.279165087657596px;" class="tag-cloud-link">dp</a>
+    <a href="/tags/dp/" style="font-size: 15.108799551826628px;" class="tag-cloud-link">dp</a>
     
-    <a href="/tags/双联通分量/" style="font-size: 17.892909319049373px;" class="tag-cloud-link">双联通分量</a>
+    <a href="/tags/双联通分量/" style="font-size: 15.549586753869121px;" class="tag-cloud-link">双联通分量</a>
     
-    <a href="/tags/other/" style="font-size: 17.594968483036528px;" class="tag-cloud-link">other</a>
+    <a href="/tags/other/" style="font-size: 10.069492556413499px;" class="tag-cloud-link">other</a>
     
-    <a href="/tags/hexo/" style="font-size: 8.148281080868525px;" class="tag-cloud-link">hexo</a>
+    <a href="/tags/hexo/" style="font-size: 15.73755666191753px;" class="tag-cloud-link">hexo</a>
     
-    <a href="/tags/背包问题/" style="font-size: 11.182259956979433px;" class="tag-cloud-link">背包问题</a>
+    <a href="/tags/背包问题/" style="font-size: 19.92776275001644px;" class="tag-cloud-link">背包问题</a>
     
 </div>
                 <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
