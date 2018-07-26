@@ -10,7 +10,7 @@
     
     
     
-    <title>NIT 442 Patrol (思维) | tokitsukaze</title>
+    <title>2018牛客网暑期ACM多校训练营（第三场）E.Sort String (hash) | tokitsukaze</title>
     <link href=”http://tokitsukaze.live“ rel=”prefetch” />
 
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -157,13 +157,13 @@
         <i class="fa fa-home"></i>
         <a href="http://tokitsukaze.live">tokitsukaze</a>
         >
-        <span>NIT 442 Patrol (思维)</span>
+        <span>2018牛客网暑期ACM多校训练营（第三场）E.Sort String (hash)</span>
     </div>
     <!-- 大型设备详细文章 -->
     <div class="hidden-xs">
         <div class="title-article">
             <h1>
-                <a href="/2018/06/16/NIT442/">NIT 442 Patrol (思维)</a>
+                <a href="/2018/07/26/2018niuke3.E/">2018牛客网暑期ACM多校训练营（第三场）E.Sort String (hash)</a>
             </h1>
         </div>
         <div class="tag-article">
@@ -171,12 +171,12 @@
             <span class="label label-gal">
                 <i class="fa fa-tags"></i>
                 
-                <a href="/tags/思维/">思维</a>
+                <a href="/tags/hash/">hash</a>
                 
             </span>
             
             <span class="label label-gal">
-                <i class="fa fa-calendar"></i> 2018-06-16
+                <i class="fa fa-calendar"></i> 2018-07-26
             </span>
 
             
@@ -191,17 +191,17 @@
         <center>
             <div class="title-article">
                 <h4>
-                    <a href="/2018/06/16/NIT442/">NIT 442 Patrol (思维)</a>
+                    <a href="/2018/07/26/2018niuke3.E/">2018牛客网暑期ACM多校训练营（第三场）E.Sort String (hash)</a>
                 </h4>
             </div>
             <p>
-                <i class="fa fa-calendar"></i> 2018-06-16
+                <i class="fa fa-calendar"></i> 2018-07-26
             </p>
             <p>
                 
                 <i class="fa fa-tags"></i>
                 
-                <a href="/tags/思维/">思维</a>
+                <a href="/tags/hash/">hash</a>
                 
                 
                 
@@ -212,38 +212,14 @@
     </div>
     <div class="content-article">
         <p>转载请注明出处：<a href="http://tokitsukaze.live/">http://tokitsukaze.live/</a></p>
-<p>题目链接：<a href="https://www.nitacm.com/problem_show.php?pid=442" target="_blank" rel="noopener">https://www.nitacm.com/problem_show.php?pid=442</a></p>
-<h2 id="Patrol"><a href="#Patrol" class="headerlink" title="Patrol"></a>Patrol</h2><hr>
-<p>GF市分为n个区域，编号为1-n。有m个警察在这些区域巡逻，编号为1-m，第i个警察的巡逻区域编号为L[i]，R[i]。巡逻区域可能会有重叠。假设有一个警察请假，这n个区域中，有多少个区域没有警察巡逻。</p>
+<p>题目链接：<a href="https://www.nowcoder.com/acm/contest/141/E" target="_blank" rel="noopener">https://www.nowcoder.com/acm/contest/141/E</a></p>
 <hr>
-<p>Input<br>第一行包括一个正整数T(T≤30)，表示T个案例。</p>
-<p>对于每个案例：</p>
-<p>第一行包括两个正整数n，m(1≤n，m≤10^5)。</p>
-<p>接下来m行，每行包括两个正整数L[i]，R[i] (1≤L[i]≤R[i]≤n)。</p>
+<p>题意：<br>给一个字符串，复制前n-1个字符后，问有多少种长度n的子串，分类后按字典序输出下标。</p>
 <hr>
-<p>Output<br>对于每个案例：</p>
-<p>第一行输出Case #x:（x表示第i组案例(i从1开始)）。</p>
-<p>第二行输出m个整数，每个整数用空格隔开，行末无多余空格。第i个整数表示：若编号为i的警察请假，有多少个区域没有警察巡逻。(1≤i≤m)</p>
-<hr>
-<p>Sample Input<br>3<br>5 3<br>1 3<br>4 5<br>3 4<br>6 2<br>1 2<br>4 5<br>9 4<br>2 9<br>3 4<br>4 5<br>1 4</p>
-<hr>
-<p>Sample Output<br>Case #1:<br>2 1 0<br>Case #2:<br>4 4<br>Case #3:<br>4 0 0 1</p>
-<hr>
-<p>Hint<br>第一个案例：</p>
-<p>若编号为1的警察请假，区域1和区域2没有警察巡逻。</p>
-<p>若编号为2的警察请假，区域5没有警察巡逻。</p>
-<p>若编号为3的警察请假，每个区域还是有至少一个警察巡逻。</p>
-<p>第二个案例：</p>
-<p>若编号为1的警察请假，区域1、区域2、区域3、区域6没有警察巡逻。</p>
-<p>若编号为2的警察请假，区域3、区域4、区域5、区域6没有警察巡逻。</p>
-<hr>
-<p>Source<br>2017级新生选拔#3</p>
-<hr>
-<p>Author<br>tokitsukaze</p>
-<hr>
-<p>题解：<br>先做个前缀和，记录被覆盖的点的个数为sum，再对只被覆盖到一次的点再做前缀和，每次撤销一条线段后的答案就是sum-这条线段内只被覆盖到一次的点的个数。</p>
+<p>题解：<br>复制一遍字符串，然后预处理hash表。之后for每个起始位置，可以在O(1)的时间获取子串的hash值，然后扔进map分类即可。对于这种写法字典序不需要特殊处理。<br>这个题卡常…有两个点要注意一下。<br>1.mod取1e9+7会冲突(过了62.5%的数据)，而且每次%常数很大，会tle，这里选用了ull(自动%2^64)。<br>2.要用unordered_map，不然会tle。</p>
 <p>代码：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> comment(linker, <span class="meta-string">"/STACK:1024000000,1024000000"</span>)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> mem(a,b) memset((a),(b),sizeof(a))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MP make_pair</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pb push_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> fi first</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> se second</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> sz(x) (int)x.size()</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> all(x) x.begin(),x.end()</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> _GLIBCXX_PERMIT_BACKWARD_HASH</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;ext/hash_map&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> __gnu_cxx;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">str_hash</span>&#123;</span><span class="keyword">size_t</span> <span class="keyword">operator</span>()(<span class="keyword">const</span> <span class="built_in">string</span>&amp; str)<span class="keyword">const</span>&#123;<span class="keyword">return</span> __stl_hash_string(str.c_str());&#125;&#125;;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> ull;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> PII pair<span class="meta-string">&lt;int,int&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> PLL pair<span class="meta-string">&lt;ll,ll&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> PDD pair<span class="meta-string">&lt;double,double&gt;</span></span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF=<span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">const</span> ll LLINF=<span class="number">0x3f3f3f3f3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> PI=<span class="built_in">acos</span>(<span class="number">-1.0</span>);</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> eps=<span class="number">1e-6</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAX=<span class="number">1e5</span>+<span class="number">10</span>;</span><br><span class="line"><span class="keyword">const</span> ll mod=<span class="number">1e9</span>+<span class="number">7</span>;</span><br><span class="line"><span class="keyword">int</span> bit[MAX],w[MAX];</span><br><span class="line">PII a[MAX];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n,m,i,j,ans,t,cas=<span class="number">1</span>;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;t);</span><br><span class="line">	<span class="keyword">while</span>(t--)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;n,&amp;m);</span><br><span class="line">		mem(bit,<span class="number">0</span>);</span><br><span class="line">		mem(w,<span class="number">0</span>);</span><br><span class="line">		ans=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=m;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;a[i].fi,&amp;a[i].se);</span><br><span class="line">			bit[a[i].fi]++;</span><br><span class="line">			bit[a[i].se+<span class="number">1</span>]--;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			bit[i]+=bit[i<span class="number">-1</span>];</span><br><span class="line">			<span class="keyword">if</span>(bit[i]) ans++;</span><br><span class="line">			<span class="keyword">if</span>(bit[i]==<span class="number">1</span>) w[i]++;</span><br><span class="line">			w[i]+=w[i<span class="number">-1</span>];</span><br><span class="line">		&#125;</span><br><span class="line">		ans=n-ans;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"Case #%d:\n"</span>,cas++);</span><br><span class="line">		<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=m;i++) <span class="built_in">printf</span>(<span class="string">"%d%c"</span>,ans+w[a[i].se]-w[a[i].fi<span class="number">-1</span>],<span class="string">" \n"</span>[i==m]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> comment(linker, <span class="meta-string">"/STACK:1024000000,1024000000"</span>)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> mem(a,b) memset((a),(b),sizeof(a))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MP make_pair</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pb push_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> fi first</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> se second</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> sz(x) (int)x.size()</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> all(x) x.begin(),x.end()</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> __gnu_cxx;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> ull;</span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; PII;</span><br><span class="line"><span class="keyword">typedef</span> pair&lt;ll,ll&gt; PLL;</span><br><span class="line"><span class="keyword">typedef</span> <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; VI;</span><br><span class="line"><span class="keyword">typedef</span> <span class="built_in">vector</span>&lt;ll&gt; VL;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF=<span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">const</span> ll LLINF=<span class="number">0x3f3f3f3f3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> PI=<span class="built_in">acos</span>(<span class="number">-1.0</span>);</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> eps=<span class="number">1e-6</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAX=<span class="number">2e6</span>+<span class="number">10</span>;</span><br><span class="line"><span class="keyword">const</span> ll mod=<span class="number">1e9</span>+<span class="number">7</span>;</span><br><span class="line"><span class="comment">/*********************************  head  *********************************/</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">hash_table</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	ull seed;</span><br><span class="line">	ull Hash[MAX],tmp[MAX];</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">set</span><span class="params">(ull _seed)</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		seed=_seed;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">work</span><span class="params">(<span class="keyword">char</span> *s,<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		ll i,j;</span><br><span class="line">		tmp[<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">		Hash[<span class="number">1</span>]=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++) tmp[i]=tmp[i<span class="number">-1</span>]*seed;</span><br><span class="line">		<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++) Hash[i]=(Hash[i<span class="number">-1</span>]*seed+(s[i]-<span class="string">'a'</span>));</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function">ull <span class="title">get</span><span class="params">(<span class="keyword">int</span> l,<span class="keyword">int</span> r)</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> (Hash[r]-Hash[l<span class="number">-1</span>]*tmp[r-l+<span class="number">1</span>]);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;h;</span><br><span class="line"><span class="keyword">char</span> s[MAX];</span><br><span class="line">VI res[MAX];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i,j,len,tot;</span><br><span class="line">	<span class="keyword">while</span>(~<span class="built_in">scanf</span>(<span class="string">"%s"</span>,s+<span class="number">1</span>))</span><br><span class="line">	&#123;</span><br><span class="line">		len=<span class="built_in">strlen</span>(s+<span class="number">1</span>);</span><br><span class="line">		<span class="keyword">for</span>(i=len+<span class="number">1</span>,j=<span class="number">1</span>;j&lt;=len;i++,j++) s[i]=s[j];</span><br><span class="line">		<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=len;i++) res[i].clear();</span><br><span class="line">		h.<span class="built_in">set</span>(<span class="number">23333</span>);</span><br><span class="line">		h.work(s,len*<span class="number">2</span>);</span><br><span class="line">		<span class="built_in">unordered_map</span>&lt;ull,<span class="keyword">int</span>&gt; mp;</span><br><span class="line">		tot=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=len;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			ull tmp=h.get(i,i+len<span class="number">-1</span>);</span><br><span class="line">			<span class="keyword">if</span>(!mp.count(tmp)) mp[tmp]=++tot;</span><br><span class="line">			res[mp[tmp]].pb(i<span class="number">-1</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d\n"</span>,tot);</span><br><span class="line">		<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=tot;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"%d"</span>,sz(res[i]));</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">auto</span> it:res[i]) <span class="built_in">printf</span>(<span class="string">" %d"</span>,it);</span><br><span class="line">			<span class="built_in">puts</span>(<span class="string">""</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
     </div>
 </article>
 
@@ -253,7 +229,7 @@
 <script>
 	if(!window.commentConfig) {
       window.commentConfig = {}
-      window.commentConfig.title = 'NIT 442 Patrol (思维)'
+      window.commentConfig.title = '2018牛客网暑期ACM多校训练营（第三场）E.Sort String (hash)'
     }
 </script>
 
@@ -412,77 +388,77 @@
         <div class="panel panel-gal hidden-xs" data-aos="fade-up" data-aos-duration="2000">
             <ul class="nav nav-pills pills-gal">
                 <li class="">
-                    <a href="/2018/06/16/NIT442/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                    <a href="/2018/07/26/2018niuke3.E/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
                 </li>
                 <li class="">
-                    <a href="/2018/06/16/NIT442/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                    <a href="/2018/07/26/2018niuke3.E/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
                 </li>
                 <li class="">
-                    <a href="/2018/06/16/NIT442/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                    <a href="/2018/07/26/2018niuke3.E/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
                 </li>
             </ul>
             <div class="tab-content">
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/博弈/" style="font-size: 14.155949444889197px;" class="tag-cloud-link">博弈</a>
+    <a href="/tags/博弈/" style="font-size: 14.227781502470233px;" class="tag-cloud-link">博弈</a>
     
-    <a href="/tags/学习笔记/" style="font-size: 10.128645837559983px;" class="tag-cloud-link">学习笔记</a>
+    <a href="/tags/学习笔记/" style="font-size: 10.390272076002926px;" class="tag-cloud-link">学习笔记</a>
     
-    <a href="/tags/竞赛经历/" style="font-size: 13.47384772421424px;" class="tag-cloud-link">竞赛经历</a>
+    <a href="/tags/竞赛经历/" style="font-size: 13.960088433851379px;" class="tag-cloud-link">竞赛经历</a>
     
-    <a href="/tags/组合数学/" style="font-size: 9.067914450999933px;" class="tag-cloud-link">组合数学</a>
+    <a href="/tags/组合数学/" style="font-size: 10.653442929405912px;" class="tag-cloud-link">组合数学</a>
     
-    <a href="/tags/主席树/" style="font-size: 16.014047195743032px;" class="tag-cloud-link">主席树</a>
+    <a href="/tags/主席树/" style="font-size: 10.125042046296356px;" class="tag-cloud-link">主席树</a>
     
-    <a href="/tags/思维/" style="font-size: 16.61720819178485px;" class="tag-cloud-link">思维</a>
+    <a href="/tags/思维/" style="font-size: 11.476322140464992px;" class="tag-cloud-link">思维</a>
     
-    <a href="/tags/hash/" style="font-size: 12.609390258605153px;" class="tag-cloud-link">hash</a>
+    <a href="/tags/hash/" style="font-size: 19.449239595162222px;" class="tag-cloud-link">hash</a>
     
-    <a href="/tags/构造/" style="font-size: 10.19078893272519px;" class="tag-cloud-link">构造</a>
+    <a href="/tags/构造/" style="font-size: 17.924193144936098px;" class="tag-cloud-link">构造</a>
     
-    <a href="/tags/基环树dp/" style="font-size: 14.82323175139021px;" class="tag-cloud-link">基环树dp</a>
+    <a href="/tags/基环树dp/" style="font-size: 15.002743735408046px;" class="tag-cloud-link">基环树dp</a>
     
-    <a href="/tags/Kancolle/" style="font-size: 12.484889442284622px;" class="tag-cloud-link">Kancolle</a>
+    <a href="/tags/Kancolle/" style="font-size: 18.869412584121367px;" class="tag-cloud-link">Kancolle</a>
     
-    <a href="/tags/数学/" style="font-size: 11.225678235066267px;" class="tag-cloud-link">数学</a>
+    <a href="/tags/数学/" style="font-size: 8.066004943738012px;" class="tag-cloud-link">数学</a>
     
-    <a href="/tags/模拟/" style="font-size: 15.843319485368506px;" class="tag-cloud-link">模拟</a>
+    <a href="/tags/模拟/" style="font-size: 18.162840267018353px;" class="tag-cloud-link">模拟</a>
     
-    <a href="/tags/01字典树/" style="font-size: 16.81752014146571px;" class="tag-cloud-link">01字典树</a>
+    <a href="/tags/01字典树/" style="font-size: 13.937596242640652px;" class="tag-cloud-link">01字典树</a>
     
-    <a href="/tags/树状数组/" style="font-size: 14.550156858275782px;" class="tag-cloud-link">树状数组</a>
+    <a href="/tags/树状数组/" style="font-size: 9.563219294651933px;" class="tag-cloud-link">树状数组</a>
     
-    <a href="/tags/STL/" style="font-size: 8.5299812591668px;" class="tag-cloud-link">STL</a>
+    <a href="/tags/STL/" style="font-size: 11.642570137405759px;" class="tag-cloud-link">STL</a>
     
-    <a href="/tags/线段树/" style="font-size: 17.130790007686706px;" class="tag-cloud-link">线段树</a>
+    <a href="/tags/线段树/" style="font-size: 10.642195939969959px;" class="tag-cloud-link">线段树</a>
     
-    <a href="/tags/枚举/" style="font-size: 19.051249355017532px;" class="tag-cloud-link">枚举</a>
+    <a href="/tags/枚举/" style="font-size: 19.50696414122968px;" class="tag-cloud-link">枚举</a>
     
-    <a href="/tags/FFT/" style="font-size: 19.24113243032998px;" class="tag-cloud-link">FFT</a>
+    <a href="/tags/FFT/" style="font-size: 12.262385449138698px;" class="tag-cloud-link">FFT</a>
     
-    <a href="/tags/dp/" style="font-size: 17.39363971663811px;" class="tag-cloud-link">dp</a>
+    <a href="/tags/dp/" style="font-size: 17.421635915214864px;" class="tag-cloud-link">dp</a>
     
-    <a href="/tags/几何/" style="font-size: 14.477708857946135px;" class="tag-cloud-link">几何</a>
+    <a href="/tags/几何/" style="font-size: 18.227206546391475px;" class="tag-cloud-link">几何</a>
     
-    <a href="/tags/强连通分量/" style="font-size: 18.430992254728565px;" class="tag-cloud-link">强连通分量</a>
+    <a href="/tags/强连通分量/" style="font-size: 16.208117305046205px;" class="tag-cloud-link">强连通分量</a>
     
-    <a href="/tags/背包问题/" style="font-size: 13.611407646967681px;" class="tag-cloud-link">背包问题</a>
+    <a href="/tags/背包问题/" style="font-size: 14.20298912778084px;" class="tag-cloud-link">背包问题</a>
     
-    <a href="/tags/dfs-bfs/" style="font-size: 16.633029274932472px;" class="tag-cloud-link">dfs/bfs</a>
+    <a href="/tags/dfs-bfs/" style="font-size: 16.40680426144479px;" class="tag-cloud-link">dfs/bfs</a>
     
-    <a href="/tags/树形dp/" style="font-size: 11.244377135216983px;" class="tag-cloud-link">树形dp</a>
+    <a href="/tags/树形dp/" style="font-size: 11.214263915714904px;" class="tag-cloud-link">树形dp</a>
     
-    <a href="/tags/单调栈-单调队列/" style="font-size: 18.718698876795468px;" class="tag-cloud-link">单调栈/单调队列</a>
+    <a href="/tags/单调栈-单调队列/" style="font-size: 15.193730367921825px;" class="tag-cloud-link">单调栈/单调队列</a>
     
-    <a href="/tags/双联通分量/" style="font-size: 9.62173004033071px;" class="tag-cloud-link">双联通分量</a>
+    <a href="/tags/双联通分量/" style="font-size: 18.798601664737163px;" class="tag-cloud-link">双联通分量</a>
     
-    <a href="/tags/other/" style="font-size: 12.07441018881143px;" class="tag-cloud-link">other</a>
+    <a href="/tags/other/" style="font-size: 16.919039597541214px;" class="tag-cloud-link">other</a>
     
-    <a href="/tags/hexo/" style="font-size: 11.570235632942012px;" class="tag-cloud-link">hexo</a>
+    <a href="/tags/hexo/" style="font-size: 14.233754035619354px;" class="tag-cloud-link">hexo</a>
     
-    <a href="/tags/折半搜索/" style="font-size: 8.63070898118784px;" class="tag-cloud-link">折半搜索</a>
+    <a href="/tags/折半搜索/" style="font-size: 12.717090725583645px;" class="tag-cloud-link">折半搜索</a>
     
-    <a href="/tags/概率期望/" style="font-size: 14.347633935820255px;" class="tag-cloud-link">概率期望</a>
+    <a href="/tags/概率期望/" style="font-size: 18.352185275946816px;" class="tag-cloud-link">概率期望</a>
     
 </div>
                 <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
@@ -592,7 +568,7 @@
 <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
     if(window.commentConfig) {
-      window.commentConfig.id = 'Sat Jun 16 2018 01:56:08 GMT+0800'
+      window.commentConfig.id = 'Thu Jul 26 2018 22:50:17 GMT+0800'
       window.commentConfig.owner = 'tokitsu-kaze'
       window.commentConfig.repo = 'comment-save'
       window.commentConfig.client_id = '822ab9521b502687b55f'
@@ -600,7 +576,7 @@
       window.commentConfig.redirect_uri = ''
     } else {
       window.commentConfig = {
-      	id: 'Sat Jun 16 2018 01:56:08 GMT+0800',
+      	id: 'Thu Jul 26 2018 22:50:17 GMT+0800',
         owner: 'tokitsu-kaze',
         repo: 'comment-save',
         client_id: '822ab9521b502687b55f',
