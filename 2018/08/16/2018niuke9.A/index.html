@@ -216,7 +216,7 @@
 <hr>
 <p>题意：</p>
 <hr>
-<p>题解：<br>观察样例感觉是个卷积，然后发现是个xor的FWT。<br>题意转换成，给个a数组和c数组，求一个b数组，使得a数组和b数组做FWT后的结果为c数组。<br>然后观察FWT的过程：对a，b数组做FWT，c[i]=a[i]*b[i]，然后对c数组做UFWT。<br>我们把这个过程倒过来：先对c数组做UFWT，然后对a数组做FWT，然后b[i]=c[i]/b[i]，最后对b数组做FWT，就把b数组还原了。</p>
+<p>题解：<br>观察样例感觉是个卷积，然后发现是个xor的FWT。<br>题意转换成，给个a数组和c数组，求一个b数组，使得a数组和b数组做FWT后的结果为c数组。<br>然后观察FWT的过程：对a，b数组做FWT，c[i]=a[i]*b[i]，然后对c数组做UFWT。<br>我们把这个过程倒过来：先对c数组做UFWT，然后对a数组做FWT，然后b[i]=c[i]/a[i]，最后对b数组做FWT，就把b数组还原了。</p>
 <p>代码：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> comment(linker, <span class="meta-string">"/STACK:1024000000,1024000000"</span>)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> mem(a,b) memset((a),(b),sizeof(a))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MP make_pair</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pb push_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> fi first</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> se second</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> sz(x) (int)x.size()</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> all(x) x.begin(),x.end()</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> __gnu_cxx;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> ull;</span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; PII;</span><br><span class="line"><span class="keyword">typedef</span> pair&lt;ll,ll&gt; PLL;</span><br><span class="line"><span class="keyword">typedef</span> <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; VI;</span><br><span class="line"><span class="keyword">typedef</span> <span class="built_in">vector</span>&lt;ll&gt; VL;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">go</span><span class="params">()</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="meta">#<span class="meta-keyword">ifdef</span> tokitsukaze</span></span><br><span class="line">		freopen(<span class="string">"TEST.txt"</span>,<span class="string">"r"</span>,<span class="built_in">stdin</span>);</span><br><span class="line">	<span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line">	go();<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF=<span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">const</span> ll LLINF=<span class="number">0x3f3f3f3f3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> PI=<span class="built_in">acos</span>(<span class="number">-1.0</span>);</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> eps=<span class="number">1e-6</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAX=<span class="number">6e5</span>+<span class="number">10</span>;</span><br><span class="line"><span class="keyword">const</span> ll mod=<span class="number">1e9</span>+<span class="number">7</span>;</span><br><span class="line"><span class="comment">/*********************************  head  *********************************/</span></span><br><span class="line"><span class="keyword">namespace</span> FWT</span><br><span class="line">&#123;</span><br><span class="line">	ll inv2;</span><br><span class="line">	<span class="keyword">const</span> ll p=<span class="number">1e9</span>+<span class="number">7</span>;</span><br><span class="line">	<span class="function">ll <span class="title">pow2</span><span class="params">(ll a,ll b)</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		ll res=<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">while</span>(b)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(b&amp;<span class="number">1</span>) res=res*a%p;</span><br><span class="line">			a=a*a%p;</span><br><span class="line">			b&gt;&gt;=<span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> res;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">fwt</span><span class="params">(ll *a,<span class="keyword">int</span> n,<span class="keyword">int</span> v)</span></span></span><br><span class="line"><span class="function">	</span>&#123;  </span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> d=<span class="number">1</span>;d&lt;n;d&lt;&lt;=<span class="number">1</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> m=d&lt;&lt;<span class="number">1</span>,i=<span class="number">0</span>;i&lt;n;i+=m)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;d;j++)</span><br><span class="line">				&#123;  </span><br><span class="line">					ll x=a[i+j],y=a[i+j+d];</span><br><span class="line">					<span class="keyword">if</span>(!v) a[i+j]=(x+y)%p,a[i+j+d]=(x-y+p)%p;</span><br><span class="line">					<span class="keyword">else</span> a[i+j]=(x+y)*inv2%p,a[i+j+d]=(x-y+p)%p*inv2%p;</span><br><span class="line">	            &#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">XOR</span><span class="params">(ll *a,ll *b,<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="keyword">int</span> len;</span><br><span class="line">		<span class="keyword">for</span>(len=<span class="number">1</span>;len&lt;=n;len&lt;&lt;=<span class="number">1</span>);</span><br><span class="line">		fwt(a,len,<span class="number">0</span>);</span><br><span class="line">		fwt(b,len,<span class="number">0</span>);</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;len;i++) a[i]=a[i]*b[i]%p;</span><br><span class="line">		inv2=pow2(<span class="number">2</span>,p<span class="number">-2</span>);</span><br><span class="line">		fwt(a,len,<span class="number">1</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">XOR_inv</span><span class="params">(ll *a,ll *b,<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="keyword">int</span> len;</span><br><span class="line">		<span class="keyword">for</span>(len=<span class="number">1</span>;len&lt;=n;len&lt;&lt;=<span class="number">1</span>);</span><br><span class="line">		inv2=pow2(<span class="number">2</span>,p<span class="number">-2</span>);</span><br><span class="line">		fwt(a,len,<span class="number">1</span>);</span><br><span class="line">		fwt(b,len,<span class="number">0</span>);</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;len;i++) a[i]=a[i]*pow2(b[i]%p,p<span class="number">-2</span>)%p;</span><br><span class="line">		fwt(a,len,<span class="number">0</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line">ll a[MAX],b[MAX];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">go</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n,i;</span><br><span class="line">	<span class="keyword">while</span>(read(n))</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++) read(b[i]);</span><br><span class="line">		<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++) read(a[i]);</span><br><span class="line">		FWT::XOR_inv(a,b,n);</span><br><span class="line">		<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++) <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,a[i]);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -400,71 +400,71 @@
             <div class="tab-content">
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/博弈/" style="font-size: 19.211997915675646px;" class="tag-cloud-link">博弈</a>
+    <a href="/tags/博弈/" style="font-size: 19.631352490996903px;" class="tag-cloud-link">博弈</a>
     
-    <a href="/tags/学习笔记/" style="font-size: 15.01141671465788px;" class="tag-cloud-link">学习笔记</a>
+    <a href="/tags/学习笔记/" style="font-size: 18.34630297800275px;" class="tag-cloud-link">学习笔记</a>
     
-    <a href="/tags/竞赛经历/" style="font-size: 9.368559567190783px;" class="tag-cloud-link">竞赛经历</a>
+    <a href="/tags/竞赛经历/" style="font-size: 18.066766805940922px;" class="tag-cloud-link">竞赛经历</a>
     
-    <a href="/tags/dp/" style="font-size: 12.656769636814934px;" class="tag-cloud-link">dp</a>
+    <a href="/tags/dp/" style="font-size: 17.211954477893432px;" class="tag-cloud-link">dp</a>
     
-    <a href="/tags/主席树/" style="font-size: 13.810429727208598px;" class="tag-cloud-link">主席树</a>
+    <a href="/tags/组合数学/" style="font-size: 13.901480014944323px;" class="tag-cloud-link">组合数学</a>
     
-    <a href="/tags/组合数学/" style="font-size: 9.950462370132787px;" class="tag-cloud-link">组合数学</a>
+    <a href="/tags/主席树/" style="font-size: 11.518382201748521px;" class="tag-cloud-link">主席树</a>
     
-    <a href="/tags/基环树dp/" style="font-size: 8.923430464847325px;" class="tag-cloud-link">基环树dp</a>
+    <a href="/tags/树形dp/" style="font-size: 18.143115179549852px;" class="tag-cloud-link">树形dp</a>
     
-    <a href="/tags/树形dp/" style="font-size: 11.591185216524249px;" class="tag-cloud-link">树形dp</a>
+    <a href="/tags/基环树dp/" style="font-size: 13.449586941485638px;" class="tag-cloud-link">基环树dp</a>
     
-    <a href="/tags/随机化/" style="font-size: 10.629920966381455px;" class="tag-cloud-link">随机化</a>
+    <a href="/tags/随机化/" style="font-size: 12.451980947572011px;" class="tag-cloud-link">随机化</a>
     
-    <a href="/tags/hash/" style="font-size: 18.395801510606915px;" class="tag-cloud-link">hash</a>
+    <a href="/tags/hash/" style="font-size: 14.639721301718607px;" class="tag-cloud-link">hash</a>
     
-    <a href="/tags/STL/" style="font-size: 8.434040597333773px;" class="tag-cloud-link">STL</a>
+    <a href="/tags/STL/" style="font-size: 11.33871475308357px;" class="tag-cloud-link">STL</a>
     
-    <a href="/tags/构造/" style="font-size: 18.136497866899553px;" class="tag-cloud-link">构造</a>
+    <a href="/tags/FWT/" style="font-size: 16.60013770188984px;" class="tag-cloud-link">FWT</a>
     
-    <a href="/tags/Kancolle/" style="font-size: 16.35784469001908px;" class="tag-cloud-link">Kancolle</a>
+    <a href="/tags/Kancolle/" style="font-size: 15.493178523057185px;" class="tag-cloud-link">Kancolle</a>
     
-    <a href="/tags/思维/" style="font-size: 13.526398235717927px;" class="tag-cloud-link">思维</a>
+    <a href="/tags/构造/" style="font-size: 16.54025898738182px;" class="tag-cloud-link">构造</a>
     
-    <a href="/tags/数学/" style="font-size: 8.136991109719201px;" class="tag-cloud-link">数学</a>
+    <a href="/tags/数学/" style="font-size: 16.616389175313905px;" class="tag-cloud-link">数学</a>
     
-    <a href="/tags/模拟/" style="font-size: 13.616216529894789px;" class="tag-cloud-link">模拟</a>
+    <a href="/tags/思维/" style="font-size: 19.636406838951444px;" class="tag-cloud-link">思维</a>
     
-    <a href="/tags/01字典树/" style="font-size: 16.058162293695815px;" class="tag-cloud-link">01字典树</a>
+    <a href="/tags/模拟/" style="font-size: 19.08841867167608px;" class="tag-cloud-link">模拟</a>
     
-    <a href="/tags/树状数组/" style="font-size: 9.631487172233676px;" class="tag-cloud-link">树状数组</a>
+    <a href="/tags/线段树/" style="font-size: 10.58831226403689px;" class="tag-cloud-link">线段树</a>
     
-    <a href="/tags/线段树/" style="font-size: 15.335890516280967px;" class="tag-cloud-link">线段树</a>
+    <a href="/tags/01字典树/" style="font-size: 9.629345016164308px;" class="tag-cloud-link">01字典树</a>
     
-    <a href="/tags/枚举/" style="font-size: 16.337667094217046px;" class="tag-cloud-link">枚举</a>
+    <a href="/tags/树状数组/" style="font-size: 14.100678903436775px;" class="tag-cloud-link">树状数组</a>
     
-    <a href="/tags/FFT/" style="font-size: 11.537435553696628px;" class="tag-cloud-link">FFT</a>
+    <a href="/tags/枚举/" style="font-size: 13.629089693208496px;" class="tag-cloud-link">枚举</a>
     
-    <a href="/tags/几何/" style="font-size: 15.63400320678352px;" class="tag-cloud-link">几何</a>
+    <a href="/tags/FFT/" style="font-size: 14.009357695481434px;" class="tag-cloud-link">FFT</a>
     
-    <a href="/tags/折半搜索/" style="font-size: 9.71827414143603px;" class="tag-cloud-link">折半搜索</a>
+    <a href="/tags/几何/" style="font-size: 19.76262387159178px;" class="tag-cloud-link">几何</a>
     
-    <a href="/tags/背包问题/" style="font-size: 17.090584610156156px;" class="tag-cloud-link">背包问题</a>
+    <a href="/tags/折半搜索/" style="font-size: 9.670946709361147px;" class="tag-cloud-link">折半搜索</a>
     
-    <a href="/tags/强连通分量/" style="font-size: 19.901325637845716px;" class="tag-cloud-link">强连通分量</a>
+    <a href="/tags/强连通分量/" style="font-size: 18.597921054867275px;" class="tag-cloud-link">强连通分量</a>
     
-    <a href="/tags/dfs-bfs/" style="font-size: 15.136701031162325px;" class="tag-cloud-link">dfs/bfs</a>
+    <a href="/tags/dfs-bfs/" style="font-size: 9.930986420939467px;" class="tag-cloud-link">dfs/bfs</a>
     
-    <a href="/tags/单调栈-单调队列/" style="font-size: 14.914837810117518px;" class="tag-cloud-link">单调栈/单调队列</a>
+    <a href="/tags/背包问题/" style="font-size: 18.167762893203662px;" class="tag-cloud-link">背包问题</a>
     
-    <a href="/tags/双联通分量/" style="font-size: 9.17985171727764px;" class="tag-cloud-link">双联通分量</a>
+    <a href="/tags/单调栈-单调队列/" style="font-size: 8.08179742219772px;" class="tag-cloud-link">单调栈/单调队列</a>
     
-    <a href="/tags/概率期望/" style="font-size: 15.434605860284744px;" class="tag-cloud-link">概率期望</a>
+    <a href="/tags/双联通分量/" style="font-size: 10.83973827049629px;" class="tag-cloud-link">双联通分量</a>
     
-    <a href="/tags/other/" style="font-size: 13.910790482846414px;" class="tag-cloud-link">other</a>
+    <a href="/tags/概率期望/" style="font-size: 12.826126331633175px;" class="tag-cloud-link">概率期望</a>
     
-    <a href="/tags/hexo/" style="font-size: 10.196295321616487px;" class="tag-cloud-link">hexo</a>
+    <a href="/tags/other/" style="font-size: 13.68557544034067px;" class="tag-cloud-link">other</a>
     
-    <a href="/tags/FWT/" style="font-size: 18.62201613041468px;" class="tag-cloud-link">FWT</a>
+    <a href="/tags/hexo/" style="font-size: 12.406577106872305px;" class="tag-cloud-link">hexo</a>
     
-    <a href="/tags/树链剖分/" style="font-size: 11.58076139465376px;" class="tag-cloud-link">树链剖分</a>
+    <a href="/tags/树链剖分/" style="font-size: 10.7600271836523px;" class="tag-cloud-link">树链剖分</a>
     
 </div>
                 <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
