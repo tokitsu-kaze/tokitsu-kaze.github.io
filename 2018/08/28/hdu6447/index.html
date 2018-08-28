@@ -220,7 +220,7 @@
 <hr>
 <p>题意：<br>从 (0,0) 往 (1e9,1e9)走，每次只能从 (x,y)走到 (x+1,y) 或者 (x,y+1)或者 (x+1,y+1)。某些点(x,y)有价值v，当且仅当从 (x−1,y−1)走到(x,y)时，才能获得v，求获得的价值总和最大是多少。</p>
 <hr>
-<p>题解：<br>点只有1e5个。<br>dp[i]表示走到第i个点能获得的最大价值。<br>转移：dp[i]=dp[j]+v[i]，需要满足条件x[j]&lt;=x[i]-1且y[j]&lt;=y[i]-1。</p>
+<p>题解：<br>点只有1e5个。<br>dp[i]表示走到第i个点能获得的最大价值。<br>转移：dp[i]=max(dp[j])+v[i]，需要满足条件x[j]&lt;=x[i]-1且y[j]&lt;=y[i]-1。</p>
 <p>对x进行从小到大sort，然后扫描线扫过去。这样保证了转移的第一个条件。</p>
 <p>对y离散化一下，开一个树状数组，下标表示y。每次通过树状数组查询前缀最大值进行dp转移。转移之后把dp值插入树状数组。这样保证了转移的第二个条件。</p>
 <p>注意：因为x[j]&lt;=x[i]-1，所以当x相同的时候，dp转移完不能马上插入树状数组，马上插入的话会导致转移条件变为x[j]&lt;=x[i]，这样就错了。所以当x相同的时候，我们先开个vector存放一下，等到碰到不同的x的时候，再全部一起插入。</p>
@@ -407,81 +407,81 @@
             <div class="tab-content">
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/博弈/" style="font-size: 16.538948503580365px;" class="tag-cloud-link">博弈</a>
+    <a href="/tags/博弈/" style="font-size: 14.234716528507516px;" class="tag-cloud-link">博弈</a>
     
-    <a href="/tags/学习笔记/" style="font-size: 14.374137111599897px;" class="tag-cloud-link">学习笔记</a>
+    <a href="/tags/学习笔记/" style="font-size: 8.572000665681259px;" class="tag-cloud-link">学习笔记</a>
     
-    <a href="/tags/竞赛经历/" style="font-size: 11.313228356101192px;" class="tag-cloud-link">竞赛经历</a>
+    <a href="/tags/竞赛经历/" style="font-size: 13.437158016072416px;" class="tag-cloud-link">竞赛经历</a>
     
-    <a href="/tags/dp/" style="font-size: 10.698604838457754px;" class="tag-cloud-link">dp</a>
+    <a href="/tags/dp/" style="font-size: 19.79386233102196px;" class="tag-cloud-link">dp</a>
     
-    <a href="/tags/组合数学/" style="font-size: 10.496627711892753px;" class="tag-cloud-link">组合数学</a>
+    <a href="/tags/组合数学/" style="font-size: 17.541654258105176px;" class="tag-cloud-link">组合数学</a>
     
-    <a href="/tags/主席树/" style="font-size: 12.378673189566843px;" class="tag-cloud-link">主席树</a>
+    <a href="/tags/主席树/" style="font-size: 10.25243346840377px;" class="tag-cloud-link">主席树</a>
     
-    <a href="/tags/基环树dp/" style="font-size: 14.507648953195641px;" class="tag-cloud-link">基环树dp</a>
+    <a href="/tags/基环树dp/" style="font-size: 9.958290423407181px;" class="tag-cloud-link">基环树dp</a>
     
-    <a href="/tags/树形dp/" style="font-size: 14.36240689929605px;" class="tag-cloud-link">树形dp</a>
+    <a href="/tags/树形dp/" style="font-size: 9.437383841282244px;" class="tag-cloud-link">树形dp</a>
     
-    <a href="/tags/随机化/" style="font-size: 11.552485966226115px;" class="tag-cloud-link">随机化</a>
+    <a href="/tags/随机化/" style="font-size: 19.198829187340046px;" class="tag-cloud-link">随机化</a>
     
-    <a href="/tags/hash/" style="font-size: 16.95641089141542px;" class="tag-cloud-link">hash</a>
+    <a href="/tags/hash/" style="font-size: 11.682546368068447px;" class="tag-cloud-link">hash</a>
     
-    <a href="/tags/FWT/" style="font-size: 17.008780822309276px;" class="tag-cloud-link">FWT</a>
+    <a href="/tags/FWT/" style="font-size: 14.748288647784122px;" class="tag-cloud-link">FWT</a>
     
-    <a href="/tags/kd-tree/" style="font-size: 14.105659755559683px;" class="tag-cloud-link">kd-tree</a>
+    <a href="/tags/kd-tree/" style="font-size: 8.32430088826651px;" class="tag-cloud-link">kd-tree</a>
     
-    <a href="/tags/STL/" style="font-size: 9.709071553054207px;" class="tag-cloud-link">STL</a>
+    <a href="/tags/STL/" style="font-size: 19.275200623771763px;" class="tag-cloud-link">STL</a>
     
-    <a href="/tags/构造/" style="font-size: 8.174392761530065px;" class="tag-cloud-link">构造</a>
+    <a href="/tags/构造/" style="font-size: 18.59532362226769px;" class="tag-cloud-link">构造</a>
     
-    <a href="/tags/Kancolle/" style="font-size: 15.384519452258788px;" class="tag-cloud-link">Kancolle</a>
+    <a href="/tags/Kancolle/" style="font-size: 9.56363802858931px;" class="tag-cloud-link">Kancolle</a>
     
-    <a href="/tags/数学/" style="font-size: 8.988017807698526px;" class="tag-cloud-link">数学</a>
+    <a href="/tags/数学/" style="font-size: 10.436261139350375px;" class="tag-cloud-link">数学</a>
     
-    <a href="/tags/思维/" style="font-size: 15.472605946159632px;" class="tag-cloud-link">思维</a>
+    <a href="/tags/思维/" style="font-size: 10.864897913972179px;" class="tag-cloud-link">思维</a>
     
-    <a href="/tags/模拟/" style="font-size: 14.794318661265383px;" class="tag-cloud-link">模拟</a>
+    <a href="/tags/模拟/" style="font-size: 11.990135924777842px;" class="tag-cloud-link">模拟</a>
     
-    <a href="/tags/线段树/" style="font-size: 14.115684499769571px;" class="tag-cloud-link">线段树</a>
+    <a href="/tags/线段树/" style="font-size: 11.784761759181082px;" class="tag-cloud-link">线段树</a>
     
-    <a href="/tags/树状数组/" style="font-size: 8.243299887740857px;" class="tag-cloud-link">树状数组</a>
+    <a href="/tags/树状数组/" style="font-size: 13.5157239738521px;" class="tag-cloud-link">树状数组</a>
     
-    <a href="/tags/FFT/" style="font-size: 9.27326023164941px;" class="tag-cloud-link">FFT</a>
+    <a href="/tags/FFT/" style="font-size: 10.914498288908625px;" class="tag-cloud-link">FFT</a>
     
-    <a href="/tags/枚举/" style="font-size: 9.069798003788861px;" class="tag-cloud-link">枚举</a>
+    <a href="/tags/枚举/" style="font-size: 14.355682020454584px;" class="tag-cloud-link">枚举</a>
     
-    <a href="/tags/几何/" style="font-size: 15.834547143122848px;" class="tag-cloud-link">几何</a>
+    <a href="/tags/几何/" style="font-size: 16.26636723811819px;" class="tag-cloud-link">几何</a>
     
-    <a href="/tags/折半搜索/" style="font-size: 12.495122922009934px;" class="tag-cloud-link">折半搜索</a>
+    <a href="/tags/折半搜索/" style="font-size: 17.78784179631325px;" class="tag-cloud-link">折半搜索</a>
     
-    <a href="/tags/强连通分量/" style="font-size: 12.74294670422681px;" class="tag-cloud-link">强连通分量</a>
+    <a href="/tags/强连通分量/" style="font-size: 9.706189611511995px;" class="tag-cloud-link">强连通分量</a>
     
-    <a href="/tags/背包问题/" style="font-size: 17.586402805627436px;" class="tag-cloud-link">背包问题</a>
+    <a href="/tags/背包问题/" style="font-size: 16.27649288356104px;" class="tag-cloud-link">背包问题</a>
     
-    <a href="/tags/dfs-bfs/" style="font-size: 15.456737431468257px;" class="tag-cloud-link">dfs/bfs</a>
+    <a href="/tags/dfs-bfs/" style="font-size: 17.817953199955348px;" class="tag-cloud-link">dfs/bfs</a>
     
-    <a href="/tags/01字典树/" style="font-size: 9.789835074100852px;" class="tag-cloud-link">01字典树</a>
+    <a href="/tags/01字典树/" style="font-size: 15.518597350021357px;" class="tag-cloud-link">01字典树</a>
     
-    <a href="/tags/单调栈-单调队列/" style="font-size: 16.827344374762497px;" class="tag-cloud-link">单调栈/单调队列</a>
+    <a href="/tags/单调栈-单调队列/" style="font-size: 8.395791453339546px;" class="tag-cloud-link">单调栈/单调队列</a>
     
-    <a href="/tags/概率期望/" style="font-size: 10.870644342836725px;" class="tag-cloud-link">概率期望</a>
+    <a href="/tags/概率期望/" style="font-size: 11.128276634754474px;" class="tag-cloud-link">概率期望</a>
     
-    <a href="/tags/RMQ/" style="font-size: 16.805619605135117px;" class="tag-cloud-link">RMQ</a>
+    <a href="/tags/RMQ/" style="font-size: 17.997459764902427px;" class="tag-cloud-link">RMQ</a>
     
-    <a href="/tags/分治/" style="font-size: 13.838495269778447px;" class="tag-cloud-link">分治</a>
+    <a href="/tags/分治/" style="font-size: 17.884919052544994px;" class="tag-cloud-link">分治</a>
     
-    <a href="/tags/双联通分量/" style="font-size: 11.922065359651814px;" class="tag-cloud-link">双联通分量</a>
+    <a href="/tags/双联通分量/" style="font-size: 19.617628114571154px;" class="tag-cloud-link">双联通分量</a>
     
-    <a href="/tags/树链剖分/" style="font-size: 9.31293313251074px;" class="tag-cloud-link">树链剖分</a>
+    <a href="/tags/树链剖分/" style="font-size: 17.194258660877786px;" class="tag-cloud-link">树链剖分</a>
     
-    <a href="/tags/离线处理/" style="font-size: 14.666805696327891px;" class="tag-cloud-link">离线处理</a>
+    <a href="/tags/离线处理/" style="font-size: 12.625523796320934px;" class="tag-cloud-link">离线处理</a>
     
-    <a href="/tags/贪心/" style="font-size: 19.608107940635488px;" class="tag-cloud-link">贪心</a>
+    <a href="/tags/贪心/" style="font-size: 13.854613386882374px;" class="tag-cloud-link">贪心</a>
     
-    <a href="/tags/other/" style="font-size: 15.799641724295716px;" class="tag-cloud-link">other</a>
+    <a href="/tags/other/" style="font-size: 19.788883859716368px;" class="tag-cloud-link">other</a>
     
-    <a href="/tags/hexo/" style="font-size: 17.866750655288204px;" class="tag-cloud-link">hexo</a>
+    <a href="/tags/hexo/" style="font-size: 13.889844893143326px;" class="tag-cloud-link">hexo</a>
     
 </div>
                 <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
