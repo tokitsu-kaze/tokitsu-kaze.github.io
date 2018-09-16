@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="tokitsukaze">
+    
+    
+    
+    
+    
+    
+    <title>ACM-ICPC 2018 青岛赛区网络预赛 B. Red Black Tree (二分答案+LCA) | tokitsukaze</title>
+    <link href=”http://tokitsukaze.live“ rel=”prefetch” />
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/aos.css">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/highlight.css">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/aos.js"></script>
+    <script src="/js/highslide/highslide-full.min.js"></script>
+    <link rel="stylesheet" href="/js/highslide/highslide.css">
+    <style type="text/css">
+        @media (max-width: 768px) {
+            body {
+                background-color: #f0f0f0;
+                background: url('/imgs/xsbg.gif');
+                background-attachment: fixed;
+            }
+        }
+    </style>
+    
+    <script src="//cdn1.lncld.net/static/js/3.4.2/av-min.js"></script>
+    <script>
+      AV.init({
+        appId: 'uWENcdh76XODom0EpStAf6YB-gzGzoHsz',
+        appKey: 'LSYJgbG12AXcaDaMjrHeOmiE'
+      })
+    </script>
+    
+    <!--<script type="text/javascript">
+      if (document.images) {
+        var avatar = new Image();
+        avatar.src = '/imgs/toki.jpg'
+        var previews = 'preview01.bmp,preview02.bmp,preview03.bmp,preview04.bmp,preview05.bmp'.split(',')
+        var previewsPreLoad = []
+        for(var i = 0; i < length; i++) {
+          previewsPreLoad.push(new Image())
+          previewsPreLoad[previewsPreLoad.length - 1].src = '/imgs/preview' + previews[i]
+        }
+      }
+    </script>-->
+</head>
+<body>
+    <!-- 背景轮播图功能 -->
+    <section class="hidden-xs">
+    <ul class="cb-slideshow">
+        <li><span>天若</span></li>
+        <li><span>有情</span></li>
+        <li><span>天亦老</span></li>
+        <li><span>我为</span></li>
+        <li><span>长者</span></li>
+        <li><span>续一秒</span></li>
+    </ul>
+</section>
+
+
+    <!-- 欧尼酱功能, 谁用谁知道 -->
+    
+    <header class="navbar navbar-inverse" id="gal-header">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed"
+                    data-toggle="collapse" data-target=".bs-navbar-collapse"
+                    aria-expanded="false">
+                <span class="fa fa-lg fa-reorder"></span>
+            </button>
+            <a href="http://tokitsukaze.live">
+                
+                <style>
+                    #gal-header .navbar-brand {
+                        height: 54px;
+                        line-height: 24px;
+                        font-size: 28px;
+                        opacity: 1;
+                        background-color: rgba(0,0,0,0);
+                        text-shadow: 0 0 5px #fff,0 0 10px #fff,0 0 15px #fff,0 0 20px #228DFF,0 0 35px #228DFF,0 0 40px #228DFF,0 0 50px #228DFF,0 0 75px #228DFF;
+                    }
+                </style>
+                <!-- 这里使用文字(navbar_text or config.title) -->
+                <div class="navbar-brand">tokitsukaze</div>
+                
+            </a>
+        </div>
+        <div class="collapse navbar-collapse bs-navbar-collapse">
+            <ul class="nav navbar-nav" id="menu-gal">
+                
+                
+                <li class="">
+                    <a href="/">
+                        <i class="fa fa-home"></i>首页
+                    </a>
+                </li>
+                
+                
+                
+                <li class="">
+                    <a href="/archives">
+                        <i class="fa fa-archive"></i>归档
+                    </a>
+                </li>
+                
+                
+                
+                <li class="">
+                    <a href="/categories">
+                        <i class="fa fa-list"></i>分类
+                    </a>
+                </li>
+                
+                
+                
+                <li class="">
+                    <a href="/tags">
+                        <i class="fa fa-tags"></i>标签
+                    </a>
+                </li>
+                
+                
+                
+                <li class="">
+                    <a href="http://tokitsukaze.live/categories/Games/">
+                        <i class="fa fa-gamepad"></i>Games
+                    </a>
+                </li>
+                
+                
+                
+                <li class="">
+                    <a href="/about">
+                        <i class="fa fa-comments"></i>留言板
+                    </a>
+                </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</header>
+    <div id="gal-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 gal-right" id="mainstay">
+                    
+<article class="article well article-body" id="article">
+    <div class="breadcrumb">
+        <i class="fa fa-home"></i>
+        <a href="http://tokitsukaze.live">tokitsukaze</a>
+        >
+        <span>ACM-ICPC 2018 青岛赛区网络预赛 B. Red Black Tree (二分答案+LCA)</span>
+    </div>
+    <!-- 大型设备详细文章 -->
+    <div class="hidden-xs">
+        <div class="title-article">
+            <h1>
+                <a href="/2018/09/16/2018QingdaoOnline.B/">ACM-ICPC 2018 青岛赛区网络预赛 B. Red Black Tree (二分答案+LCA)</a>
+            </h1>
+        </div>
+        <div class="tag-article">
+            
+            <span class="label label-gal">
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/二分/">二分</a>, 
+                
+                <a href="/tags/LCA/">LCA</a>
+                
+            </span>
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2018-09-16
+            </span>
+
+            
+            <span class="label label-gal">
+                <i class="fa fa-eye"></i>
+            </span>
+            
+        </div>
+    </div>
+    <!-- 小型设备详细文章 -->
+    <div class="visible-xs">
+        <center>
+            <div class="title-article">
+                <h4>
+                    <a href="/2018/09/16/2018QingdaoOnline.B/">ACM-ICPC 2018 青岛赛区网络预赛 B. Red Black Tree (二分答案+LCA)</a>
+                </h4>
+            </div>
+            <p>
+                <i class="fa fa-calendar"></i> 2018-09-16
+            </p>
+            <p>
+                
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/二分/">二分</a>, 
+                
+                <a href="/tags/LCA/">LCA</a>
+                
+                
+                
+                <i class="fa fa-eye"></i>
+                
+            </p>
+        </center>
+    </div>
+    <div class="content-article">
+        <p>转载请注明出处：<a href="http://tokitsukaze.live/">http://tokitsukaze.live/</a></p>
+<p>题目链接：</p>
+<hr>
+<p>题意：<br>给一棵有根树，根为1。边有边权。其中m个节点是红色，其他节点是黑色。<br>有q次询问，每次查询给k个节点。然后你可以选择树上最多一个节点变成红色。设d[x]为节点x到离他最近的红色节点的距离，还要求红色节点必须是节点x的祖先。如果x是红色，那么d[x]=0。求出k个节点的max{d[i]}，使这个值最小化。</p>
+<hr>
+<p>题解：<br>考虑答案是单调的，我们可以二分答案。<br>然后check，把询问的节点，如果满足就扔掉。最后把剩下这些不满足的，求个他们共同的LCA，那个点设为红点肯定最优，然后再判断是否满足。</p>
+<p>dfs一遍可以预处理每个点的d[x]，用来判断是否满足。预处理ST表，LCA就能O(1)查了。然后求共同的LCA，可以直接for一遍，对当前LCA和点求LCA就行。或者取出dfn最小和最大的点求一次LCA，一定就是所有的点的共同LCA。</p>
+<p>复杂度nlogn级别的。</p>
+<p>代码：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> comment(linker, <span class="meta-string">"/STACK:1024000000,1024000000"</span>)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> mem(a,b) memset((a),(b),sizeof(a))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MP make_pair</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pb push_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> fi first</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> se second</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> sz(x) (int)x.size()</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> all(x) x.begin(),x.end()</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> __gnu_cxx;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> ull;</span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; PII;</span><br><span class="line"><span class="keyword">typedef</span> pair&lt;ll,ll&gt; PLL;</span><br><span class="line"><span class="keyword">typedef</span> <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; VI;</span><br><span class="line"><span class="keyword">typedef</span> <span class="built_in">vector</span>&lt;ll&gt; VL;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">go</span><span class="params">()</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="meta">#<span class="meta-keyword">ifdef</span> tokitsukaze</span></span><br><span class="line">		freopen(<span class="string">"TEST.txt"</span>,<span class="string">"r"</span>,<span class="built_in">stdin</span>);</span><br><span class="line">	<span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line">	go();<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF=<span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">const</span> ll LLINF=<span class="number">0x3f3f3f3f3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> PI=<span class="built_in">acos</span>(<span class="number">-1.0</span>);</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> eps=<span class="number">1e-6</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAX=<span class="number">2e5</span>+<span class="number">10</span>;</span><br><span class="line"><span class="keyword">const</span> ll mod=<span class="number">1e9</span>+<span class="number">7</span>;</span><br><span class="line"><span class="comment">/*********************************  head  *********************************/</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	ll to,w;</span><br><span class="line">	node()&#123;&#125;</span><br><span class="line">	node(ll _to,ll _w) :to(_to),w(_w)&#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">int</span> dfn[MAX];</span><br><span class="line">ll path[<span class="number">2</span>*MAX],deep[<span class="number">2</span>*MAX],first[MAX],dis[MAX],tot,tot2;</span><br><span class="line">ll dp[<span class="number">2</span>*MAX][<span class="number">20</span>];</span><br><span class="line"><span class="keyword">bool</span> flag[MAX];</span><br><span class="line"><span class="built_in">vector</span>&lt;node&gt; mp[MAX];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(ll x,ll h)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    dfn[x]=++tot2;</span><br><span class="line">	ll i;</span><br><span class="line">	flag[x]=<span class="number">1</span>;</span><br><span class="line">	path[++tot]=x;</span><br><span class="line">	first[x]=tot;</span><br><span class="line">	deep[tot]=h;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;mp[x].size();i++)</span><br><span class="line">	&#123;</span><br><span class="line">		ll to=mp[x][i].to;</span><br><span class="line">		<span class="keyword">if</span>(!flag[to])</span><br><span class="line">		&#123;</span><br><span class="line">			dis[to]=dis[x]+mp[x][i].w;</span><br><span class="line">			dfs(to,h+<span class="number">1</span>);</span><br><span class="line">			path[++tot]=x;</span><br><span class="line">			deep[tot]=h;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">ST</span><span class="params">(ll n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	ll i,j,x,y;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		dp[i][<span class="number">0</span>]=i;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(j=<span class="number">1</span>;(<span class="number">1</span>&lt;&lt;j)&lt;=n;j++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span>(i=<span class="number">1</span>;i+(<span class="number">1</span>&lt;&lt;j)<span class="number">-1</span>&lt;=n;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			x=dp[i][j<span class="number">-1</span>];</span><br><span class="line">			y=dp[i+(<span class="number">1</span>&lt;&lt;(j<span class="number">-1</span>))][j<span class="number">-1</span>];</span><br><span class="line">			dp[i][j]=deep[x]&lt;deep[y]?x:y;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">ll <span class="title">query</span><span class="params">(ll l,ll r)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	ll len,x,y;</span><br><span class="line">	len=(<span class="keyword">int</span>)log2(r-l+<span class="number">1</span>);</span><br><span class="line">	x=dp[l][len];</span><br><span class="line">	y=dp[r-(<span class="number">1</span>&lt;&lt;len)+<span class="number">1</span>][len];</span><br><span class="line">	<span class="keyword">return</span> deep[x]&lt;deep[y]?x:y;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">ll <span class="title">LCA</span><span class="params">(ll x,ll y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	ll l,r,pos;</span><br><span class="line">	l=first[x];</span><br><span class="line">	r=first[y];</span><br><span class="line">	<span class="keyword">if</span>(l&gt;r) swap(l,r);</span><br><span class="line">	pos=query(l,r);</span><br><span class="line">	<span class="keyword">return</span> path[pos];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">ll <span class="title">getdist</span><span class="params">(ll a,ll b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> dis[a]+dis[b]<span class="number">-2</span>*dis[LCA(a,b)];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">work</span><span class="params">(ll n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	ll i;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++) dis[i]=flag[i]=<span class="number">0</span>;</span><br><span class="line">	tot=<span class="number">0</span>;</span><br><span class="line">	dfs(<span class="number">1</span>,<span class="number">0</span>);</span><br><span class="line">	ST(<span class="number">2</span>*n<span class="number">-1</span>);</span><br><span class="line">&#125;</span><br><span class="line">ll T,n,m,q,x,u,v,val,dis_red[MAX];</span><br><span class="line"><span class="keyword">int</span> quearr[MAX];</span><br><span class="line"><span class="keyword">bool</span> is_red[MAX];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs2</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> pre)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;mp[x].size();i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(mp[x][i].to!=pre)</span><br><span class="line">        &#123;</span><br><span class="line">            dis_red[mp[x][i].to]=min(dis_red[mp[x][i].to],dis_red[x]+mp[x][i].w);</span><br><span class="line">            dfs2(mp[x][i].to,x);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">int</span> side[MAX];</span><br><span class="line"><span class="keyword">int</span> sidetot;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">check1</span><span class="params">(ll vv)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    sidetot=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(ll i=<span class="number">1</span>;i&lt;=x;++i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(dis_red[quearr[i]]&gt;vv)</span><br><span class="line">        &#123;</span><br><span class="line">            side[sidetot++]=quearr[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(sidetot&lt;=<span class="number">1</span>)<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    ll p1=side[<span class="number">0</span>];</span><br><span class="line">    ll p2=side[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">for</span>(ll i=<span class="number">1</span>;i&lt;sidetot;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(dfn[side[i]]&gt;dfn[p1])p1=side[i];</span><br><span class="line">        <span class="keyword">if</span>(dfn[side[i]]&lt;dfn[p2])p2=side[i];</span><br><span class="line">    &#125;</span><br><span class="line">    ll lcas=LCA(p1,p2);</span><br><span class="line">    <span class="keyword">for</span>(ll i=<span class="number">0</span>;i&lt;sidetot;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(dis[side[i]]-dis[lcas]&gt;vv)<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">go</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    read(T);</span><br><span class="line">    <span class="keyword">while</span>(T--)</span><br><span class="line">    &#123;</span><br><span class="line">        tot2=<span class="number">0</span>;</span><br><span class="line">        read(n,m,q);</span><br><span class="line">        <span class="keyword">for</span>(ll i=<span class="number">1</span>;i&lt;=n;++i)</span><br><span class="line">        &#123;</span><br><span class="line">            mp[i].clear();</span><br><span class="line">            is_red[i]=<span class="number">0</span>;</span><br><span class="line">            dis_red[i]=LLINF;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(ll i=<span class="number">1</span>;i&lt;=m;++i)</span><br><span class="line">        &#123;</span><br><span class="line">            read(x);</span><br><span class="line">            is_red[x]=<span class="literal">true</span>;</span><br><span class="line">            dis_red[x]=<span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(ll i=<span class="number">1</span>;i&lt;n;++i)</span><br><span class="line">        &#123;</span><br><span class="line">            read(u,v,val);</span><br><span class="line">            mp[u].pb(node(v,val));</span><br><span class="line">            mp[v].pb(node(u,val));</span><br><span class="line">        &#125;</span><br><span class="line">        work(n);</span><br><span class="line">        dfs2(<span class="number">1</span>,<span class="number">1</span>);</span><br><span class="line">        <span class="keyword">while</span>(q--)</span><br><span class="line">        &#123;</span><br><span class="line">            read(x);</span><br><span class="line">            ll l=<span class="number">0</span>,r=<span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span>(ll i=<span class="number">1</span>;i&lt;=x;++i)</span><br><span class="line">            &#123;</span><br><span class="line">                read(quearr[i]);</span><br><span class="line">                r=max(r,dis[quearr[i]]);</span><br><span class="line">            &#125;</span><br><span class="line">            ll ans;</span><br><span class="line">            <span class="keyword">while</span>(l&lt;=r)</span><br><span class="line">            &#123;</span><br><span class="line">                ll mid=(l+r)&gt;&gt;<span class="number">1</span>;</span><br><span class="line">                <span class="keyword">if</span>(check1(mid))</span><br><span class="line">                &#123;</span><br><span class="line">                    ans=mid;</span><br><span class="line">                    r=mid<span class="number">-1</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span> l=mid+<span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,ans);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+    </div>
+</article>
+
+
+<div id="comments-template"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script>
+	if(!window.commentConfig) {
+      window.commentConfig = {}
+      window.commentConfig.title = 'ACM-ICPC 2018 青岛赛区网络预赛 B. Red Black Tree (二分答案+LCA)'
+    }
+</script>
+
+                </div>
+                <aside class="col-md-4 gal-left" id="sidebar">
+    <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
+<aside id="sidebar-search">
+    <div class="search hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <form class="form-inline clearfix" id="search-form" method="get"
+              action="/search/index.html">
+            <input type="text" name="s" class="form-control" id="searchInput" placeholder="搜索文章~">
+            <button class="btn btn-danger btn-gal" type="submit">
+                <i class="fa fa-search"></i>
+            </button>
+        </form>
+    </div>
+</aside>
+    <aside id="sidebar-author">
+    <div class="panel panel-gal" data-aos="flip-right" data-aos-duration="3000">
+        <div class="panel-heading" style="text-align: center">
+            <i class="fa fa-quote-left"></i>
+            tokitsukaze
+            <i class="fa fa-quote-right"></i>
+        </div>
+        <div class="author-panel text-center">
+            <img src="/imgs/toki.jpg" width="140" height="140"
+                 alt="个人头像" class="author-image">
+            <p class="author-description"></p>
+        </div>
+    </div>
+</aside>
+
+    
+    <aside id="sidebar-rand_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    	<span id="busuanzi_container_site_pv">
+	本站总访问量：<span id="busuanzi_value_site_pv"></span>
+	</span>
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+    </div>
+</aside>
+    
+
+    <!-- 要配置好leancloud才能开启此小工具 -->
+    
+    <aside id="sidebar-hot_posts">
+    <div class="panel panel-gal hot hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-fire"></i>
+            最热文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush"></ul>
+    </div>
+</aside>
+    
+    
+    
+    <aside id="sidebar-recent_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            近期文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/09/16/2018QingdaoOnline.B/">ACM-ICPC 2018 青岛赛区网络预赛 B. Red Black Tree (二分答案+LCA)</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/09/16/2018JiaozuoOnline.E/">ACM-ICPC 2018 焦作赛区网络预赛 E. Jiu Yuan Wants to Eat (树链剖分+线段树)</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/09/09/KancolleInvent2018summer/">「艦これ」「2018初秋」抜錨！連合艦隊、西へ！</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/09/09/2018shenyangonline.J/">ACM-ICPC 2018 沈阳赛区网络预赛 J. Ka Chang (dfs序+树状数组+根号分治)</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/09/09/KancolleInvent2018summerE5/">「艦これ」「2018初秋」E5 全力出撃！新ライン演習作戦</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/09/09/KancolleInvent2018summerE4/">「艦これ」「2018初秋」E4 ジェノヴァの風</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/09/09/KancolleInvent2018summerE3/">「艦これ」「2018初秋」E3 西方敵前線泊地を叩け！</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/09/09/KancolleInvent2018summerE2/">「艦これ」「2018初秋」E2 海峡奪還作戦</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/09/09/KancolleInvent2018summerE1/">「艦これ」「2018初秋」E1 作戦準備！後方兵站線確保</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/08/28/hdu6447/">hdu 6447 YJJ&#39;s Salesman (dp+树状数组)</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+
+    
+    <aside id="sidebar-recent_comments">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-comments"></i>
+            最新评论
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush"></ul>
+    </div>
+</aside>
+    
+
+    
+    <aside id="gal-sets">
+        <div class="panel panel-gal hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+            <ul class="nav nav-pills pills-gal">
+                <li class="">
+                    <a href="/2018/09/16/2018QingdaoOnline.B/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                </li>
+                <li class="">
+                    <a href="/2018/09/16/2018QingdaoOnline.B/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                </li>
+                <li class="">
+                    <a href="/2018/09/16/2018QingdaoOnline.B/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
+    
+    <a href="/tags/博弈/" style="font-size: 17.917735118696584px;" class="tag-cloud-link">博弈</a>
+    
+    <a href="/tags/学习笔记/" style="font-size: 10.850909022064942px;" class="tag-cloud-link">学习笔记</a>
+    
+    <a href="/tags/竞赛经历/" style="font-size: 10.85357741255089px;" class="tag-cloud-link">竞赛经历</a>
+    
+    <a href="/tags/二分/" style="font-size: 9.942107151984317px;" class="tag-cloud-link">二分</a>
+    
+    <a href="/tags/LCA/" style="font-size: 15.26380601363894px;" class="tag-cloud-link">LCA</a>
+    
+    <a href="/tags/树链剖分/" style="font-size: 18.34472305486052px;" class="tag-cloud-link">树链剖分</a>
+    
+    <a href="/tags/线段树/" style="font-size: 8.735298540447912px;" class="tag-cloud-link">线段树</a>
+    
+    <a href="/tags/组合数学/" style="font-size: 16.28081970778737px;" class="tag-cloud-link">组合数学</a>
+    
+    <a href="/tags/dp/" style="font-size: 12.4802743184276px;" class="tag-cloud-link">dp</a>
+    
+    <a href="/tags/主席树/" style="font-size: 19.2434121318118px;" class="tag-cloud-link">主席树</a>
+    
+    <a href="/tags/基环树dp/" style="font-size: 15.708895562119533px;" class="tag-cloud-link">基环树dp</a>
+    
+    <a href="/tags/随机化/" style="font-size: 9.694139469377047px;" class="tag-cloud-link">随机化</a>
+    
+    <a href="/tags/树形dp/" style="font-size: 19.060175922773432px;" class="tag-cloud-link">树形dp</a>
+    
+    <a href="/tags/hash/" style="font-size: 16.87871115905103px;" class="tag-cloud-link">hash</a>
+    
+    <a href="/tags/STL/" style="font-size: 14.528396230545262px;" class="tag-cloud-link">STL</a>
+    
+    <a href="/tags/FWT/" style="font-size: 15.862788923404588px;" class="tag-cloud-link">FWT</a>
+    
+    <a href="/tags/kd-tree/" style="font-size: 15.94851724291918px;" class="tag-cloud-link">kd-tree</a>
+    
+    <a href="/tags/分治/" style="font-size: 12.852428553320227px;" class="tag-cloud-link">分治</a>
+    
+    <a href="/tags/树状数组/" style="font-size: 13.005188237137506px;" class="tag-cloud-link">树状数组</a>
+    
+    <a href="/tags/构造/" style="font-size: 16.023281398797938px;" class="tag-cloud-link">构造</a>
+    
+    <a href="/tags/Kancolle/" style="font-size: 18.074066491949594px;" class="tag-cloud-link">Kancolle</a>
+    
+    <a href="/tags/思维/" style="font-size: 10.59359008221772px;" class="tag-cloud-link">思维</a>
+    
+    <a href="/tags/数学/" style="font-size: 15.685707370052928px;" class="tag-cloud-link">数学</a>
+    
+    <a href="/tags/模拟/" style="font-size: 18.46838041935557px;" class="tag-cloud-link">模拟</a>
+    
+    <a href="/tags/01字典树/" style="font-size: 8.413267878274302px;" class="tag-cloud-link">01字典树</a>
+    
+    <a href="/tags/FFT/" style="font-size: 8.690058958783494px;" class="tag-cloud-link">FFT</a>
+    
+    <a href="/tags/枚举/" style="font-size: 13.341871337610733px;" class="tag-cloud-link">枚举</a>
+    
+    <a href="/tags/折半搜索/" style="font-size: 8.525477954182914px;" class="tag-cloud-link">折半搜索</a>
+    
+    <a href="/tags/几何/" style="font-size: 19.23242740844512px;" class="tag-cloud-link">几何</a>
+    
+    <a href="/tags/背包问题/" style="font-size: 10.305030848806712px;" class="tag-cloud-link">背包问题</a>
+    
+    <a href="/tags/强连通分量/" style="font-size: 9.36716040303262px;" class="tag-cloud-link">强连通分量</a>
+    
+    <a href="/tags/dfs-bfs/" style="font-size: 8.618384514593043px;" class="tag-cloud-link">dfs/bfs</a>
+    
+    <a href="/tags/单调栈-单调队列/" style="font-size: 16.341946479192895px;" class="tag-cloud-link">单调栈/单调队列</a>
+    
+    <a href="/tags/双联通分量/" style="font-size: 17.851281899833012px;" class="tag-cloud-link">双联通分量</a>
+    
+    <a href="/tags/概率期望/" style="font-size: 19.29451936959821px;" class="tag-cloud-link">概率期望</a>
+    
+    <a href="/tags/RMQ/" style="font-size: 19.118132667165813px;" class="tag-cloud-link">RMQ</a>
+    
+    <a href="/tags/离线处理/" style="font-size: 17.035475558902245px;" class="tag-cloud-link">离线处理</a>
+    
+    <a href="/tags/贪心/" style="font-size: 15.539402979077387px;" class="tag-cloud-link">贪心</a>
+    
+    <a href="/tags/other/" style="font-size: 14.201978393013697px;" class="tag-cloud-link">other</a>
+    
+    <a href="/tags/hexo/" style="font-size: 8.548651030560233px;" class="tag-cloud-link">hexo</a>
+    
+</div>
+                <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
+    
+    <li>
+        <a href="http://hzwer.com" target="_blank">hzwer</a>
+    </li>
+    
+    <li>
+        <a href="http://www.cnblogs.com/wujiechao/" target="_blank">linmiaomiao</a>
+    </li>
+    
+    <li>
+        <a href="http://cubercsl.cn/" target="_blank">CSL</a>
+    </li>
+    
+    <li>
+        <a href="https://www.dreamwings.cn/" target="_blank">im0qianqian</a>
+    </li>
+    
+</div>
+                <div class="links tab-pane nav bs-sidenav fade" id="sidebar-links">
+    
+    <li>
+        <a href="https://github.com/tokitsu-kaze/" target="_blank">github</a>
+    </li>
+    
+</div>
+            </div>
+        </div>
+    </aside>
+    
+</aside>
+            </div>
+        </div>
+    </div>
+    <footer id="gal-footer">
+    <div class="container">
+        Copyright © 2018 tokitsukaze Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>.&nbsp;Theme by <a href="https://github.com/ZEROKISEKI" target="_blank">AONOSORA</a>
+    </div>
+</footer>
+
+<!-- 回到顶端 -->
+<div id="gal-gotop">
+    <i class="fa fa-angle-up"></i>
+</div>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/kankoreharuna.model.json"},"display":{"superSample":1.2,"width":150,"height":320,"position":"right","hOffset":0,"vOffset":-20},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":1,"opacityOnHover":0.2}});</script></body>
+<script src="/js/activate-power-mode.js"></script>
+<script>
+
+    // 配置highslide
+	hs.graphicsDir = '/js/highslide/graphics/'
+    hs.outlineType = "rounded-white";
+    hs.dimmingOpacity = 0.8;
+    hs.outlineWhileAnimating = true;
+    hs.showCredits = false;
+    hs.captionEval = "this.thumb.alt";
+    hs.numberPosition = "caption";
+    hs.align = "center";
+    hs.transitions = ["expand", "crossfade"];
+    hs.lang.number = '共%2张图, 当前是第%1张';
+    hs.addSlideshow({
+      interval: 5000,
+      repeat: true,
+      useControls: true,
+      fixedControls: "fit",
+      overlayOptions: {
+        opacity: 0.75,
+        position: "bottom center",
+        hideOnMouseOut: true
+      }
+    })
+
+    // 初始化aos
+    AOS.init({
+      duration: 1000,
+      delay: 0,
+      easing: 'ease-out-back'
+    });
+
+</script>
+<script>
+	POWERMODE.colorful = 'true';    // make power mode colorful
+	POWERMODE.shake = 'true';       // turn off shake
+	// TODO 这里根据具体情况修改
+	document.body.addEventListener('input', POWERMODE);
+</script>
+<script>
+    window.slideConfig = {
+      prefix: '/imgs/slide/background',
+      ext: 'bmp',
+      maxCount: '6'
+    }
+</script>
+<script src="/js/hs.js"></script>
+<script src="/js/blog.js"></script>
+
+
+<script>
+    window.hot_posts_count = '10'
+    // window.use_leancloud = 'true'
+</script>
+<script src="/js/comment/leancloud.js"></script>
+
+
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+    if(window.commentConfig) {
+      window.commentConfig.id = 'Sun Sep 16 2018 00:20:30 GMT+0800'
+      window.commentConfig.owner = 'tokitsu-kaze'
+      window.commentConfig.repo = 'comment-save'
+      window.commentConfig.client_id = '822ab9521b502687b55f'
+      window.commentConfig.client_secret = '6714308affc87e3af23276ae18c83ff20885fa4a'
+      window.commentConfig.redirect_uri = ''
+    } else {
+      window.commentConfig = {
+      	id: 'Sun Sep 16 2018 00:20:30 GMT+0800',
+        owner: 'tokitsu-kaze',
+        repo: 'comment-save',
+        client_id: '822ab9521b502687b55f',
+        client_secret: '6714308affc87e3af23276ae18c83ff20885fa4a',
+        redirect_uri: ''
+      }
+    }
+</script>
+<script src="/js/comment/gitment.js"></script>
+
+
+
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>
+
+
+</html>
