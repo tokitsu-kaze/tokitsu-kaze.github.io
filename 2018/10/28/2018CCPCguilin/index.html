@@ -10,7 +10,7 @@
     
     
     
-    <title>tags: 几何 | tokitsukaze</title>
+    <title>2018CCPC桂林 | tokitsukaze</title>
     <link href=”http://tokitsukaze.live“ rel=”prefetch” />
 
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -122,7 +122,7 @@
                 
                 
                 
-                <li class="current">
+                <li class="">
                     <a href="/tags">
                         <i class="fa fa-tags"></i>标签
                     </a>
@@ -153,19 +153,39 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 gal-right" id="mainstay">
-                    <article class="article well article-body" id="article-tag">
+                    
+<article class="article well article-body" id="article">
     <div class="breadcrumb">
         <i class="fa fa-home"></i>
         <a href="http://tokitsukaze.live">tokitsukaze</a>
         >
-        <span>标签</span>
+        <span>2018CCPC桂林</span>
     </div>
     <!-- 大型设备详细文章 -->
     <div class="hidden-xs">
         <div class="title-article">
             <h1>
-                <a href="/tags/几何/index.html">几何</a>
+                <a href="/2018/10/28/2018CCPCguilin/">2018CCPC桂林</a>
             </h1>
+        </div>
+        <div class="tag-article">
+            
+            <span class="label label-gal">
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/竞赛经历/">竞赛经历</a>
+                
+            </span>
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2018-10-28
+            </span>
+
+            
+            <span class="label label-gal">
+                <i class="fa fa-eye"></i>
+            </span>
+            
         </div>
     </div>
     <!-- 小型设备详细文章 -->
@@ -173,21 +193,53 @@
         <center>
             <div class="title-article">
                 <h4>
-                    <a href="/tags/几何/index.html">几何</a>
+                    <a href="/2018/10/28/2018CCPCguilin/">2018CCPC桂林</a>
                 </h4>
             </div>
+            <p>
+                <i class="fa fa-calendar"></i> 2018-10-28
+            </p>
+            <p>
+                
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/竞赛经历/">竞赛经历</a>
+                
+                
+                
+                <i class="fa fa-eye"></i>
+                
+            </p>
         </center>
     </div>
-    <div class="content-article" style="margin-top: 30px;">
-        <div class="alert alert-info" style="font-size: 14px; line-height: 2; font-weight: bold;">
-            
-            <a href="/2018/06/17/cf488.1A/">Codeforces Round#488 div2C/div1A Two Squares (几何)</a>
-            <br>
-            
-            
-        </div>
+    <div class="content-article">
+        <p>转载请注明出处：<a href="http://tokitsukaze.live/">http://tokitsukaze.live/</a></p>
+<hr>
+<p>day0：</p>
+<p>还是提前一天起飞，带上3ds继续爬树。</p>
+<p>day1：</p>
+<p>热身赛。据说有队伍1小时没登进去，结果是网线没插海星。A是个old题，结论有的条件记漏了，后来想起来，加了个gcd就能用结论了。然后D是个比较裸的网络流，抄完板子1A。C估计是什么积分，反正不会。B是大模拟，chy上去暴敲一波，没过样例…最后居然是在金牌区(然后被群里各种奶，奶死了)。</p>
+<p>然后回酒店的时候被chy带着绕了一大圈…出发从酒店左边出发，回来从酒店右边回来？？？(证明了地球是圆的 (雾))</p>
+<p>day2：</p>
+<p>正赛。开场chy读了A，猜了个”字典序尽量大”的结论，说后缀数组可以做，先放着。我读了H，6分钟有人过，我上去敲了个假算法，wa。然后chy上D，我和zyf讨论H。这时zyf有了H的解法(假)，说答案只可能包含’a’,’b’,’c’，然后我听完觉得海星？(其实样例就过不去，我居然没注意)这时chy的Dwa，zyf上H。我跟chy讨论了D，很快指出判-1的情况漏了，改完过了。然后看榜，我们开G，很快有了做法，让zyf先下，chy上G，我看J。然后Gwa，打印发现有个地方需要加绝对值，改完还是wa。然后又发现，有个地方要判，改完又wa。这时候zyf打完，测一下样例立马发现假了。然后3个人一起调G，zyf测出问题，改完继续wa。然后我看了看，发现我锅了，调试没删…删了调试，过了。然后chy读J，提供了个假题意。J是个博弈，于是我看J，他们搞H。H有了个二分的做法，wa。J(假题意)我很快有了做法(新生赛题get)，上机敲。然后他们发现了H有个细节有问题，改完过了。然后我交了一发J，wa。感觉没什么问题，重新读了一下题，看到个“neighbor”，才发现题意假了。然后看榜，发现4题有一排，得再过两题才行。于是他们搞J，我开新题。首先思考了一下A，毕竟首A13min，能不后缀数组就尽量不上。贪了贪，发现不太行。然后看L，是个几何。zyf空闲的时候和他讨论了一下，弄出4个向量极角排序一下，感觉可行，但是时间不多，没敢上。他们J搞到封榜还是wa，差不多是凉了。电脑有空闲的时候我帮忙抄了后缀数组，首先被卡了一下内存，然后t了一发，改了初始化，最后get了一个wa，可能猜的结论有问题。然后就结束了。</p>
+<p>赛后zyf问了一下，J似乎思路大致是对的，可能哪炸了。颁奖没来得及参加，赶飞机(暗示打铁)。于是离铜线差了2名，真实铁首。</p>
+<p>胡乱分析一波，发现又死在大家都会的博弈上。去年杭州，去年ec…看来得在这方面努力一下了。(为什么去的这么多场现场赛都有大家都会的博弈，自己训练都没遇到过..)</p>
+<p>最后丢个狗牌好了。</p>
+<p><img src="/2018/10/28/2018CCPCguilin/1.jpg" alt="1"></p>
+
     </div>
 </article>
+
+
+<div id="comments-template"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script>
+	if(!window.commentConfig) {
+      window.commentConfig = {}
+      window.commentConfig.title = '2018CCPC桂林'
+    }
+</script>
+
                 </div>
                 <aside class="col-md-4 gal-left" id="sidebar">
     <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
@@ -344,97 +396,97 @@
         <div class="panel panel-gal hidden-xs" data-aos="fade-up" data-aos-duration="2000">
             <ul class="nav nav-pills pills-gal">
                 <li class="">
-                    <a href="/tags/几何/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                    <a href="/2018/10/28/2018CCPCguilin/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
                 </li>
                 <li class="">
-                    <a href="/tags/几何/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                    <a href="/2018/10/28/2018CCPCguilin/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
                 </li>
                 <li class="">
-                    <a href="/tags/几何/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                    <a href="/2018/10/28/2018CCPCguilin/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
                 </li>
             </ul>
             <div class="tab-content">
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/博弈/" style="font-size: 19.540212237426882px;" class="tag-cloud-link">博弈</a>
+    <a href="/tags/博弈/" style="font-size: 11.54597639348139px;" class="tag-cloud-link">博弈</a>
     
-    <a href="/tags/学习笔记/" style="font-size: 15.701609878406039px;" class="tag-cloud-link">学习笔记</a>
+    <a href="/tags/学习笔记/" style="font-size: 18.773993824734397px;" class="tag-cloud-link">学习笔记</a>
     
-    <a href="/tags/竞赛经历/" style="font-size: 8.12717059118518px;" class="tag-cloud-link">竞赛经历</a>
+    <a href="/tags/竞赛经历/" style="font-size: 18.31419695147592px;" class="tag-cloud-link">竞赛经历</a>
     
-    <a href="/tags/FFT/" style="font-size: 18.08098107552853px;" class="tag-cloud-link">FFT</a>
+    <a href="/tags/FFT/" style="font-size: 19.848473100187167px;" class="tag-cloud-link">FFT</a>
     
-    <a href="/tags/思维/" style="font-size: 18.004778400317125px;" class="tag-cloud-link">思维</a>
+    <a href="/tags/思维/" style="font-size: 12.762663023089253px;" class="tag-cloud-link">思维</a>
     
-    <a href="/tags/树链剖分/" style="font-size: 18.569713293935123px;" class="tag-cloud-link">树链剖分</a>
+    <a href="/tags/树链剖分/" style="font-size: 14.945708419384061px;" class="tag-cloud-link">树链剖分</a>
     
-    <a href="/tags/线段树/" style="font-size: 19.118032960731234px;" class="tag-cloud-link">线段树</a>
+    <a href="/tags/线段树/" style="font-size: 17.335401000152284px;" class="tag-cloud-link">线段树</a>
     
-    <a href="/tags/二分/" style="font-size: 15.220681999080469px;" class="tag-cloud-link">二分</a>
+    <a href="/tags/二分/" style="font-size: 11.79651933778728px;" class="tag-cloud-link">二分</a>
     
-    <a href="/tags/LCA/" style="font-size: 14.094779834144848px;" class="tag-cloud-link">LCA</a>
+    <a href="/tags/LCA/" style="font-size: 15.598784106738822px;" class="tag-cloud-link">LCA</a>
     
-    <a href="/tags/dp/" style="font-size: 11.552877713883614px;" class="tag-cloud-link">dp</a>
+    <a href="/tags/dp/" style="font-size: 14.858551900574682px;" class="tag-cloud-link">dp</a>
     
-    <a href="/tags/组合数学/" style="font-size: 18.656654088203535px;" class="tag-cloud-link">组合数学</a>
+    <a href="/tags/组合数学/" style="font-size: 9.350037583018397px;" class="tag-cloud-link">组合数学</a>
     
-    <a href="/tags/主席树/" style="font-size: 15.241858897292731px;" class="tag-cloud-link">主席树</a>
+    <a href="/tags/主席树/" style="font-size: 11.967405088673564px;" class="tag-cloud-link">主席树</a>
     
-    <a href="/tags/基环树dp/" style="font-size: 14.167973850271757px;" class="tag-cloud-link">基环树dp</a>
+    <a href="/tags/基环树dp/" style="font-size: 14.092703114937526px;" class="tag-cloud-link">基环树dp</a>
     
-    <a href="/tags/树形dp/" style="font-size: 13.652549214266333px;" class="tag-cloud-link">树形dp</a>
+    <a href="/tags/树形dp/" style="font-size: 16.723202198799882px;" class="tag-cloud-link">树形dp</a>
     
-    <a href="/tags/随机化/" style="font-size: 18.351776173782625px;" class="tag-cloud-link">随机化</a>
+    <a href="/tags/随机化/" style="font-size: 15.769346802386849px;" class="tag-cloud-link">随机化</a>
     
-    <a href="/tags/hash/" style="font-size: 8.908183921816683px;" class="tag-cloud-link">hash</a>
+    <a href="/tags/hash/" style="font-size: 15.17566306800118px;" class="tag-cloud-link">hash</a>
     
-    <a href="/tags/STL/" style="font-size: 8.198246162025882px;" class="tag-cloud-link">STL</a>
+    <a href="/tags/STL/" style="font-size: 9.90307193373151px;" class="tag-cloud-link">STL</a>
     
-    <a href="/tags/FWT/" style="font-size: 17.26418427409208px;" class="tag-cloud-link">FWT</a>
+    <a href="/tags/FWT/" style="font-size: 11.874057888208558px;" class="tag-cloud-link">FWT</a>
     
-    <a href="/tags/kd-tree/" style="font-size: 17.580781881118522px;" class="tag-cloud-link">kd-tree</a>
+    <a href="/tags/kd-tree/" style="font-size: 13.06678977315504px;" class="tag-cloud-link">kd-tree</a>
     
-    <a href="/tags/分治/" style="font-size: 11.976090432365627px;" class="tag-cloud-link">分治</a>
+    <a href="/tags/分治/" style="font-size: 8.222384686531353px;" class="tag-cloud-link">分治</a>
     
-    <a href="/tags/树状数组/" style="font-size: 18.914474782708663px;" class="tag-cloud-link">树状数组</a>
+    <a href="/tags/树状数组/" style="font-size: 12.696780029969826px;" class="tag-cloud-link">树状数组</a>
     
-    <a href="/tags/构造/" style="font-size: 14.08508961430499px;" class="tag-cloud-link">构造</a>
+    <a href="/tags/构造/" style="font-size: 9.162436880372756px;" class="tag-cloud-link">构造</a>
     
-    <a href="/tags/Kancolle/" style="font-size: 9.479302680888939px;" class="tag-cloud-link">Kancolle</a>
+    <a href="/tags/Kancolle/" style="font-size: 12.294742552521203px;" class="tag-cloud-link">Kancolle</a>
     
-    <a href="/tags/数学/" style="font-size: 9.521646102143412px;" class="tag-cloud-link">数学</a>
+    <a href="/tags/数学/" style="font-size: 14.166863066464487px;" class="tag-cloud-link">数学</a>
     
-    <a href="/tags/模拟/" style="font-size: 10.388998231269909px;" class="tag-cloud-link">模拟</a>
+    <a href="/tags/模拟/" style="font-size: 19.154673816935478px;" class="tag-cloud-link">模拟</a>
     
-    <a href="/tags/01字典树/" style="font-size: 11.158217188709848px;" class="tag-cloud-link">01字典树</a>
+    <a href="/tags/01字典树/" style="font-size: 16.82999844067979px;" class="tag-cloud-link">01字典树</a>
     
-    <a href="/tags/枚举/" style="font-size: 10.253556092387601px;" class="tag-cloud-link">枚举</a>
+    <a href="/tags/枚举/" style="font-size: 17.817296959167606px;" class="tag-cloud-link">枚举</a>
     
-    <a href="/tags/折半搜索/" style="font-size: 18.020390909249365px;" class="tag-cloud-link">折半搜索</a>
+    <a href="/tags/折半搜索/" style="font-size: 19.281762197385714px;" class="tag-cloud-link">折半搜索</a>
     
-    <a href="/tags/几何/" style="font-size: 11.014347143381858px;" class="tag-cloud-link">几何</a>
+    <a href="/tags/几何/" style="font-size: 15.65037184342754px;" class="tag-cloud-link">几何</a>
     
-    <a href="/tags/强连通分量/" style="font-size: 8.18339511263743px;" class="tag-cloud-link">强连通分量</a>
+    <a href="/tags/强连通分量/" style="font-size: 9.957810328145897px;" class="tag-cloud-link">强连通分量</a>
     
-    <a href="/tags/背包问题/" style="font-size: 10.648725871738272px;" class="tag-cloud-link">背包问题</a>
+    <a href="/tags/背包问题/" style="font-size: 12.505811300240952px;" class="tag-cloud-link">背包问题</a>
     
-    <a href="/tags/dfs-bfs/" style="font-size: 14.545344376486508px;" class="tag-cloud-link">dfs/bfs</a>
+    <a href="/tags/dfs-bfs/" style="font-size: 19.779288838333844px;" class="tag-cloud-link">dfs/bfs</a>
     
-    <a href="/tags/单调栈-单调队列/" style="font-size: 17.560280712496457px;" class="tag-cloud-link">单调栈/单调队列</a>
+    <a href="/tags/单调栈-单调队列/" style="font-size: 13.221435779617892px;" class="tag-cloud-link">单调栈/单调队列</a>
     
-    <a href="/tags/双联通分量/" style="font-size: 12.631384434236525px;" class="tag-cloud-link">双联通分量</a>
+    <a href="/tags/双联通分量/" style="font-size: 15.306724971873907px;" class="tag-cloud-link">双联通分量</a>
     
-    <a href="/tags/概率期望/" style="font-size: 9.041494617904851px;" class="tag-cloud-link">概率期望</a>
+    <a href="/tags/概率期望/" style="font-size: 16.822107575733067px;" class="tag-cloud-link">概率期望</a>
     
-    <a href="/tags/RMQ/" style="font-size: 17.990277464314104px;" class="tag-cloud-link">RMQ</a>
+    <a href="/tags/RMQ/" style="font-size: 16.302049762567915px;" class="tag-cloud-link">RMQ</a>
     
-    <a href="/tags/贪心/" style="font-size: 9.669935270635829px;" class="tag-cloud-link">贪心</a>
+    <a href="/tags/贪心/" style="font-size: 9.60679622727572px;" class="tag-cloud-link">贪心</a>
     
-    <a href="/tags/离线处理/" style="font-size: 13.49952994697486px;" class="tag-cloud-link">离线处理</a>
+    <a href="/tags/离线处理/" style="font-size: 14.33788491388036px;" class="tag-cloud-link">离线处理</a>
     
-    <a href="/tags/other/" style="font-size: 8.716207377812935px;" class="tag-cloud-link">other</a>
+    <a href="/tags/other/" style="font-size: 10.34508332237729px;" class="tag-cloud-link">other</a>
     
-    <a href="/tags/hexo/" style="font-size: 14.201594966494216px;" class="tag-cloud-link">hexo</a>
+    <a href="/tags/hexo/" style="font-size: 17.980842730909913px;" class="tag-cloud-link">hexo</a>
     
 </div>
                 <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
@@ -544,7 +596,7 @@
 <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
     if(window.commentConfig) {
-      window.commentConfig.id = ''
+      window.commentConfig.id = 'Sun Oct 28 2018 16:55:22 GMT+0800'
       window.commentConfig.owner = 'tokitsu-kaze'
       window.commentConfig.repo = 'comment-save'
       window.commentConfig.client_id = '822ab9521b502687b55f'
@@ -552,7 +604,7 @@
       window.commentConfig.redirect_uri = ''
     } else {
       window.commentConfig = {
-      	id: '',
+      	id: 'Sun Oct 28 2018 16:55:22 GMT+0800',
         owner: 'tokitsu-kaze',
         repo: 'comment-save',
         client_id: '822ab9521b502687b55f',
