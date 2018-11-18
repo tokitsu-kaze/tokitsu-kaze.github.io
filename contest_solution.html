@@ -10,7 +10,7 @@
     
     
     
-    <title>Educational Codeforces Round 54 | tokitsukaze</title>
+    <title>2018-2019 ACM-ICPC, Asia Nanjing Regional Contest (gym101981) | tokitsukaze</title>
     <link href=”http://tokitsukaze.live“ rel=”prefetch” />
 
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -161,7 +161,7 @@
     <div class="hidden-xs">
         <div class="title-article">
             <h1>
-                <a href="/contest_solution.html">Educational Codeforces Round 54</a>
+                <a href="/contest_solution.html">2018-2019 ACM-ICPC, Asia Nanjing Regional Contest (gym101981)</a>
             </h1>
         </div>
         <div class="tag-article">
@@ -175,7 +175,7 @@
         <center>
             <div class="title-article">
                 <h4>
-                    <a href="/contest_solution.html">Educational Codeforces Round 54</a>
+                    <a href="/contest_solution.html">2018-2019 ACM-ICPC, Asia Nanjing Regional Contest (gym101981)</a>
                 </h4>
             </div>
             <p>
@@ -185,8 +185,57 @@
     </div>
     <div class="content-article">
         <p>转载请注明出处：<a href="http://tokitsukaze.live/">http://tokitsukaze.live/</a></p>
-<p>题目链接：<a href="http://codeforces.com/contest/1076" target="_blank" rel="noopener">http://codeforces.com/contest/1076</a></p>
+<p>题目链接：<a href="http://codeforces.com/gym/101981" target="_blank" rel="noopener">http://codeforces.com/gym/101981</a></p>
 <hr>
+<p><strong>补题进度：8/13。</strong></p>
+<p>&nbsp;</p>
+<p>A.<a href="http://codeforces.com/gym/101981/problem/A" target="_blank" rel="noopener">Adrien and Austin</a></p>
+<p>考虑对称操作。先手能拿中间，必胜。</p>
+<p>n为奇数，先手只需把中间一个拿了，所以先手必胜。</p>
+<p>n为偶数，先手需要拿中间的两个，所以k=1时先手必败，否则先手必胜。</p>
+<p>注意特判n=0是先手必败。</p>
+<p>&nbsp;</p>
+<p>D.<a href="http://codeforces.com/gym/101981/problem/D" target="_blank" rel="noopener">Country Meow</a></p>
+<p>最小包围球。模拟退火的时候往最远点靠近即可。</p>
+<p>&nbsp;</p>
+<p>E.<a href="http://codeforces.com/gym/101981/problem/E" target="_blank" rel="noopener">Eva and Euro coins</a></p>
+<p>注意题意是能连续翻k个状态相同的硬币。</p>
+<p>qls：一个观察是你可以把每个 1 在不跨越其他 1 的情况下往左右移 k 个位置。尽可能把 1 往左靠，出现连续 k 个 1 就消掉。check 两个串处理之后的串是否相同。</p>
+<p>一个1能往左移k个位置，那么中间肯定有k个0。所以就变成了消消乐，把连续的k个1或者0都消掉，用栈模拟即可。</p>
+<p>&nbsp;</p>
+<p>G.<a href="http://codeforces.com/gym/101981/problem/G" target="_blank" rel="noopener">Pyramid</a></p>
+<p>ans=C(n+3,4)。不会推。</p>
+<p>&nbsp;</p>
+<p>I.<a href="http://codeforces.com/gym/101981/problem/I" target="_blank" rel="noopener">Magic Potion</a></p>
+<p>源点与每个英雄连边，容量1。</p>
+<p>源点与中转点连边，容量k。</p>
+<p>中转点与每个英雄连边，容量1。</p>
+<p>每个英雄与能打的怪物连边，容量1。</p>
+<p>每个怪物与汇点连边，容量1。</p>
+<p>然后跑最大流。</p>
+<p>&nbsp;</p>
+<p>J.<a href="http://codeforces.com/gym/101981/problem/J" target="_blank" rel="noopener">Prime Game</a></p>
+<p>每种质因数分开算贡献。</p>
+<p>记录每种质因数出现的位置。比如第pos位出现了，那么第pos位的贡献为(pos-pre)*(nex-pos+1)。</p>
+<p>&nbsp;</p>
+<p>K.<a href="http://codeforces.com/gym/101981/problem/K" target="_blank" rel="noopener">Kangaroo Puzzle</a></p>
+<p>随机输出5e4个’L’,’R’,’D’,’U’。据说卡不掉。</p>
+<p>&nbsp;</p>
+<p>M.<a href="http://codeforces.com/gym/101981/problem/M" target="_blank" rel="noopener">Mediocre String Problem</a></p>
+<p>题意：给S串与T串。S[i..j]+T[1..k]为回文串，且|S[i..j]|&gt;|T[1..k]|，求(i,j,k)个数。</p>
+<p>将S[i..j]分为两个部分，S[i..p]为T[1..k]的反转，S[p+1..j]为回文串。</p>
+<p>由于|S[i..j]|&gt;|T[1..k]|，所以S[p+1..j]必须不为空。</p>
+<p>枚举回文串的起始点p+1，那么我们要求的是：</p>
+<p>1.由于S[i..p]为T[1..k]的反转，我们只要求有多少个(i,k)。这个部分是exkmp的基础。</p>
+<p>将S反转，跟T跑exkmp，求出ex[]，再把ex[]反过来即可。</p>
+<p>2.S[p+1..j]为回文串，我们只要求有多少个j，即求的是以p+1为起点的回文串个数cnt[]。</p>
+<p>那么只要把S串倒着插入回文自动机，cnt[i]=插入第i个字符后，fail树的深度。</p>
+<p>&nbsp;</p>
+<p>最后枚举回文串起点p+1，算出ex[p]*cnt[p+1]，求和即为答案。</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>代码：</p>
+<p><a href="https://github.com/tokitsu-kaze/ACM-Solved-Problems/tree/master/gym/2018-2019%20ACM-ICPC%2C%20Asia%20Nanjing%20Regional%20Contest" target="_blank" rel="noopener">https://github.com/tokitsu-kaze/ACM-Solved-Problems/tree/master/gym/2018-2019%20ACM-ICPC%2C%20Asia%20Nanjing%20Regional%20Contest</a></p>
 
     </div>
 </article>
@@ -197,7 +246,7 @@
 <script>
 	if(!window.commentConfig) {
       window.commentConfig = {}
-      window.commentConfig.title = 'Educational Codeforces Round 54'
+      window.commentConfig.title = '2018-2019 ACM-ICPC, Asia Nanjing Regional Contest (gym101981)'
     }
 </script>
 
@@ -370,83 +419,85 @@
             <div class="tab-content">
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/博弈/" style="font-size: 10.837252600801403px;" class="tag-cloud-link">博弈</a>
+    <a href="/tags/博弈/" style="font-size: 12.118753381284634px;" class="tag-cloud-link">博弈</a>
     
-    <a href="/tags/学习笔记/" style="font-size: 16.86637082222594px;" class="tag-cloud-link">学习笔记</a>
+    <a href="/tags/学习笔记/" style="font-size: 15.76669094088361px;" class="tag-cloud-link">学习笔记</a>
     
-    <a href="/tags/竞赛经历/" style="font-size: 13.538331137552753px;" class="tag-cloud-link">竞赛经历</a>
+    <a href="/tags/竞赛经历/" style="font-size: 16.291084772969885px;" class="tag-cloud-link">竞赛经历</a>
     
-    <a href="/tags/FFT/" style="font-size: 18.091769091227224px;" class="tag-cloud-link">FFT</a>
+    <a href="/tags/FFT/" style="font-size: 19.57446587380258px;" class="tag-cloud-link">FFT</a>
     
-    <a href="/tags/思维/" style="font-size: 18.039212836254634px;" class="tag-cloud-link">思维</a>
+    <a href="/tags/思维/" style="font-size: 13.215677245616543px;" class="tag-cloud-link">思维</a>
     
-    <a href="/tags/线段树/" style="font-size: 9.153759635452872px;" class="tag-cloud-link">线段树</a>
+    <a href="/tags/线段树/" style="font-size: 10.534428953687888px;" class="tag-cloud-link">线段树</a>
     
-    <a href="/tags/FWT/" style="font-size: 9.257397933967237px;" class="tag-cloud-link">FWT</a>
+    <a href="/tags/几何/" style="font-size: 9.718969274056736px;" class="tag-cloud-link">几何</a>
     
-    <a href="/tags/几何/" style="font-size: 8.180537714482472px;" class="tag-cloud-link">几何</a>
+    <a href="/tags/FWT/" style="font-size: 17.223561539116073px;" class="tag-cloud-link">FWT</a>
     
-    <a href="/tags/树链剖分/" style="font-size: 17.822971950545575px;" class="tag-cloud-link">树链剖分</a>
+    <a href="/tags/树链剖分/" style="font-size: 11.850283043104536px;" class="tag-cloud-link">树链剖分</a>
     
-    <a href="/tags/二分/" style="font-size: 12.924885880929363px;" class="tag-cloud-link">二分</a>
+    <a href="/tags/二分/" style="font-size: 9.429382154815372px;" class="tag-cloud-link">二分</a>
     
-    <a href="/tags/LCA/" style="font-size: 16.47533857035654px;" class="tag-cloud-link">LCA</a>
+    <a href="/tags/LCA/" style="font-size: 16.839403864258387px;" class="tag-cloud-link">LCA</a>
     
-    <a href="/tags/dp/" style="font-size: 13.499228507848454px;" class="tag-cloud-link">dp</a>
+    <a href="/tags/dp/" style="font-size: 19.78022597591262px;" class="tag-cloud-link">dp</a>
     
-    <a href="/tags/组合数学/" style="font-size: 10.815064077343294px;" class="tag-cloud-link">组合数学</a>
+    <a href="/tags/组合数学/" style="font-size: 14.096637114631287px;" class="tag-cloud-link">组合数学</a>
     
-    <a href="/tags/主席树/" style="font-size: 10.229880422030671px;" class="tag-cloud-link">主席树</a>
+    <a href="/tags/主席树/" style="font-size: 16.181315187569915px;" class="tag-cloud-link">主席树</a>
     
-    <a href="/tags/基环树dp/" style="font-size: 10.285594170003918px;" class="tag-cloud-link">基环树dp</a>
+    <a href="/tags/基环树dp/" style="font-size: 16.754028658109863px;" class="tag-cloud-link">基环树dp</a>
     
-    <a href="/tags/树形dp/" style="font-size: 9.971181603787976px;" class="tag-cloud-link">树形dp</a>
+    <a href="/tags/树形dp/" style="font-size: 15.702669021961px;" class="tag-cloud-link">树形dp</a>
     
-    <a href="/tags/随机化/" style="font-size: 19.060581615961713px;" class="tag-cloud-link">随机化</a>
+    <a href="/tags/随机化/" style="font-size: 19.332182906401517px;" class="tag-cloud-link">随机化</a>
     
-    <a href="/tags/hash/" style="font-size: 10.661967915983052px;" class="tag-cloud-link">hash</a>
+    <a href="/tags/hash/" style="font-size: 13.978808051793198px;" class="tag-cloud-link">hash</a>
     
-    <a href="/tags/STL/" style="font-size: 11.140295416752103px;" class="tag-cloud-link">STL</a>
+    <a href="/tags/kd-tree/" style="font-size: 17.36782564515177px;" class="tag-cloud-link">kd-tree</a>
     
-    <a href="/tags/kd-tree/" style="font-size: 18.9772667454623px;" class="tag-cloud-link">kd-tree</a>
+    <a href="/tags/STL/" style="font-size: 14.461027010740017px;" class="tag-cloud-link">STL</a>
     
-    <a href="/tags/分治/" style="font-size: 17.975996921059167px;" class="tag-cloud-link">分治</a>
+    <a href="/tags/分治/" style="font-size: 16.284479531220356px;" class="tag-cloud-link">分治</a>
     
-    <a href="/tags/树状数组/" style="font-size: 15.981927517925342px;" class="tag-cloud-link">树状数组</a>
+    <a href="/tags/树状数组/" style="font-size: 17.676904768513616px;" class="tag-cloud-link">树状数组</a>
     
-    <a href="/tags/构造/" style="font-size: 19.16128086097703px;" class="tag-cloud-link">构造</a>
+    <a href="/tags/Kancolle/" style="font-size: 12.969648074883821px;" class="tag-cloud-link">Kancolle</a>
     
-    <a href="/tags/Kancolle/" style="font-size: 19.417448754856522px;" class="tag-cloud-link">Kancolle</a>
+    <a href="/tags/构造/" style="font-size: 15.018961745730273px;" class="tag-cloud-link">构造</a>
     
-    <a href="/tags/折半搜索/" style="font-size: 11.957712503539902px;" class="tag-cloud-link">折半搜索</a>
+    <a href="/tags/折半搜索/" style="font-size: 10.855944018860292px;" class="tag-cloud-link">折半搜索</a>
     
-    <a href="/tags/枚举/" style="font-size: 19.83798405901995px;" class="tag-cloud-link">枚举</a>
+    <a href="/tags/枚举/" style="font-size: 10.152580094712224px;" class="tag-cloud-link">枚举</a>
     
-    <a href="/tags/强连通分量/" style="font-size: 18.655639295092314px;" class="tag-cloud-link">强连通分量</a>
+    <a href="/tags/强连通分量/" style="font-size: 16.516237851871526px;" class="tag-cloud-link">强连通分量</a>
     
-    <a href="/tags/背包问题/" style="font-size: 8.541797853890913px;" class="tag-cloud-link">背包问题</a>
+    <a href="/tags/背包问题/" style="font-size: 15.764046697613402px;" class="tag-cloud-link">背包问题</a>
     
-    <a href="/tags/数学/" style="font-size: 11.31045227322508px;" class="tag-cloud-link">数学</a>
+    <a href="/tags/数学/" style="font-size: 13.885562602410753px;" class="tag-cloud-link">数学</a>
     
-    <a href="/tags/dfs-bfs/" style="font-size: 8.25126029202073px;" class="tag-cloud-link">dfs/bfs</a>
+    <a href="/tags/dfs-bfs/" style="font-size: 15.06178171566188px;" class="tag-cloud-link">dfs/bfs</a>
     
-    <a href="/tags/单调栈-单调队列/" style="font-size: 13.88305175455355px;" class="tag-cloud-link">单调栈/单调队列</a>
+    <a href="/tags/单调栈-单调队列/" style="font-size: 11.508879707749657px;" class="tag-cloud-link">单调栈/单调队列</a>
     
-    <a href="/tags/Contest/" style="font-size: 10.929217199935897px;" class="tag-cloud-link">Contest</a>
+    <a href="/tags/Contest/" style="font-size: 19.44240846270508px;" class="tag-cloud-link">Contest</a>
     
-    <a href="/tags/双联通分量/" style="font-size: 14.880330572679647px;" class="tag-cloud-link">双联通分量</a>
+    <a href="/tags/双联通分量/" style="font-size: 17.88592402504796px;" class="tag-cloud-link">双联通分量</a>
     
-    <a href="/tags/概率期望/" style="font-size: 8.241487780054014px;" class="tag-cloud-link">概率期望</a>
+    <a href="/tags/gym/" style="font-size: 8.478946390987801px;" class="tag-cloud-link">gym</a>
     
-    <a href="/tags/RMQ/" style="font-size: 15.404590331827219px;" class="tag-cloud-link">RMQ</a>
+    <a href="/tags/概率期望/" style="font-size: 8.72076589984946px;" class="tag-cloud-link">概率期望</a>
     
-    <a href="/tags/离线处理/" style="font-size: 17.703742998425113px;" class="tag-cloud-link">离线处理</a>
+    <a href="/tags/RMQ/" style="font-size: 19.660194921640368px;" class="tag-cloud-link">RMQ</a>
     
-    <a href="/tags/贪心/" style="font-size: 14.901356138723425px;" class="tag-cloud-link">贪心</a>
+    <a href="/tags/贪心/" style="font-size: 15.5592637318858px;" class="tag-cloud-link">贪心</a>
     
-    <a href="/tags/other/" style="font-size: 18.36615978005384px;" class="tag-cloud-link">other</a>
+    <a href="/tags/离线处理/" style="font-size: 11.400258703358077px;" class="tag-cloud-link">离线处理</a>
     
-    <a href="/tags/hexo/" style="font-size: 15.134572531102457px;" class="tag-cloud-link">hexo</a>
+    <a href="/tags/other/" style="font-size: 19.0603258578625px;" class="tag-cloud-link">other</a>
+    
+    <a href="/tags/hexo/" style="font-size: 9.583870035262304px;" class="tag-cloud-link">hexo</a>
     
 </div>
                 <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
@@ -556,7 +607,7 @@
 <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
     if(window.commentConfig) {
-      window.commentConfig.id = 'Sun Nov 18 2018 02:51:46 GMT+0800'
+      window.commentConfig.id = 'Sun Nov 18 2018 22:15:25 GMT+0800'
       window.commentConfig.owner = 'tokitsu-kaze'
       window.commentConfig.repo = 'comment-save'
       window.commentConfig.client_id = '822ab9521b502687b55f'
@@ -564,7 +615,7 @@
       window.commentConfig.redirect_uri = ''
     } else {
       window.commentConfig = {
-      	id: 'Sun Nov 18 2018 02:51:46 GMT+0800',
+      	id: 'Sun Nov 18 2018 22:15:25 GMT+0800',
         owner: 'tokitsu-kaze',
         repo: 'comment-save',
         client_id: '822ab9521b502687b55f',
