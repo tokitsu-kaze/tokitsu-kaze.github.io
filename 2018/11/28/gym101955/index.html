@@ -10,7 +10,7 @@
     
     
     
-    <title>2018牛客网暑期ACM多校训练营（第一场）E.Removal (dp) | tokitsukaze</title>
+    <title>2018-2019 ACM-ICPC, Asia Shenyang Regional Contest (gym101955) | tokitsukaze</title>
     <link href=”http://tokitsukaze.live“ rel=”prefetch” />
 
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -159,13 +159,13 @@
         <i class="fa fa-home"></i>
         <a href="http://tokitsukaze.live">tokitsukaze</a>
         >
-        <span>2018牛客网暑期ACM多校训练营（第一场）E.Removal (dp)</span>
+        <span>2018-2019 ACM-ICPC, Asia Shenyang Regional Contest (gym101955)</span>
     </div>
     <!-- 大型设备详细文章 -->
     <div class="hidden-xs">
         <div class="title-article">
             <h1>
-                <a href="/2018/07/22/2018niuke1.E/">2018牛客网暑期ACM多校训练营（第一场）E.Removal (dp)</a>
+                <a href="/2018/11/28/gym101955/">2018-2019 ACM-ICPC, Asia Shenyang Regional Contest (gym101955)</a>
             </h1>
         </div>
         <div class="tag-article">
@@ -173,12 +173,12 @@
             <span class="label label-gal">
                 <i class="fa fa-tags"></i>
                 
-                <a href="/tags/dp/">dp</a>
+                <a href="/tags/gym/">gym</a>
                 
             </span>
             
             <span class="label label-gal">
-                <i class="fa fa-calendar"></i> 2018-07-22
+                <i class="fa fa-calendar"></i> 2018-11-28
             </span>
 
             
@@ -193,17 +193,17 @@
         <center>
             <div class="title-article">
                 <h4>
-                    <a href="/2018/07/22/2018niuke1.E/">2018牛客网暑期ACM多校训练营（第一场）E.Removal (dp)</a>
+                    <a href="/2018/11/28/gym101955/">2018-2019 ACM-ICPC, Asia Shenyang Regional Contest (gym101955)</a>
                 </h4>
             </div>
             <p>
-                <i class="fa fa-calendar"></i> 2018-07-22
+                <i class="fa fa-calendar"></i> 2018-11-28
             </p>
             <p>
                 
                 <i class="fa fa-tags"></i>
                 
-                <a href="/tags/dp/">dp</a>
+                <a href="/tags/gym/">gym</a>
                 
                 
                 
@@ -214,13 +214,34 @@
     </div>
     <div class="content-article">
         <p>转载请注明出处：<a href="http://tokitsukaze.live/">http://tokitsukaze.live/</a></p>
-<p>题目链接：<a href="https://www.nowcoder.com/acm/contest/139/E" target="_blank" rel="noopener">https://www.nowcoder.com/acm/contest/139/E</a></p>
+<p>题目链接：<a href="https://codeforces.com/gym/101955" target="_blank" rel="noopener">https://codeforces.com/gym/101955</a></p>
 <hr>
-<p>题意：<br>长度为n的序列，删掉m个数字后有多少种不同的序列。<br>n&lt;=10^5，m&lt;=10。</p>
-<hr>
-<p>题解：<br>dp[i][j]表示加入第i个数字后，总共删掉j个数字时，有多少种不同的序列。<br>假设不考虑有重复的情况，dp方程为：dp[i][j]=dp[i-1][j] (第i个数字不删)+dp[i-1][j-1] (第i个数字删)。<br>现在考虑重复的情况。<br>如果前面有与a[i]相同的数字a[k] (k小于i)，并且i-k&lt;=j，就会产生重复。<br>比如：cdeaae(用字符串举例比较方便)<br>当我们i=6,j=3时,a[3]=a[6],那么如果删掉中间的[eaa]字串就会变成[cde]，因为我们已经在前面i=3时算过了一次[cde]这种情况，所以我们需要dp[6][3]-dp[2][0]。<br>那么为什么不是减掉dp[3][0]而是减掉dp[2][0]呢。<br>举个比较好说明的例子。<br>还是上面那个串，假设现在是i=6,j=4。那么我们需要dp[6][4]-dp[2][1]。<br>那么为什么不是减掉dp[3][1]呢。<br>因为dp[3][1]=dp[2][1]+dp[2][0]，也就是说dp[3][1]还包括了删掉a[3]的状态，而如果删掉a[3]，那么加入a[6]的时候就不会有重复了。所以减掉dp[2][1]，就是减掉了a[3]不删除的情况。</p>
+<p><strong>补题进度：7/13。</strong></p>
+<p>&nbsp;</p>
+<p>C.<a href="https://codeforces.com/gym/101955/problem/C" target="_blank" rel="noopener">Insertion Sort</a></p>
+<p>打表找规律 or 推公式。</p>
+<p>&nbsp;</p>
+<p>E.<a href="https://codeforces.com/gym/101955/problem/E" target="_blank" rel="noopener">The Kouga Ninja Scrolls</a></p>
+<p><a href="http://tokitsukaze.live/2018/11/02/2018ICPCShenyangOnsite.E/">http://tokitsukaze.live/2018/11/02/2018ICPCShenyangOnsite.E/</a></p>
+<p>&nbsp;&nbsp;</p>
+<p>G.<a href="https://codeforces.com/gym/101955/problem/G" target="_blank" rel="noopener">Best ACMer Solves the Hardest Problem</a></p>
+<p><a href="http://tokitsukaze.live/2018/11/02/2018ICPCShenyangOnsite.G/">http://tokitsukaze.live/2018/11/02/2018ICPCShenyangOnsite.G/</a></p>
+<p>&nbsp;</p>
+<p>I.<a href="https://codeforces.com/gym/101955/problem/I" target="_blank" rel="noopener">Distance Between Sweethearts</a></p>
+<p><a href="http://tokitsukaze.live/2018/11/15/2018ICPCShenyangOnsite.I/">http://tokitsukaze.live/2018/11/15/2018ICPCShenyangOnsite.I/</a></p>
+<p>&nbsp;</p>
+<p>J.<a href="https://codeforces.com/gym/101955/problem/J" target="_blank" rel="noopener">How Much Memory Your Code Is Using?</a></p>
+<p>签到题。直接模拟即可。</p>
+<p>&nbsp;</p>
+<p>K.<a href="https://codeforces.com/gym/101955/problem/K" target="_blank" rel="noopener">Let the Flames Begin</a></p>
+<p>学不会，扒个板子走了..</p>
+<p>&nbsp;</p>
+<p>L.<a href="https://codeforces.com/gym/101955/problem/L" target="_blank" rel="noopener">Machining Disc Rotors</a></p>
+<p><a href="http://tokitsukaze.live/2018/11/02/2018ICPCShenyangOnsite.L/">http://tokitsukaze.live/2018/11/02/2018ICPCShenyangOnsite.L/</a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
 <p>代码：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> comment(linker, <span class="meta-string">"/STACK:1024000000,1024000000"</span>)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> mem(a,b) memset((a),(b),sizeof(a))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MP make_pair</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pb push_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> fi first</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> se second</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> sz(x) (int)x.size()</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> all(x) x.begin(),x.end()</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> _GLIBCXX_PERMIT_BACKWARD_HASH</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;ext/hash_map&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> __gnu_cxx;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> ull;</span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; PII;</span><br><span class="line"><span class="keyword">typedef</span> pair&lt;ll,ll&gt; PLL;</span><br><span class="line"><span class="keyword">typedef</span> <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; VI;</span><br><span class="line"><span class="keyword">typedef</span> <span class="built_in">vector</span>&lt;ll&gt; VL;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">str_hash</span>&#123;</span><span class="keyword">size_t</span> <span class="keyword">operator</span>()(<span class="keyword">const</span> <span class="built_in">string</span>&amp; str)<span class="keyword">const</span>&#123;<span class="keyword">return</span> __stl_hash_string(str.c_str());&#125;&#125;;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF=<span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">const</span> ll LLINF=<span class="number">0x3f3f3f3f3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> PI=<span class="built_in">acos</span>(<span class="number">-1.0</span>);</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> eps=<span class="number">1e-4</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAX=<span class="number">1e5</span>+<span class="number">10</span>;</span><br><span class="line"><span class="keyword">const</span> ll mod=<span class="number">1e9</span>+<span class="number">7</span>;</span><br><span class="line"><span class="comment">/****************************************  head  ****************************************/</span></span><br><span class="line">ll dp[MAX][<span class="number">12</span>];</span><br><span class="line"><span class="keyword">int</span> last[<span class="number">12</span>],pre[MAX],a[MAX];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n,m,k,i,j;</span><br><span class="line">	<span class="keyword">while</span>(~<span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>,&amp;n,&amp;m,&amp;k))</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=k;i++) last[i]=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a[i]);</span><br><span class="line">			pre[i]=last[a[i]];</span><br><span class="line">			last[a[i]]=i;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;=m;i++) dp[i][i]=<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			dp[i][<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">			<span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;=min(i<span class="number">-1</span>,m);j++)</span><br><span class="line">			&#123;</span><br><span class="line">				dp[i][j]=(dp[i<span class="number">-1</span>][j]+dp[i<span class="number">-1</span>][j<span class="number">-1</span>])%mod;</span><br><span class="line">				<span class="keyword">if</span>(pre[i]&amp;&amp;i-pre[i]&lt;=j)</span><br><span class="line">				&#123;</span><br><span class="line">					dp[i][j]-=dp[pre[i]<span class="number">-1</span>][j-(i-pre[i])];</span><br><span class="line">					dp[i][j]%=mod;</span><br><span class="line">					dp[i][j]=(dp[i][j]+mod)%mod;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,dp[n][m]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">6 4 5</span></span><br><span class="line"><span class="comment">3 4 5 1 1 5</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<p><a href="https://github.com/tokitsu-kaze/ACM-Solved-Problems/tree/master/gym/2018-2019%20ACM-ICPC%2C%20Asia%20Shenyang%20Regional%20Contest" target="_blank" rel="noopener">https://github.com/tokitsu-kaze/ACM-Solved-Problems/tree/master/gym/2018-2019%20ACM-ICPC%2C%20Asia%20Shenyang%20Regional%20Contest</a></p>
 
     </div>
 </article>
@@ -231,7 +252,7 @@
 <script>
 	if(!window.commentConfig) {
       window.commentConfig = {}
-      window.commentConfig.title = '2018牛客网暑期ACM多校训练营（第一场）E.Removal (dp)'
+      window.commentConfig.title = '2018-2019 ACM-ICPC, Asia Shenyang Regional Contest (gym101955)'
     }
 </script>
 
@@ -391,97 +412,97 @@
         <div class="panel panel-gal hidden-xs" data-aos="fade-up" data-aos-duration="2000">
             <ul class="nav nav-pills pills-gal">
                 <li class="">
-                    <a href="/2018/07/22/2018niuke1.E/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                    <a href="/2018/11/28/gym101955/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
                 </li>
                 <li class="">
-                    <a href="/2018/07/22/2018niuke1.E/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                    <a href="/2018/11/28/gym101955/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
                 </li>
                 <li class="">
-                    <a href="/2018/07/22/2018niuke1.E/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                    <a href="/2018/11/28/gym101955/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
                 </li>
             </ul>
             <div class="tab-content">
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/博弈/" style="font-size: 17.81002235096598px;" class="tag-cloud-link">博弈</a>
+    <a href="/tags/博弈/" style="font-size: 15.456220539822398px;" class="tag-cloud-link">博弈</a>
     
-    <a href="/tags/学习笔记/" style="font-size: 8.576601152570852px;" class="tag-cloud-link">学习笔记</a>
+    <a href="/tags/学习笔记/" style="font-size: 18.694130116091365px;" class="tag-cloud-link">学习笔记</a>
     
-    <a href="/tags/竞赛经历/" style="font-size: 15.06336297756855px;" class="tag-cloud-link">竞赛经历</a>
+    <a href="/tags/竞赛经历/" style="font-size: 17.685813531532066px;" class="tag-cloud-link">竞赛经历</a>
     
-    <a href="/tags/FFT/" style="font-size: 11.049116850612577px;" class="tag-cloud-link">FFT</a>
+    <a href="/tags/FFT/" style="font-size: 14.509939965551563px;" class="tag-cloud-link">FFT</a>
     
-    <a href="/tags/线段树/" style="font-size: 18.368373347226314px;" class="tag-cloud-link">线段树</a>
+    <a href="/tags/线段树/" style="font-size: 19.407519275531005px;" class="tag-cloud-link">线段树</a>
     
-    <a href="/tags/思维/" style="font-size: 18.01107514586803px;" class="tag-cloud-link">思维</a>
+    <a href="/tags/思维/" style="font-size: 17.241670418483455px;" class="tag-cloud-link">思维</a>
     
-    <a href="/tags/FWT/" style="font-size: 15.756596655332585px;" class="tag-cloud-link">FWT</a>
+    <a href="/tags/FWT/" style="font-size: 11.742559171579472px;" class="tag-cloud-link">FWT</a>
     
-    <a href="/tags/几何/" style="font-size: 15.357228983120468px;" class="tag-cloud-link">几何</a>
+    <a href="/tags/几何/" style="font-size: 15.049368813900282px;" class="tag-cloud-link">几何</a>
     
-    <a href="/tags/树链剖分/" style="font-size: 12.985423357282px;" class="tag-cloud-link">树链剖分</a>
+    <a href="/tags/树链剖分/" style="font-size: 18.785386483079993px;" class="tag-cloud-link">树链剖分</a>
     
-    <a href="/tags/二分/" style="font-size: 19.04459984029186px;" class="tag-cloud-link">二分</a>
+    <a href="/tags/二分/" style="font-size: 11.735978108155802px;" class="tag-cloud-link">二分</a>
     
-    <a href="/tags/LCA/" style="font-size: 18.883631151120134px;" class="tag-cloud-link">LCA</a>
+    <a href="/tags/LCA/" style="font-size: 15.183432362378596px;" class="tag-cloud-link">LCA</a>
     
-    <a href="/tags/主席树/" style="font-size: 19.269147351892272px;" class="tag-cloud-link">主席树</a>
+    <a href="/tags/主席树/" style="font-size: 18.5404515461273px;" class="tag-cloud-link">主席树</a>
     
-    <a href="/tags/dp/" style="font-size: 12.823868307074061px;" class="tag-cloud-link">dp</a>
+    <a href="/tags/dp/" style="font-size: 13.579468194792547px;" class="tag-cloud-link">dp</a>
     
-    <a href="/tags/基环树dp/" style="font-size: 12.255742825779521px;" class="tag-cloud-link">基环树dp</a>
+    <a href="/tags/基环树dp/" style="font-size: 16.598861398498922px;" class="tag-cloud-link">基环树dp</a>
     
-    <a href="/tags/组合数学/" style="font-size: 11.959893777587489px;" class="tag-cloud-link">组合数学</a>
+    <a href="/tags/组合数学/" style="font-size: 17.153869270475674px;" class="tag-cloud-link">组合数学</a>
     
-    <a href="/tags/树形dp/" style="font-size: 17.947470561493713px;" class="tag-cloud-link">树形dp</a>
+    <a href="/tags/树形dp/" style="font-size: 12.071397716563153px;" class="tag-cloud-link">树形dp</a>
     
-    <a href="/tags/hash/" style="font-size: 11.17915619065182px;" class="tag-cloud-link">hash</a>
+    <a href="/tags/hash/" style="font-size: 16.90424055998068px;" class="tag-cloud-link">hash</a>
     
-    <a href="/tags/随机化/" style="font-size: 11.56212397490021px;" class="tag-cloud-link">随机化</a>
+    <a href="/tags/随机化/" style="font-size: 15.830959201115px;" class="tag-cloud-link">随机化</a>
     
-    <a href="/tags/STL/" style="font-size: 10.876398508856258px;" class="tag-cloud-link">STL</a>
+    <a href="/tags/STL/" style="font-size: 18.893309137956283px;" class="tag-cloud-link">STL</a>
     
-    <a href="/tags/kd-tree/" style="font-size: 17.38198352360217px;" class="tag-cloud-link">kd-tree</a>
+    <a href="/tags/kd-tree/" style="font-size: 16.0673116083271px;" class="tag-cloud-link">kd-tree</a>
     
-    <a href="/tags/Kancolle/" style="font-size: 10.404098857864819px;" class="tag-cloud-link">Kancolle</a>
+    <a href="/tags/Kancolle/" style="font-size: 13.536076451757536px;" class="tag-cloud-link">Kancolle</a>
     
-    <a href="/tags/构造/" style="font-size: 13.162710183075358px;" class="tag-cloud-link">构造</a>
+    <a href="/tags/构造/" style="font-size: 10.725680201360255px;" class="tag-cloud-link">构造</a>
     
-    <a href="/tags/分治/" style="font-size: 11.901887436401939px;" class="tag-cloud-link">分治</a>
+    <a href="/tags/分治/" style="font-size: 8.913154410079166px;" class="tag-cloud-link">分治</a>
     
-    <a href="/tags/树状数组/" style="font-size: 11.783100138842194px;" class="tag-cloud-link">树状数组</a>
+    <a href="/tags/树状数组/" style="font-size: 13.462631457110138px;" class="tag-cloud-link">树状数组</a>
     
-    <a href="/tags/枚举/" style="font-size: 18.093062623237753px;" class="tag-cloud-link">枚举</a>
+    <a href="/tags/枚举/" style="font-size: 17.946587207206285px;" class="tag-cloud-link">枚举</a>
     
-    <a href="/tags/折半搜索/" style="font-size: 10.530595623302201px;" class="tag-cloud-link">折半搜索</a>
+    <a href="/tags/折半搜索/" style="font-size: 17.68801084482648px;" class="tag-cloud-link">折半搜索</a>
     
-    <a href="/tags/强连通分量/" style="font-size: 16.969729826070346px;" class="tag-cloud-link">强连通分量</a>
+    <a href="/tags/强连通分量/" style="font-size: 14.834976916191629px;" class="tag-cloud-link">强连通分量</a>
     
-    <a href="/tags/dfs-bfs/" style="font-size: 8.271450330366363px;" class="tag-cloud-link">dfs/bfs</a>
+    <a href="/tags/dfs-bfs/" style="font-size: 10.103859539927917px;" class="tag-cloud-link">dfs/bfs</a>
     
-    <a href="/tags/背包问题/" style="font-size: 13.504393330333217px;" class="tag-cloud-link">背包问题</a>
+    <a href="/tags/背包问题/" style="font-size: 9.84784254283148px;" class="tag-cloud-link">背包问题</a>
     
-    <a href="/tags/数学/" style="font-size: 15.497751503717135px;" class="tag-cloud-link">数学</a>
+    <a href="/tags/数学/" style="font-size: 8.066472011946882px;" class="tag-cloud-link">数学</a>
     
-    <a href="/tags/单调栈-单调队列/" style="font-size: 10.65207379978715px;" class="tag-cloud-link">单调栈/单调队列</a>
+    <a href="/tags/单调栈-单调队列/" style="font-size: 15.860030022544816px;" class="tag-cloud-link">单调栈/单调队列</a>
     
-    <a href="/tags/Codeforces/" style="font-size: 11.376091946652336px;" class="tag-cloud-link">Codeforces</a>
+    <a href="/tags/Codeforces/" style="font-size: 19.466384058039274px;" class="tag-cloud-link">Codeforces</a>
     
-    <a href="/tags/gym/" style="font-size: 11.69585840294475px;" class="tag-cloud-link">gym</a>
+    <a href="/tags/gym/" style="font-size: 11.123304630003044px;" class="tag-cloud-link">gym</a>
     
-    <a href="/tags/双联通分量/" style="font-size: 12.35863159191767px;" class="tag-cloud-link">双联通分量</a>
+    <a href="/tags/双联通分量/" style="font-size: 11.299340289027981px;" class="tag-cloud-link">双联通分量</a>
     
-    <a href="/tags/贪心/" style="font-size: 12.056513243507016px;" class="tag-cloud-link">贪心</a>
+    <a href="/tags/贪心/" style="font-size: 19.929487185522156px;" class="tag-cloud-link">贪心</a>
     
-    <a href="/tags/概率期望/" style="font-size: 12.831427476233603px;" class="tag-cloud-link">概率期望</a>
+    <a href="/tags/概率期望/" style="font-size: 18.088322955315096px;" class="tag-cloud-link">概率期望</a>
     
-    <a href="/tags/RMQ/" style="font-size: 17.76134861084924px;" class="tag-cloud-link">RMQ</a>
+    <a href="/tags/RMQ/" style="font-size: 13.314408255501522px;" class="tag-cloud-link">RMQ</a>
     
-    <a href="/tags/离线处理/" style="font-size: 15.276287597571777px;" class="tag-cloud-link">离线处理</a>
+    <a href="/tags/离线处理/" style="font-size: 16.75773842187811px;" class="tag-cloud-link">离线处理</a>
     
-    <a href="/tags/hexo/" style="font-size: 12.212231827039394px;" class="tag-cloud-link">hexo</a>
+    <a href="/tags/hexo/" style="font-size: 13.291533229274869px;" class="tag-cloud-link">hexo</a>
     
-    <a href="/tags/other/" style="font-size: 18.016531969078503px;" class="tag-cloud-link">other</a>
+    <a href="/tags/other/" style="font-size: 11.24739345280554px;" class="tag-cloud-link">other</a>
     
 </div>
                 <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
@@ -591,7 +612,7 @@
 <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
     if(window.commentConfig) {
-      window.commentConfig.id = 'Sun Jul 22 2018 01:30:21 GMT+0800'
+      window.commentConfig.id = 'Wed Nov 28 2018 14:40:23 GMT+0800'
       window.commentConfig.owner = 'tokitsu-kaze'
       window.commentConfig.repo = 'comment-save'
       window.commentConfig.client_id = '822ab9521b502687b55f'
@@ -599,7 +620,7 @@
       window.commentConfig.redirect_uri = ''
     } else {
       window.commentConfig = {
-      	id: 'Sun Jul 22 2018 01:30:21 GMT+0800',
+      	id: 'Wed Nov 28 2018 14:40:23 GMT+0800',
         owner: 'tokitsu-kaze',
         repo: 'comment-save',
         client_id: '822ab9521b502687b55f',
